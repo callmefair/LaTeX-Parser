@@ -1,0 +1,21 @@
+# Python-generated files
+__pycache__/
+rag/__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# IDE(에디터) 설정 파일 (선택 사항이지만 추천)
+.vscode/
+.idea/
+
+# 환경변수 파일 (비밀번호, API 키 등 보안 데이터)
+.env
+
+# 미완성
+chatbot/
