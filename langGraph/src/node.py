@@ -5,8 +5,6 @@ from src.config import GOOGLE_MODEL, GOOGLE_API_KEY
 from src.retriever import get_retriever
 from src.tools import TOOLS
 
-from langchain_core.output_parsers import StrOutputParser
-
 retriever = get_retriever()
 
 llm = ChatGoogleGenerativeAI(
@@ -38,9 +36,11 @@ def retrieve(state) -> dict:
         contents.append(doc.page_content)
     formatted = "\n\n".join(contents)
 
+    unique_sources = list(dict.fromkeys(sources))
+
     return {
         "documents": formatted,
-        "sources": sources,
+        "sources": unique_sources,
     }
 
 def generate(state) -> dict:

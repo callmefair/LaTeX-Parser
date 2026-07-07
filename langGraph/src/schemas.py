@@ -5,7 +5,7 @@ class QueryRequest(BaseModel):
     context: str = ""
     page_title: str = ""
     question: str = ""
-    thread_id = "DEFAULT"
+    thread_id: str = "DEFAULT"
 
 class QueryResponse(BaseModel):
     answer: str = ""

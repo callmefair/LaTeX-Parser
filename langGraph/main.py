@@ -30,6 +30,6 @@ def query(req: QueryRequest):
         config = {"configurable": {"thread_id": req.thread_id}},
     )
     return QueryResponse(
-        answer=result["messages"][-1].content,
+        answer=result["messages"][-1].text,
         sources=result["sources"],
         )
