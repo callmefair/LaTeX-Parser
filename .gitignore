@@ -20,4 +20,6 @@ chroma_db/
 
 # 미완성
 chatbot/
+.DS_Store
 **/.DS_Store
+**/Thumbs.db
