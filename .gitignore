@@ -19,4 +19,5 @@ wheels/
 chroma_db/
 
 # 미완성
-chatbot/**/.DS_Store
+chatbot/
+**/.DS_Store
