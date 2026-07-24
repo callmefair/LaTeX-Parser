@@ -1,0 +1,10 @@
+[
+    {
+        "question": "Central Limit Theorem은 무엇을 의미하나요?",
+        "answer": "iid 분포를 따르는 확률변수들의 합 $S_n$을 표준화한 $\\frac{S_n - n\\mu}{\\sigma\\sqrt{n}}$은 n이 무한대로 갈 때 분포가 무엇이든 관계없이 표준정규분포 $N(0,\\; 1)$로 분포 수렴합니다."
+    },
+    {
+        "question": "왜 $\\int_{-\\infty}^\\infty e^{-x^2} dx$ 적분이 확률밀도함수에 쓰이나요?",
+        "answer": "$\\int_{-\\infty}^\\infty e^{-t^2/2} dt = \\sqrt{2\\pi}$이므로, $e^{-t^2/2}$를 $\\sqrt{2\\pi}$로 나누면 전체 실수에서 적분값이 1이 됩니다. 이것이 정규분포 확률밀도함수의 정규화 상수 근거입니다."
+    }
+]

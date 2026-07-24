@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>LaTeX 기호 Parser</title>
+<!-- KaTeX: CDN에서 로드. trust:true 렌더링에 필요한 건 JS 옵션이지 별도 파일이 아님 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<style>
+  :root {
+    --red: #e5484d; --blue: #3b82f6;
+    --bg: #fafafa; --panel: #ffffff; --border: #e5e5e5; --text: #222;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: system-ui, -apple-system, "Apple SD Gothic Neo", sans-serif;
+         background: var(--bg); color: var(--text); height: 100vh; display: flex; flex-direction: column; }
+
+  header { padding: 10px 16px; background: var(--panel); border-bottom: 1px solid var(--border);
+           display: flex; align-items: center; gap: 12px; }
+  header h1 { font-size: 15px; margin: 0; }
+  header .spacer { flex: 1; }
+  header button, header label { font-size: 12px; }
+
+  main { flex: 1; display: flex; min-height: 0; }
+
+  /* ---------- 왼쪽: 수식 패널 ---------- */
+  #formula-panel { flex: 1.2; padding: 24px; overflow: auto; }
+  #page-title { font-size: 18px; font-weight: 600; margin-bottom: 20px; }
+  #formula { font-size: 1.6em; padding: 24px 8px; }
+
+  /* 박스 표시 모드: 항상 옅은 테두리 (스크린샷의 빨간/파란 박스 재현) */
+  .show-boxes [data-token] { outline: 1.5px solid color-mix(in srgb, var(--red) 55%, transparent);
+                             outline-offset: 2px; border-radius: 2px; }
+  .show-boxes [data-term]  { outline: 1.5px solid color-mix(in srgb, var(--blue) 45%, transparent);
+                             outline-offset: 6px; border-radius: 3px; }
+  /* 호버/선택 강조 */
+  [data-token], [data-term] { cursor: pointer; transition: background .12s; }
+  [data-token]:hover { background: color-mix(in srgb, var(--red) 18%, transparent); }
+  [data-token].selected { background: color-mix(in srgb, var(--red) 30%, transparent); }
+  [data-term].selected  { background: color-mix(in srgb, var(--blue) 18%, transparent); }
+
+  #selection-info { margin-top: 16px; padding: 12px; background: var(--panel);
+                    border: 1px solid var(--border); border-radius: 8px; font-size: 13px;
+                    display: none; }
+  #selection-info .tex { font-family: ui-monospace, monospace; background: #f3f3f3;
+                         padding: 2px 6px; border-radius: 4px; }
+
+  /* ---------- 오른쪽: 채팅 패널 ---------- */
+  #chat-panel { flex: 1; display: flex; flex-direction: column; background: var(--panel);
+                border-left: 1px solid var(--border); min-width: 340px; }
+  #messages { flex: 1; overflow-y: auto; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+  .msg { max-width: 88%; padding: 10px 12px; border-radius: 12px; font-size: 14px; line-height: 1.55;
+         white-space: pre-wrap; overflow-wrap: anywhere; }
+  .msg.user { align-self: flex-end; background: #eef4ff; }
+  .msg.bot  { align-self: flex-start; background: #f4f4f4; }
+  .msg.bot .sources { margin-top: 8px; font-size: 11px; color: #888; border-top: 1px dashed #ddd; padding-top: 6px; }
+  .msg .katex { font-size: 1.05em; }
+  .msg.pending { color: #999; font-style: italic; }
+
+  #input-row { display: flex; gap: 8px; padding: 12px; border-top: 1px solid var(--border); }
+  #question-input { flex: 1; padding: 10px 12px; border: 1px solid var(--border); border-radius: 8px;
+                    font-size: 14px; font-family: inherit; }
+  button { padding: 8px 14px; border: 1px solid var(--border); border-radius: 8px;
+           background: #fff; cursor: pointer; font-family: inherit; }
+  button:hover { background: #f0f0f0; }
+  button.primary { background: #222; color: #fff; border-color: #222; }
+  #thread-badge { font-size: 11px; color: #999; padding: 4px 16px 8px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>LaTeX 기호 Parser</h1>
+  <div class="spacer"></div>
+  <label><input type="checkbox" id="toggle-boxes" checked> 박스 보기</label>
+  <button id="new-thread">새 스레드</button>
+</header>
+
+<main>
+  <section id="formula-panel">
+    <div id="page-title"></div>
+    <div id="formula" class="show-boxes"></div>
+    <div id="selection-info"></div>
+  </section>
+
+  <section id="chat-panel">
+    <div id="messages"></div>
+    <div id="thread-badge"></div>
+    <div id="input-row">
+      <input id="question-input" placeholder="추가 질문을 입력하거나, 수식의 박스를 클릭하세요"
+             autocomplete="off">
+      <button class="primary" id="send-btn">전송</button>
+    </div>
+  </section>
+</main>
+
+<script>
+"use strict";
+
+// ===== 설정 =====
+const PAGE_TITLE = "다르부 적분";           // 나중에 URL 파라미터 등으로 교체 가능
+const API = "";                             // FastAPI와 같은 origin에서 서빙하므로 상대경로
+
+// ===== 상태 =====
+let page = null;                            // { annotated, tokens, terms }
+let threadId = newThreadId();
+
+function newThreadId() {
+  return "web-" + Math.random().toString(36).slice(2, 10);
+}
+
+// ===== 초기화: 페이지(토큰화된 수식) 불러와서 렌더링 =====
+async function loadPage() {
+  const el = document.getElementById("formula");
+  try {
+    const res = await fetch(`${API}/page/${encodeURIComponent(PAGE_TITLE)}`);
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    page = await res.json();
+  } catch (e) {
+    el.textContent = "백엔드 연결 실패: uvicorn main:app 이 켜져 있는지 확인. (" + e.message + ")";
+    return;
+  }
+  document.getElementById("page-title").textContent = page.title ?? PAGE_TITLE;
+
+  // 핵심: trust:true 여야 \htmlData가 data-* 속성으로 살아남는다
+  katex.render(page.annotated, el, {
+    displayMode: true,
+    trust: true,
+    strict: "ignore",
+    throwOnError: false,
+  });
+}
+
+// ===== 클릭 → 토큰/항 판별 =====
+// 클릭 지점에서 가장 가까운 [data-token]을 찾고 (빨간 박스),
+// 없으면 [data-term]만 잡힌 것 (파란 박스 = 항 전체 질문)
+document.getElementById("formula").addEventListener("click", (e) => {
+  if (!page) return;
+  const tokenEl = e.target.closest("[data-token]");
+  const termEl  = e.target.closest("[data-term]");
+  if (!tokenEl && !termEl) return;
+
+  // 선택 표시 갱신
+  document.querySelectorAll(".selected").forEach(n => n.classList.remove("selected"));
+  (tokenEl ?? termEl).classList.add("selected");
+
+  const symbol  = tokenEl ? page.tokens[tokenEl.dataset.token] : page.terms[termEl.dataset.term];
+  const context = termEl ? page.terms[termEl.dataset.term] : "";
+
+  showSelection(symbol, context);
+  askSymbol(symbol, context);   // 클릭 즉시 자동 질문 (README ㉢~㉣ 흐름)
+});
+
+function showSelection(symbol, context) {
+  const box = document.getElementById("selection-info");
+  box.style.display = "block";
+  box.innerHTML =
+    `선택한 기호: <span class="tex"></span><br>포함된 항: <span class="tex"></span>`;
+  const spans = box.querySelectorAll(".tex");
+  spans[0].textContent = symbol;
+  spans[1].textContent = context || "(없음)";
+}
+
+// ===== 채팅 =====
+const messagesEl = document.getElementById("messages");
+
+function addMessage(role, text, sources) {
+  const div = document.createElement("div");
+  div.className = "msg " + role;
+  div.textContent = text;
+  if (sources?.length) {
+    const s = document.createElement("div");
+    s.className = "sources";
+    s.textContent = "출처: " + sources.join(", ");
+    div.appendChild(s);
+  }
+  messagesEl.appendChild(div);
+  messagesEl.scrollTop = messagesEl.scrollHeight;
+  return div;
+}
+
+// 사용자 말풍선에 기호를 KaTeX로 예쁘게 렌더
+function addSymbolMessage(symbol) {
+  const div = addMessage("user", "이 기호가 궁금해요: ");
+  const span = document.createElement("span");
+  katex.render(symbol, span, { throwOnError: false });
+  div.appendChild(span);
+}
+
+// 공통 전송 함수: /query 는 기존 백엔드 그대로
+async function sendQuery(body) {
+  const pending = addMessage("bot pending", "생각 중…");
+  try {
+    const res = await fetch(`${API}/query`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(body),
+    });
+    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    const data = await res.json();
+    pending.remove();
+    addMessage("bot", data.answer, data.sources);
+  } catch (e) {
+    pending.remove();
+    addMessage("bot", "오류: " + e.message);
+  }
+}
+
+// 기호 클릭 질문: symbol이 채워지면 백엔드 route가 symbol_question으로 보냄
+function askSymbol(symbol, context) {
+  addSymbolMessage(symbol);
+  sendQuery({
+    symbol, context,
+    page_title: PAGE_TITLE,
+    question: "",
+    thread_id: threadId,
+  });
+}
+
+// 일반 후속 질문: symbol을 비워서 passthrough 경로로
+function askFollowup() {
+  const input = document.getElementById("question-input");
+  const q = input.value.trim();
+  if (!q) return;
+  input.value = "";
+  addMessage("user", q);
+  sendQuery({
+    symbol: "", context: "",
+    page_title: PAGE_TITLE,
+    question: q,
+    thread_id: threadId,
+  });
+}
+
+document.getElementById("send-btn").addEventListener("click", askFollowup);
+document.getElementById("question-input").addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.isComposing) askFollowup();   // 한글 조합 중 Enter 무시
+});
+
+// ===== 부가 기능 =====
+document.getElementById("toggle-boxes").addEventListener("change", (e) => {
+  document.getElementById("formula").classList.toggle("show-boxes", e.target.checked);
+});
+
+document.getElementById("new-thread").addEventListener("click", () => {
+  threadId = newThreadId();
+  messagesEl.innerHTML = "";
+  updateThreadBadge();
+});
+
+function updateThreadBadge() {
+  document.getElementById("thread-badge").textContent = "thread_id: " + threadId;
+}
+
+updateThreadBadge();
+loadPage();
+</script>
+</body>
+</html>
