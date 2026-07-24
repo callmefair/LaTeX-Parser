@@ -22,4 +22,4 @@ chroma_db/
 chatbot/
 .DS_Store
 **/.DS_Store
-**/Thumbs.db
+**/Thumbs.db.DS_Store
