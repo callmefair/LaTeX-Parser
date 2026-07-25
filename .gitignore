@@ -6,6 +6,7 @@ build/
 dist/
 wheels/
 *.egg-info
+*.pyc
 
 # Virtual environments
 .venv
@@ -23,3 +24,5 @@ chatbot/
 .DS_Store
 **/.DS_Store
 **/Thumbs.db.DS_Store
+
+md/

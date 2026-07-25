@@ -1,12 +1,6 @@
 from deepeval.metrics import FaithfulnessMetric, ContextualPrecisionMetric, ContextualRelevancyMetric
 
-from langchain_anthropic import ChatAnthropic
-from src.config import ANTHROPIC_MODEL, ANTHROPIC_API_KEY
-
-judge_llm = ChatAnthropic(
-    model=ANTHROPIC_MODEL,
-    api_key=ANTHROPIC_API_KEY
-)
+from eval.metrics.judge_model import judge_llm
 
 #Faithfulness
 ff_metric = FaithfulnessMetric(

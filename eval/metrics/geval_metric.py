@@ -1,13 +1,7 @@
 from deepeval.metrics import GEval
 from deepeval.test_case import LLMTestCaseParams
 
-from langchain_anthropic import ChatAnthropic
-from src.config import ANTHROPIC_MODEL, ANTHROPIC_API_KEY
-
-judge_llm = ChatAnthropic(
-    model=ANTHROPIC_MODEL,
-    api_key=ANTHROPIC_API_KEY
-)
+from eval.metrics.judge_model import judge_llm
 
 #SymbolExplanation
 se_metric = GEval(
@@ -37,8 +31,7 @@ se_metric = GEval(
     "- b에 해당하는 문법이나 c에 대한 설명이 들어가는 순서가 틀린 것은 감점 요소가 아닙니다.",
     evaluation_params=[
         LLMTestCaseParams.INPUT,
-        LLMTestCaseParams.ACTUAL_OUTPUT,
-        LLMTestCaseParams.EXPECTED_OUTPUT
+        LLMTestCaseParams.ACTUAL_OUTPUT
     ],
     model=judge_llm
 )

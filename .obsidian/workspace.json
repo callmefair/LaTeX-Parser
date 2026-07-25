@@ -11,10 +11,14 @@
             "id": "f69e8a008499c77d",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "md/Limit Theorems/Thm. Almost surely면 P 수렴한다.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "새 탭"
+              "title": "Thm. Almost surely면 P 수렴한다"
             }
           }
         ]
@@ -177,5 +181,26 @@
     }
   },
   "active": "f69e8a008499c77d",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "eval/metrics/__pycache__/geval_metric.cpython-312.pyc",
+    "eval/metrics/__pycache__/judge_model.cpython-312.pyc",
+    "eval/metrics/judge_model.py",
+    "eval/metrics/__pycache__/rest_metric.cpython-312.pyc",
+    "eval/metrics/__pycache__",
+    "eval/__pycache__/run_eval.cpython-312.pyc",
+    "eval/__pycache__",
+    "md/Limit Theorems/Thm. Strong Law of Large Number.md",
+    "md/Limit Theorems/Std. Slutsky랑 Continuous Mapping으로 뭐할 수 있냐.md",
+    "md/Discrete Random Variables/Obj. Geometric Random Variable.md",
+    "md/General Random Variables/Obj. Uniform Random Variable.md",
+    "md/General Random Variables/Std. CDF 좀 더 생각해보기.md",
+    "md/General Random Variables/Def. Continuous Random Variable & CDF.md",
+    "md/General Random Variables/Def. 확률밀도함수.md",
+    "md/Limit Theorems/Thm. MS convergence이면 P convergence.md",
+    "md/Limit Theorems/Thm. Markov Inequality.md",
+    "md/Discrete Random Variables/Def. Discrete Random Variable & PMF.md",
+    "md/Limit Theorems/Thm. 확률수렴이면 분포수렴이다.md",
+    "md/Limit Theorems/Lem. Borel-Cantelli Lemma.md",
+    "md/General Random Variables/Def. 평균. 연속확률변수에서의.md"
+  ]
 }

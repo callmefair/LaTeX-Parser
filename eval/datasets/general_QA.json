@@ -1,10 +1,42 @@
 [
+    
     {
         "question": "Central Limit Theorem은 무엇을 의미하나요?",
-        "answer": "iid 분포를 따르는 확률변수들의 합 $S_n$을 표준화한 $\\frac{S_n - n\\mu}{\\sigma\\sqrt{n}}$은 n이 무한대로 갈 때 분포가 무엇이든 관계없이 표준정규분포 $N(0,\\; 1)$로 분포 수렴합니다."
+        "answer": "iid 분포를 따르는 확률변수들의 합 $S_n$을 표준화한 $\\frac{S_n - n\\mu}{\\sigma\\sqrt{n}}$은 $n$이 무한대로 갈 때 원래 확률변수의 개별 분포가 무조건 표준정규분포 $N(0, 1)$로 수렴한다는 것을 의미합니다.",
+        "page_title": "Thm. Central Limit Theorem"
     },
     {
-        "question": "왜 $\\int_{-\\infty}^\\infty e^{-x^2} dx$ 적분이 확률밀도함수에 쓰이나요?",
-        "answer": "$\\int_{-\\infty}^\\infty e^{-t^2/2} dt = \\sqrt{2\\pi}$이므로, $e^{-t^2/2}$를 $\\sqrt{2\\pi}$로 나누면 전체 실수에서 적분값이 1이 됩니다. 이것이 정규분포 확률밀도함수의 정규화 상수 근거입니다."
+        "question": "Central Limit Theorem은 무엇을 의미하나요?",
+        "answer": "표본의 크기 $n$이 충분히 크다면, 임의의 모집단에서 추출한 표본들의 합 $S_n$을 표준화한 $\\frac{S_n - n\\mu}{\\sigma\\sqrt{n}}$의 분포는 항상 표준정규분포 $N(0, 1)$과 일치하게 됩니다.",
+        "page_title": "Thm. Central Limit Theorem"
+    },
+    {
+        "question": "Central Limit Theorem은 무엇을 의미하나요?",
+        "answer": "iid 분포를 따르는 확률변수들의 합 $S_n$을 표준화한 $\\frac{S_n - n\\mu}{\\sigma\\sqrt{n}}$은 n이 무한대로 갈 때 분포가 무엇이든 관계없이 표준정규분포 $N(0,\\; 1)$로 분포 수렴합니다.",
+        "page_title": "Thm. Central Limit Theorem"
+    },
+    {
+        "question": "Discrete Random Variable은 왜 이런 조건을 가져?",
+        "page_title": "Def. Discrete Random Variable & PMF"
+    },
+    {
+        "question": "Markov Inequality는 왜 이런 의미를 가질까용?",
+        "page_title": "Thm. Markov Inequality"
+    },
+    {
+        "question": "확률밀도함수는 $\\dfrac{1}{\\sqrt{2\\pi}}$ 같은 숫자가 왜 붙어 있는건가요?",
+        "page_title": "Def. 확률밀도함수"
+    },
+    {
+        "question": "$W = X_1^2+ \\cdots+X_n^2$로 왜 정의 되는걸까나",
+        "page_title": "Std. Slutsky랑 Continuous Mapping으로 뭐할 수 있냐"
+    },
+    {
+        "question": "지금 이 페이지에서 이 식이 WLLN 말고 SLLN으로 불리는 이유가 무엇인 것 같아?",
+        "page_title": "Thm. Strong Law of Large Number"
+    },
+    {
+        "question": "이 페이지의 식 증명 방법 간단히 좀 알려주라!",
+        "page_title": "Thm. Almost surely면 P 수렴한다"
     }
 ]
