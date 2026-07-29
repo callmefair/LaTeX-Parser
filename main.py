@@ -1,10 +1,13 @@
 from contextlib import asynccontextmanager
 
 from dotenv import load_dotenv
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
 
 from src.schemas import QueryRequest, QueryResponse
 from src.graph import build_graph
+
+from fastapi.staticfiles import StaticFiles
+from src import tokenizer
 
 load_dotenv()
 
@@ -34,3 +37,13 @@ def query(req: QueryRequest):
         answer=result["messages"][-1].text,
         sources=result["sources"],
         )
+
+@app.get("/page/{title}")
+def page(title: str):
+    try:
+        result = tokenizer.get_page(title)
+    except KeyError:
+        raise HTTPException(status_code=404, detail=f"페이지 없음: {title}")
+    return {"title": title, **result}
+
+app.mount("/", StaticFiles(directory="static", html=True), name="static")

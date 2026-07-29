@@ -1,66 +1,152 @@
-# src/tokenizer.py
-r"""LaTeX 문자열을 클릭 가능한 토큰으로 가공하는 모듈. ★ 여기는 네 영역 ★
+from src.config import MD_GLOB
+from glob import glob
+from pathlib import Path
+import re
 
-[계약 - 프론트엔드와의 약속]
-tokenize(latex) -> dict:
-    {
-        "annotated": str,   # \htmlData{token=N}{...} / \htmlData{term=N}{...}가 심어진 LaTeX
-        "tokens": {str: str},  # {"0": "\\int_{I}", ...}  토큰 id → 원본 LaTeX (빨간 박스)
-        "terms":  {str: str},  # {"0": "\\overline{\\int_{I}} f", ...} 항 id → 원본 LaTeX (파란 박스)
-    }
-- 토큰은 \htmlData{token=N}{원본조각}으로 감싼다 (빨간 박스가 될 부분)
-- 항은 \htmlData{term=N}{...}으로 감싼다 (파란 박스). 토큰 wrapper는 항 wrapper '안'에 중첩됨
-- KaTeX는 중첩된 \htmlData를 문제 없이 처리함 (node로 검증 완료)
-- id는 JSON 키라서 str. 프론트는 이 테이블만 읽으므로 내부 구현은 완전 자유
+def lexer(latex):
+    token_list = []
+    while len(latex) > 0:
+        depth = 0
+        j = 1
+        if latex[0] == "\\":
+            while j < len(latex) and (latex[j].isalpha() or j == 1):
+                j += 1
+            token_list.append(latex[0:j])
+            latex = latex[j:]
+        elif latex[0] == "{":
+            depth += 1
+            while depth > 0:
+                if latex[j] == "{":
+                    depth += 1
+                elif latex[j] == "}":
+                    depth -= 1
+                j += 1
+            token_list.append(latex[0:j])
+            latex = latex[j:]
+        elif latex[0] == " ":
+            latex = latex[1:]
+        else:
+            token_list.append(latex[0])
+            latex = latex[1:]
 
-[구현 권장 순서 - 단계별로 커밋하면 좋음]
-1. lexer(latex) -> list[str]
-   문자열을 원시 조각으로 스캔: "\명령어"(알파벳 연속), "{...}"(중괄호 균형 맞춰 통째로),
-   그 외 한 글자씩. 공백은 버리거나 보존 규칙 정하기.
-   ※ 중괄호 짝 맞추기는 depth 카운터 하나면 됨. 여기가 첫 pytest 대상.
-2. 명령어 인자 붙이기
-   ARITY 딕셔너리(\frac: 2, \overline: 1, \sqrt: 1 ...)를 보고
-   명령어 뒤의 {group}들을 그 명령어에 합쳐 하나의 조각으로.
-3. _{} / ^{} 붙이기
-   조각 리스트를 다시 순회하며 "_" 나 "^"를 만나면
-   (앞 조각) + (_또는^) + (뒤 조각)을 하나로 병합. 네 규칙 그대로.
+    return token_list
+
+ARITY = {
+    "\\dfrac": 2, "\\tfrac": 2, "\\stackrel": 2, "\\frac": 2, "\\overline": 1, "\\underline": 1, "\\sqrt": 1,
+    "\\mathrm": 1, "\\text": 1, "\\vec": 1, "\\hat": 1,
+}
+
+def attach_args(pieces):
+    attach_list = []
+    while len(pieces) > 0:
+        j = 0
+        if ARITY.get(pieces[0]):
+            j = ARITY[pieces[0]]
+            if j <= len(pieces) - 1:
+                attach_list.append("".join(pieces[0:j+1]))
+                pieces = pieces[j+1:]
+            else:
+                attach_list.append(pieces[0])
+                pieces = pieces[1:]
+        else:
+            attach_list.append(pieces[0])
+            pieces = pieces[1:]
+    return attach_list
+
+def merge_scripts(attached):
+    merge_list = []
+    while len(attached) > 1:
+        if attached[0] == "_" or attached[0] == "^":
+            if len(merge_list) > 0:
+                merged_latex = merge_list[-1] + attached[0] + attached[1]
+                merge_list = merge_list[:-1]
+                merge_list.append(merged_latex)
+                attached = attached[2:]
+            else:
+                merge_list.append(attached[0])
+                attached = attached[1:]
+        else:
+            merge_list.append(attached[0])
+            attached = attached[1:]
+    if len(attached) > 0:
+        merge_list.append(attached[0])
+    return merge_list
+
+"""
 4. 투명 명령어 처리 (TRANSPARENT 집합)
    \overline, \left, \right, \, \; 같은 것은 토큰으로 잡지 않고,
    인자 '안쪽'으로 재귀해 들어가서 내부만 토큰화.
-5. 항 나누기 (SPLITTERS 집합)
-   최상위 레벨(중괄호 depth 0)에서 = + - < > \le \ge 등을 만나면 항 경계.
-   경계 기호 자체는 토큰도 항도 아님.
-6. 재조립
-   각 토큰을 \htmlData{token=N}{...}로, 각 항을 \htmlData{term=N}{...}로
-   감싸며 문자열을 다시 이어붙이고 테이블과 함께 반환.
 
-tests/test_tokenizer.py 에 단계별 테스트 케이스 있음. 1번부터 통과시켜 나가면 됨.
 """
-
-# 구현할 때 쓰라고 미리 놓아둔 상수들 (내용은 네가 조정)
-ARITY = {
-    "\\frac": 2, "\\overline": 1, "\\underline": 1, "\\sqrt": 1,
-    "\\mathrm": 1, "\\text": 1, "\\vec": 1, "\\hat": 1,
-}
 TRANSPARENT = {"\\overline", "\\underline", "\\left", "\\right", "\\,", "\\;", "\\!"}
-SPLITTERS = {"=", "+", "-", "<", ">", "\\le", "\\ge", "\\ne", "\\in", "\\to"}
 
+SPLITTERS = {
+    "=", "+", "-", "<", ">", "\\le", "\\ge", "\\ne", "\\in", "\\to",
+    "\\leq", "\\geq", "\\approx", "\\sim", "\\neq",
+    "\\rightarrow", "\\longrightarrow", "\\subset", "\\Longleftrightarrow"  
+    }
+def split_terms(merged):
+    split_list = []
+    j = 0
+    depth = 0
+    while len(merged) > 0:
+        while j < len(merged):
+            if merged[j] in ("(", "["):
+                depth += 1
+            elif merged[j] in (")", "]"):
+                depth -= 1
+            elif depth == 0 and merged[j] in SPLITTERS:
+                if merged[j] == "-" and j == 0:
+                    j += 1
+                    continue
+                if j > 0:
+                    split_list.append(('term', merged[0:j]))
+                    split_list.append(('split', merged[j]))
+                    merged = merged[j+1:]
+                    j = 0
+                    break
+            j += 1
+        if j == len(merged):
+            split_list.append(('term', merged[0:j]))
+            merged = merged[j+1:]
+    return(split_list)
+
+def build(splitted):
+    annotated = ""
+    terms = {}
+    num_term = 0
+    tokens = {}
+    num_token = 0
+
+    def htmlterm(i):
+        return "\\htmlData{term=" + str(i) + "}"
+    def htmltoken(i, term):
+        return "\\htmlData{token=" + str(i) + "}{" + term + "}"
+    
+    while len(splitted) > 0:
+        while len(splitted) > 0 and splitted[0][0] == 'term':
+            content = splitted[0][1]
+            annotated += htmlterm(num_term) + "{"
+            terms[str(num_term)] = " ".join(content)
+            num_term += 1
+            for i in range(len(content)):
+                annotated += htmltoken(num_token, content[i])
+                tokens[str(num_token)] = content[i]
+                num_token += 1
+            annotated += "}"
+            splitted = splitted[1:]
+        if len(splitted) > 0 and splitted[0][0] == 'split':
+            annotated += splitted[0][1]
+            splitted = splitted[1:]
+    return {
+        'annotated': annotated,
+        'tokens': tokens,
+        'terms': terms,
+    }
 
 def tokenize(latex: str) -> dict:
-    r"""LaTeX 문자열 → {"annotated", "tokens", "terms"}.
+    return build(split_terms(merge_scripts(attach_args(lexer(latex)))))
 
-    ★ TODO: 여기부터 전부 네 영역 ★
-    위 docstring의 1~6 순서 추천. 완성 전까지는 NotImplementedError를
-    그대로 두면 /page 엔드포인트가 아래 EXAMPLES fallback을 사용함.
-    """
-    raise NotImplementedError
-
-
-# ---------------------------------------------------------------------------
-# 데모용 fallback. tokenize()가 완성되면 이 블록과 main.py의 fallback 분기만 지우면 됨.
-# 수식: 다르부 상적분  \overline{\int_I} f = \inf_{P:Partition(I)} U(f,P)
-# KaTeX 0.16 + trust:true 렌더링 검증 완료.
-# ---------------------------------------------------------------------------
 EXAMPLES = {
     "다르부 적분": {
         "annotated": (
@@ -85,6 +171,25 @@ EXAMPLES = {
     },
 }
 
+def load_formulas() -> dict:
+    formula_dict = {}
+    md_paths = sorted(glob(MD_GLOB, recursive=True))
+
+    for path in md_paths:
+        with open(path, "r", encoding="utf-8") as f:
+            highlight = " ".join([line.lstrip("> ").strip() for line in f if line.startswith(">")])
+        md_name = Path(path).stem
+        two_dollar = re.findall(r"\$\$(.*?)\$\$", highlight, re.DOTALL)
+        if two_dollar:
+            formula_dict[md_name] = "\\\\".join([f.strip() for f in two_dollar])
+            continue
+        one_dollar = re.findall(r"\$(.*?)\$", highlight)
+        if one_dollar:
+            formula_dict[md_name] = max(one_dollar, key=len)
+
+    return formula_dict
+
+RAW_FORMULAS = load_formulas()
 
 def get_page(title: str) -> dict:
     """페이지 제목 → 토큰화 결과. main.py의 /page/{title}가 호출하는 진입점.
@@ -103,7 +208,17 @@ def get_page(title: str) -> dict:
     raise KeyError(title)
 
 
+
 # 페이지별 수식 원문. 지금은 하드코딩, 나중에 md 파싱으로 교체.
+"""
 RAW_FORMULAS = {
     "다르부 적분": r"\overline{\int_{I}} f = \inf_{P:\,\mathrm{Partition}(I)} U(f,P)",
 }
+"""
+
+if __name__ == "__main__":
+    d = load_formulas()
+    print(len(d), "개")
+    for k, v in d.items():
+        print(f"[{k}]\n  {v}\n")
+    print(get_page("Thm. Weak Law of Large Number")["terms"])

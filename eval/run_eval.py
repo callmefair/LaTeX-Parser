@@ -8,7 +8,6 @@ from eval.metrics.geval_metric import se_metric, ar_metric, ne_metric
 from langchain_core.messages import ToolMessage
 
 from deepeval.test_case import LLMTestCase
-from deepeval.dataset import EvaluationDataset
 from deepeval import evaluate
 
 import re, time
@@ -25,7 +24,7 @@ infer_questions = [item for item in total_questions if "answer" in item]
 no_infer_questions = [item for item in total_questions if "answer" not in item]
 
 eval_graph = build_graph()
-test_cases = []
+groups = {}
 
 def invoke_with_retry(graph, state, config, max_attempts=3):
     for attempt in range(max_attempts):
@@ -40,7 +39,7 @@ def invoke_with_retry(graph, state, config, max_attempts=3):
             time.sleep(delay)
 
 failed = []
-for idx, case in enumerate(total_questions):
+for idx, case in enumerate(total_questions[:3]):
     print(f"[{idx + 1}/{len(total_questions)}] {case.get('question') or case.get('symbol')}")
     try:
         case_state = {
@@ -93,14 +92,23 @@ for idx, case in enumerate(total_questions):
             test_case = LLMTestCase(
                 input=result["question"],
                 actual_output=result["messages"][-1].text,
+                expected_output=case.get("answer"),
                 retrieval_context=retrieval_chunk,
-                metrics=metric_list,
             )
 
-            test_cases.append(test_case)
+            key = tuple(m.__name__ for m in metric_list)
+            groups.setdefault(key, {"metrics": metric_list, "test_cases": []})
+            groups[key]["test_cases"].append(test_case)
+
+            
     except Exception as e:
         print(f"[{idx}] FAILED: {e}")
         failed.append(idx)
 
-combined_dataset = EvaluationDataset(test_cases=test_cases)
-evaluate(combined_dataset)
+for group in groups.values():
+    final_result = evaluate(test_cases=group["test_cases"], metrics=group["metrics"])
+    for test_result in final_result.test_results:
+        for metric_data in test_result.metrics_data:
+            print(metric_data.name, metric_data.score, metric_data.threshold)
+            print(metric_data.reason)
+            print("---")
