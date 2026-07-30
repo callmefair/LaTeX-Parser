@@ -46,4 +46,8 @@ def page(title: str):
         raise HTTPException(status_code=404, detail=f"페이지 없음: {title}")
     return {"title": title, **result}
 
+@app.get("/pages")
+def pages():
+    return sorted(tokenizer.RAW_FORMULAS.keys())
+
 app.mount("/", StaticFiles(directory="static", html=True), name="static")

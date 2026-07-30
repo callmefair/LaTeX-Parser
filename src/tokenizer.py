@@ -111,6 +111,8 @@ def split_terms(merged):
             merged = merged[j+1:]
     return(split_list)
 
+NO_TOKEN = {"(", ")", ",", "|", "[", "]"}
+
 def build(splitted):
     annotated = ""
     terms = {}
@@ -130,9 +132,12 @@ def build(splitted):
             terms[str(num_term)] = " ".join(content)
             num_term += 1
             for i in range(len(content)):
-                annotated += htmltoken(num_token, content[i])
-                tokens[str(num_token)] = content[i]
-                num_token += 1
+                if content[i] in NO_TOKEN:
+                    annotated += content[i]
+                else:
+                    annotated += htmltoken(num_token, content[i])
+                    tokens[str(num_token)] = content[i]
+                    num_token += 1
             annotated += "}"
             splitted = splitted[1:]
         if len(splitted) > 0 and splitted[0][0] == 'split':
@@ -146,30 +151,6 @@ def build(splitted):
 
 def tokenize(latex: str) -> dict:
     return build(split_terms(merge_scripts(attach_args(lexer(latex)))))
-
-EXAMPLES = {
-    "다르부 적분": {
-        "annotated": (
-            r"\htmlData{term=0}{\overline{\htmlData{token=0}{\int_{\htmlData{token=1}{I}}}}\; "
-            r"\htmlData{token=2}{f}} = "
-            r"\htmlData{term=1}{\htmlData{token=3}{\inf_{P:\,\mathrm{Partition}(I)}} "
-            r"\htmlData{token=4}{U}\!\left(\htmlData{token=5}{f},\htmlData{token=6}{P}\right)}"
-        ),
-        "tokens": {
-            "0": r"\int_{I}",
-            "1": r"I",
-            "2": r"f",
-            "3": r"\inf_{P:\,\mathrm{Partition}(I)}",
-            "4": r"U",
-            "5": r"f",
-            "6": r"P",
-        },
-        "terms": {
-            "0": r"\overline{\int_{I}}\; f",
-            "1": r"\inf_{P:\,\mathrm{Partition}(I)} U(f,P)",
-        },
-    },
-}
 
 def load_formulas() -> dict:
     formula_dict = {}
@@ -192,29 +173,13 @@ def load_formulas() -> dict:
 RAW_FORMULAS = load_formulas()
 
 def get_page(title: str) -> dict:
-    """페이지 제목 → 토큰화 결과. main.py의 /page/{title}가 호출하는 진입점.
-
-    지금은: 네 tokenize()를 먼저 시도하고, 미구현이면 EXAMPLES에서 찾는다.
-    나중엔: md 파일에서 title에 해당하는 수식 원문을 읽어 tokenize()에 넘기면 됨.
-    """
     raw = RAW_FORMULAS.get(title)
     if raw is not None:
         try:
             return tokenize(raw)
         except NotImplementedError:
             pass
-    if title in EXAMPLES:
-        return EXAMPLES[title]
     raise KeyError(title)
-
-
-
-# 페이지별 수식 원문. 지금은 하드코딩, 나중에 md 파싱으로 교체.
-"""
-RAW_FORMULAS = {
-    "다르부 적분": r"\overline{\int_{I}} f = \inf_{P:\,\mathrm{Partition}(I)} U(f,P)",
-}
-"""
 
 if __name__ == "__main__":
     d = load_formulas()

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "md/Limit Theorems/Thm. Slutsky_s Theorem.md",
+                "file": "md/Limit Theorems/Thm. Almost surely면 P 수렴한다.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Thm. Slutsky_s Theorem"
+              "title": "Thm. Almost surely면 P 수렴한다"
             }
           }
         ]
@@ -182,6 +182,10 @@
   },
   "active": "f69e8a008499c77d",
   "lastOpenFiles": [
+    "md/Limit Theorems/Std. Coverge Surely.md",
+    "md/Limit Theorems/Thm. Slutsky_s Theorem.md",
+    "md/Discrete Random Variables/Obj. Uniform Random Variable.md",
+    "md/Limit Theorems/Lem. Borel-Cantelli Lemma.md",
     "md/Limit Theorems/Thm. Markov Inequality.md",
     "md/Limit Theorems/Thm. 확률수렴이면 분포수렴이다.md",
     "md/Discrete Random Variables/Thm. 독립과 평균, 분산.md",
@@ -202,12 +206,8 @@
     "md/Discrete Random Variables/Obj. Geometric Random Variable.md",
     "md/Discrete Random Variables/Obj. Hypergeometric Random Variable.md",
     "md/Discrete Random Variables/Obj. Poisson Random Variable.md",
-    "md/Discrete Random Variables/Obj. Uniform Random Variable.md",
     "md/Discrete Random Variables/Thm. 독립에 함수 씌워도 유지.md",
     "md/Discrete Random Variables/Thm. E(X+Y) = E(X) + E(Y).md",
-    "md/General Random Variables/Obj. Exponential Random Variable.md",
-    "md/Limit Theorems/Std. Coverge Surely.md",
-    "md/Limit Theorems/Thm. Almost surely면 P 수렴한다.md",
     "eval/metrics/__pycache__/geval_metric.cpython-312.pyc",
     "eval/metrics/__pycache__/judge_model.cpython-312.pyc",
     "eval/metrics/judge_model.py",

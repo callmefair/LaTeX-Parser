@@ -29,8 +29,6 @@
   #formula { font-size: 1.6em; padding: 24px 8px; }
 
   /* 박스 표시 모드: 항상 옅은 테두리 (스크린샷의 빨간/파란 박스 재현) */
-  .show-boxes [data-token] { outline: 1.5px solid color-mix(in srgb, var(--red) 55%, transparent);
-                             outline-offset: 2px; border-radius: 2px; }
   .show-boxes [data-term]  { outline: 1.5px solid color-mix(in srgb, var(--blue) 45%, transparent);
                              outline-offset: 6px; border-radius: 3px; }
   /* 호버/선택 강조 */
@@ -71,6 +69,7 @@
 
 <header>
   <h1>LaTeX 기호 Parser</h1>
+  <select id="page-select"></select>
   <div class="spacer"></div>
   <label><input type="checkbox" id="toggle-boxes" checked> 박스 보기</label>
   <button id="new-thread">새 스레드</button>
@@ -98,7 +97,7 @@
 "use strict";
 
 // ===== 설정 =====
-const PAGE_TITLE = "Thm. De-Moivre Laplace Approximation";           // 나중에 URL 파라미터 등으로 교체 가능
+let PAGE_TITLE = null;           // 나중에 URL 파라미터 등으로 교체 가능
 const API = "";                             // FastAPI와 같은 origin에서 서빙하므로 상대경로
 
 // ===== 상태 =====
@@ -110,6 +109,18 @@ function newThreadId() {
 }
 
 // ===== 초기화: 페이지(토큰화된 수식) 불러와서 렌더링 =====
+async function loadPageList() {
+  const sel = document.getElementById("page-select");
+  const titles = await (await fetch(`${API}/pages`)).json();
+  sel.innerHTML = titles.map(t => `<option>${t}</option>`).join("");
+  PAGE_TITLE = titles[0];
+  sel.addEventListener("change", () => {
+    PAGE_TITLE = sel.value;
+    document.getElementById("selection-info").style.display = "none";
+    loadPage();
+  });
+}
+
 async function loadPage() {
   const el = document.getElementById("formula");
   try {
@@ -253,7 +264,7 @@ function updateThreadBadge() {
 }
 
 updateThreadBadge();
-loadPage();
+loadPageList().then(loadPage);
 </script>
 </body>
 </html>
