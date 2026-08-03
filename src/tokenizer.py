@@ -3,6 +3,13 @@ from glob import glob
 from pathlib import Path
 import re
 
+class TokenizerError(Exception): pass
+
+class TokenizeUnavailable(TokenizerError):
+    def __init__(self, formula: str):
+        self.formula = formula
+        super().__init__(f"분류할 수 없는 수식입니다: {formula}")
+
 def lexer(latex):
     token_list = []
     while len(latex) > 0:
@@ -33,7 +40,7 @@ def lexer(latex):
 
 ARITY = {
     "\\dfrac": 2, "\\tfrac": 2, "\\stackrel": 2, "\\frac": 2, "\\overline": 1, "\\underline": 1, "\\sqrt": 1,
-    "\\mathrm": 1, "\\text": 1, "\\vec": 1, "\\hat": 1,
+    "\\mathrm": 1, "\\text": 1, "\\vec": 1, "\\hat": 1, "\\begin": 1, "\\end": 1,
 }
 
 def attach_args(pieces):
@@ -83,7 +90,7 @@ TRANSPARENT = {"\\overline", "\\underline", "\\left", "\\right", "\\,", "\\;", "
 SPLITTERS = {
     "=", "+", "-", "<", ">", "\\le", "\\ge", "\\ne", "\\in", "\\to",
     "\\leq", "\\geq", "\\approx", "\\sim", "\\neq",
-    "\\rightarrow", "\\longrightarrow", "\\subset", "\\Longleftrightarrow"  
+    "\\rightarrow", "\\longrightarrow", "\\subset", "\\Longleftrightarrow", "&", "\\\\",
     }
 def split_terms(merged):
     split_list = []
@@ -95,30 +102,30 @@ def split_terms(merged):
                 depth += 1
             elif merged[j] in (")", "]"):
                 depth -= 1
-            elif depth == 0 and merged[j] in SPLITTERS:
+            elif depth == 0 and (merged[j] in SPLITTERS or merged[j].startswith("\\begin") or merged[j].startswith("\\end")):
                 if merged[j] == "-" and j == 0:
                     j += 1
                     continue
                 if j > 0:
                     split_list.append(('term', merged[0:j]))
-                    split_list.append(('split', merged[j]))
-                    merged = merged[j+1:]
-                    j = 0
-                    break
+                split_list.append(('split', merged[j]))
+                merged = merged[j+1:]
+                j = 0
+                break
             j += 1
         if j == len(merged):
             split_list.append(('term', merged[0:j]))
             merged = merged[j+1:]
     return(split_list)
 
-NO_TOKEN = {"(", ")", ",", "|", "[", "]"}
+NO_TOKEN = {"(", ")", ",", "[", "]", ".", "\\left", "\\right"}
 
-def build(splitted):
+def build(splitted, start_term=0, start_token=0):
     annotated = ""
     terms = {}
-    num_term = 0
+    num_term = start_term
     tokens = {}
-    num_token = 0
+    num_token = start_token
 
     def htmlterm(i):
         return "\\htmlData{term=" + str(i) + "}"
@@ -147,10 +154,15 @@ def build(splitted):
         'annotated': annotated,
         'tokens': tokens,
         'terms': terms,
+        'next_term': num_term,
+        'next_token': num_token,
     }
 
-def tokenize(latex: str) -> dict:
-    return build(split_terms(merge_scripts(attach_args(lexer(latex)))))
+def tokenize(latex: str, start_term=0, start_token=0) -> dict:
+    try:
+        return build(split_terms(merge_scripts(attach_args(lexer(latex)))), start_term, start_token)
+    except Exception as err:
+        raise TokenizeUnavailable(latex) from err
 
 def load_formulas() -> dict:
     formula_dict = {}
@@ -162,28 +174,49 @@ def load_formulas() -> dict:
         md_name = Path(path).stem
         two_dollar = re.findall(r"\$\$(.*?)\$\$", highlight, re.DOTALL)
         if two_dollar:
-            formula_dict[md_name] = "\\\\".join([f.strip() for f in two_dollar])
+            formula_dict[md_name] = [f.strip() for f in two_dollar]
             continue
         one_dollar = re.findall(r"\$(.*?)\$", highlight)
         if one_dollar:
-            formula_dict[md_name] = max(one_dollar, key=len)
+            formula_dict[md_name] = [max(one_dollar, key=len)]
 
     return formula_dict
 
 RAW_FORMULAS = load_formulas()
+WIKI_SECTIONS = {}
+
+def tokenize_sections(sections) -> dict:
+    result = {"sections": [], "tokens": {}, "terms": {}}
+    current_term = 0 
+    current_token = 0
+    for dict in sections:
+        annotated = []
+        for raw in dict["formulas"]:
+            try:
+                tkf = tokenize(raw, start_term=current_term, start_token=current_token)
+            except Exception:
+                annotated.append(raw)
+                continue
+            annotated.append(tkf['annotated'])
+            current_term = tkf['next_term']
+            current_token = tkf['next_token']
+            result["terms"].update(tkf["terms"])
+            result["tokens"].update(tkf["tokens"])
+        result["sections"].append({
+            "section": dict["section"],
+            "formulas": annotated,
+        })
+    return result
 
 def get_page(title: str) -> dict:
-    raw = RAW_FORMULAS.get(title)
-    if raw is not None:
-        try:
-            return tokenize(raw)
-        except NotImplementedError:
-            pass
-    raise KeyError(title)
+    if title in WIKI_SECTIONS:
+        return tokenize_sections(WIKI_SECTIONS[title])
+    formulas = RAW_FORMULAS.get(title)
+    if formulas is None:
+        raise KeyError(title)
+    return tokenize_sections([{"section": "", "formulas": formulas}])
 
 if __name__ == "__main__":
-    d = load_formulas()
-    print(len(d), "개")
-    for k, v in d.items():
-        print(f"[{k}]\n  {v}\n")
-    print(get_page("Thm. Weak Law of Large Number")["terms"])
+    pieces = merge_scripts(attach_args(lexer(r"\begin{align} a &= b \\ c &= d \end{align}")))
+    print(pieces)
+    print(split_terms(pieces))

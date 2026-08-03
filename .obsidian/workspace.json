@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "md/Limit Theorems/Thm. Almost surely면 P 수렴한다.md",
+                "file": "md/Discrete Random Variables/Def. Conditional Expectation.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Thm. Almost surely면 P 수렴한다"
+              "title": "Def. Conditional Expectation"
             }
           }
         ]
@@ -41,7 +41,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "파일 탐색기"
@@ -182,7 +184,25 @@
   },
   "active": "f69e8a008499c77d",
   "lastOpenFiles": [
+    "static/katex/fonts/KaTeX_Typewriter-Regular.woff2",
+    "static/katex/fonts/KaTeX_Typewriter-Regular.woff",
+    "static/katex/fonts/KaTeX_Typewriter-Regular.ttf",
+    "static/katex/fonts/KaTeX_Size4-Regular.woff2",
+    "static/katex/fonts/KaTeX_Size4-Regular.woff",
+    "static/katex/fonts/KaTeX_Size4-Regular.ttf",
+    "static/katex/fonts/KaTeX_Size3-Regular.woff2",
+    "static/katex/fonts/KaTeX_Size3-Regular.woff",
+    "static/katex/fonts/KaTeX_Size3-Regular.ttf",
+    "static/katex/fonts/KaTeX_Size2-Regular.woff2",
+    "static/katex/fonts/KaTeX_Size2-Regular.woff",
+    "static/katex/README.md",
+    "md/Limit Theorems/Thm. De-Moivre Laplace Approximation.md",
+    "md/Limit Theorems/Thm. Weak Law of Large Number.md",
+    "md/Limit Theorems/Thm. Strong Law of Large Number.md",
+    "md/Limit Theorems/Thm. Chebyshev Inequality.md",
+    "md/Limit Theorems/Thm. Central Limit Theorem.md",
     "md/Limit Theorems/Std. Coverge Surely.md",
+    "md/Limit Theorems/Thm. Almost surely면 P 수렴한다.md",
     "md/Limit Theorems/Thm. Slutsky_s Theorem.md",
     "md/Discrete Random Variables/Obj. Uniform Random Variable.md",
     "md/Limit Theorems/Lem. Borel-Cantelli Lemma.md",
@@ -199,21 +219,6 @@
     "md/General Random Variables/Thm. Proof of LoTuS with some condition.md",
     "md/General Random Variables/Thm. Radon-Nikodym Theorem.md",
     "md/Limit Theorems/Thm. Jensen_s Inequality.md",
-    "md/Limit Theorems/Thm. De-Moivre Laplace Approximation.md",
-    "md/General Random Variables/Lem. 연속확률변수의 적분 표현.md",
-    "md/General Random Variables/Def. 평균. 연속확률변수에서의.md",
-    "md/General Random Variables/Def. Continuous Random Variable & CDF.md",
-    "md/Discrete Random Variables/Obj. Geometric Random Variable.md",
-    "md/Discrete Random Variables/Obj. Hypergeometric Random Variable.md",
-    "md/Discrete Random Variables/Obj. Poisson Random Variable.md",
-    "md/Discrete Random Variables/Thm. 독립에 함수 씌워도 유지.md",
-    "md/Discrete Random Variables/Thm. E(X+Y) = E(X) + E(Y).md",
-    "eval/metrics/__pycache__/geval_metric.cpython-312.pyc",
-    "eval/metrics/__pycache__/judge_model.cpython-312.pyc",
-    "eval/metrics/judge_model.py",
-    "eval/metrics/__pycache__/rest_metric.cpython-312.pyc",
-    "eval/metrics/__pycache__",
-    "eval/__pycache__/run_eval.cpython-312.pyc",
-    "eval/__pycache__"
+    "md/General Random Variables/Lem. 연속확률변수의 적분 표현.md"
   ]
 }

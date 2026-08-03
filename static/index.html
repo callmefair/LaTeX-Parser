@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <title>LaTeX 기호 Parser</title>
 <!-- KaTeX: CDN에서 로드. trust:true 렌더링에 필요한 건 JS 옵션이지 별도 파일이 아님 -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.11/katex.min.js"></script>
+<link rel="stylesheet" href="/katex/katex.min.css">
+<script src="/katex/katex.min.js"></script>
 <style>
   :root {
     --red: #e5484d; --blue: #3b82f6;
@@ -63,6 +63,12 @@
   button:hover { background: #f0f0f0; }
   button.primary { background: #222; color: #fff; border-color: #222; }
   #thread-badge { font-size: 11px; color: #999; padding: 4px 16px 8px; }
+  .section-title { font-size: 14px; color: #888; margin: 28px 0 4px; font-weight: 600; }
+  .formula-block { padding: 10px 0; overflow-x: auto; }
+  [data-token], [data-term] { display: inline-block; }
+  [data-token] { position: relative; z-index: 1; }
+  #selection-info { position: sticky; bottom: 12px; background: var(--panel); }
+  #selection-info { z-index: 10; }
 </style>
 </head>
 <body>
@@ -123,22 +129,35 @@ async function loadPageList() {
 
 async function loadPage() {
   const el = document.getElementById("formula");
+  el.innerHTML = "";                       // 페이지 바꿀 때 비우기
   try {
     const res = await fetch(`${API}/page/${encodeURIComponent(PAGE_TITLE)}`);
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     page = await res.json();
   } catch (e) {
-    el.textContent = "백엔드 연결 실패: uvicorn main:app 이 켜져 있는지 확인. (" + e.message + ")";
+    el.textContent = "백엔드 연결 실패: " + e.message;
     return;
   }
   document.getElementById("page-title").textContent = page.title ?? PAGE_TITLE;
 
-  // 핵심: trust:true 여야 \htmlData가 data-* 속성으로 살아남는다
-  katex.render(page.annotated, el, {
-    displayMode: true,
-    trust: true,
-    strict: "ignore",
-    throwOnError: false,
+  page.sections.forEach(sec => {
+    if (sec.section) {
+      const h = document.createElement("h3");
+      h.className = "section-title";
+      h.textContent = sec.section;
+      el.appendChild(h);
+    }
+    sec.formulas.forEach(f => {
+      const div = document.createElement("div");
+      div.className = "formula-block";
+      el.appendChild(div);
+      try {
+        katex.render(f, div, { displayMode: true, trust: true, strict: "ignore", throwOnError: true });
+      } catch (err) {
+        console.warn("렌더 실패:", err.message, "\n원본:", f);
+        katex.render(f, div, { displayMode: true, trust: true, strict: "ignore", throwOnError: false });
+      }
+    });
   });
 }
 
