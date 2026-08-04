@@ -1,4 +1,4 @@
-from urllib.parse import urlparse
+from urllib.parse import urlparse, unquote
 import requests
 import re
 
@@ -32,10 +32,10 @@ HEADERS = {
 def get_title(url):
     parsed_url = urlparse(url)
     api_url = parsed_url.scheme + "://" + parsed_url.netloc + "/w/api.php"
-    title = parsed_url.path.rstrip("/").split("/")[-1]
+    title = unquote(parsed_url.path.rstrip("/").split("/")[-1])
     return (title, api_url)
 
-def fetch_address(url):
+def get_wikitext(url):
     title, api_url = get_title(url)
     params = {
         "action": "parse",
@@ -92,11 +92,11 @@ def header_divide(text):
     
     return dict_list
 
-def get_latex(url: str) -> dict:
+def get_latex(url: str) -> list[dict]:
     parsed_url = urlparse(url)
     if not parsed_url.netloc.endswith("wikipedia.org"):
         raise NotWikipediaURL(url)
-    wikitext = fetch_address(url)
+    wikitext = get_wikitext(url)
     sections = header_divide(wikitext)
     if not sections:
         raise NoFormulaFound(url)

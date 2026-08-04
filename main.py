@@ -48,21 +48,15 @@ def add_wiki(req: WikiRequest):
     sections = get_latex(req.url)
     title = "[Wiki] " + get_title(req.url)[0]
     tokenizer.WIKI_SECTIONS[title] = sections
-    page = tokenize_sections(sections)
-    for s in page["sections"]:
-        for f in s["formulas"]:
-            if "{\\htmlData}" in f:
-                print(f[:200])
-                break
     return {"title": title}
 
 
 STATUS = {
-    NotWikipediaURL:  400,
+    NotWikipediaURL: 400,
     WikiPageNotFound: 404,
-    NoFormulaFound:   404,
+    NoFormulaFound: 404,
     TokenizeUnavailable: 501,
-    WikiFetchFailed:  502,
+    WikiFetchFailed: 502,
 }
 
 @app.exception_handler(WikiError)
@@ -73,7 +67,7 @@ def handle_wiki_error(request, exc: WikiError):
     )
 
 @app.exception_handler(TokenizerError)
-def handle_wiki_error(request, exc: TokenizerError):
+def handle_wiki_error(_, exc: TokenizerError):
     return JSONResponse(
         status_code=STATUS.get(type(exc), 500),
         content={"detail": str(exc)},

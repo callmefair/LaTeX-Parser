@@ -75,6 +75,8 @@
 
 <header>
   <h1>LaTeX 기호 Parser</h1>
+  <input id="wiki-url" placeholder="위키피디아 문서 주소 붙여넣기" size="32">
+  <button id="wiki-add">추가</button>
   <select id="page-select"></select>
   <div class="spacer"></div>
   <label><input type="checkbox" id="toggle-boxes" checked> 박스 보기</label>
@@ -105,6 +107,13 @@
 // ===== 설정 =====
 let PAGE_TITLE = null;           // 나중에 URL 파라미터 등으로 교체 가능
 const API = "";                             // FastAPI와 같은 origin에서 서빙하므로 상대경로
+const KATEX_MACROS = {
+  "\\Q": "\\mathbb{Q}", "\\R": "\\mathbb{R}", "\\N": "\\mathbb{N}",
+  "\\Z": "\\mathbb{Z}", "\\C": "\\mathbb{C}", "\\H": "\\mathbb{H}",
+  "\\sub": "\\subset", "\\sube": "\\subseteq", "\\supe": "\\supseteq",
+  "\\isin": "\\in", "\\empty": "\\emptyset", "\\ang": "\\angle",
+  "\\and": "\\land", "\\or": "\\lor", "\\part": "\\partial",
+};
 
 // ===== 상태 =====
 let page = null;                            // { annotated, tokens, terms }
@@ -115,16 +124,12 @@ function newThreadId() {
 }
 
 // ===== 초기화: 페이지(토큰화된 수식) 불러와서 렌더링 =====
-async function loadPageList() {
+async function loadPageList(selectTitle) {
   const sel = document.getElementById("page-select");
   const titles = await (await fetch(`${API}/pages`)).json();
   sel.innerHTML = titles.map(t => `<option>${t}</option>`).join("");
-  PAGE_TITLE = titles[0];
-  sel.addEventListener("change", () => {
-    PAGE_TITLE = sel.value;
-    document.getElementById("selection-info").style.display = "none";
-    loadPage();
-  });
+  PAGE_TITLE = (selectTitle && titles.includes(selectTitle)) ? selectTitle : titles[0];
+  sel.value = PAGE_TITLE;
 }
 
 async function loadPage() {
@@ -152,14 +157,51 @@ async function loadPage() {
       div.className = "formula-block";
       el.appendChild(div);
       try {
-        katex.render(f, div, { displayMode: true, trust: true, strict: "ignore", throwOnError: true });
+        katex.render(f, div, { displayMode: true, trust: true, strict: "ignore", throwOnError: true, macros: KATEX_MACROS });
       } catch (err) {
         console.warn("렌더 실패:", err.message, "\n원본:", f);
-        katex.render(f, div, { displayMode: true, trust: true, strict: "ignore", throwOnError: false });
+        katex.render(f, div, { displayMode: true, trust: true, strict: "ignore", throwOnError: false, macros: KATEX_MACROS });
       }
     });
   });
 }
+
+async function addWikiPage() {
+  const input = document.getElementById("wiki-url");
+  const btn = document.getElementById("wiki-add");
+  const url = input.value.trim();
+  if (!url) return;
+
+  btn.disabled = true;
+  btn.textContent = "가져오는 중...";
+  try {
+    const res = await fetch(`${API}/wiki`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url }),
+    });
+    const data = await res.json();
+    if (!res.ok) throw new Error(data.detail ?? `HTTP ${res.status}`);
+    input.value = "";
+    await loadPageList(data.title);   // 목록 갱신 + 방금 추가한 것 선택
+    loadPage();
+  } catch (e) {
+    alert("추가 실패: " + e.message);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = "추가";
+  }
+}
+
+document.getElementById("wiki-add").addEventListener("click", addWikiPage);
+document.getElementById("wiki-url").addEventListener("keydown", (e) => {
+  if (e.key === "Enter" && !e.isComposing) addWikiPage();
+});
+document.getElementById("page-select").addEventListener("change", (e) => {
+  PAGE_TITLE = e.target.value;
+  document.getElementById("selection-info").style.display = "none";
+  loadPage();
+});
 
 // ===== 클릭 → 토큰/항 판별 =====
 // 클릭 지점에서 가장 가까운 [data-token]을 찾고 (빨간 박스),
@@ -213,7 +255,7 @@ function addMessage(role, text, sources) {
 function addSymbolMessage(symbol) {
   const div = addMessage("user", "이 기호가 궁금해요: ");
   const span = document.createElement("span");
-  katex.render(symbol, span, { throwOnError: false });
+  katex.render(symbol, span, { throwOnError: false, macros: KATEX_MACROS });
   div.appendChild(span);
 }
 
