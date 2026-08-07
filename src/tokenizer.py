@@ -191,7 +191,9 @@ def tokenize_sections(sections) -> dict:
     current_token = 0
     for dict in sections:
         annotated = []
+        raws = []
         for raw in dict["formulas"]:
+            raws.append(raw)
             try:
                 tkf = tokenize(raw, start_term=current_term, start_token=current_token)
             except Exception:
@@ -204,18 +206,33 @@ def tokenize_sections(sections) -> dict:
             result["tokens"].update(tkf["tokens"])
         result["sections"].append({
             "section": dict["section"],
-            "formulas": annotated,
+            "formulas": [{"annotated": a, "raw": r} for a, r in zip(annotated, raws)],
         })
     return result
 
 def get_page(title: str) -> dict:
     if title in WIKI_SECTIONS:
-        return tokenize_sections(WIKI_SECTIONS[title])
+        return tokenize_sections(WIKI_SECTIONS[title]["sections"])
     formulas = RAW_FORMULAS.get(title)
     if formulas is None:
         raise KeyError(title)
     return tokenize_sections([{"section": "", "formulas": formulas}])
 
+DEF_HINTS = {"where", "let ", "denote", "defined", "such that", "라 하", "이라 하"}
+RADIUS = 100
+def find_symbol_lines(title: str, symbol: str):
+    sentences = [s.strip() for s in WIKI_SECTIONS[title]["wikitext"].split('.') if symbol in s]
+    j = 0
+    for i in range(len(sentences)):
+        symbol_idx = sentences[i].find(symbol)
+        sentences[i] = sentences[i][max(0, symbol_idx - RADIUS) : symbol_idx + RADIUS]
+        if any(hint in sentences[i].lower() for hint in DEF_HINTS):
+            temp = sentences[i]
+            sentences[i] = sentences[j]
+            sentences[j] = temp
+            j += 1
+    return sentences[:3]
+    
 if __name__ == "__main__":
     pieces = merge_scripts(attach_args(lexer(r"\begin{align} a &= b \\ c &= d \end{align}")))
     print(pieces)

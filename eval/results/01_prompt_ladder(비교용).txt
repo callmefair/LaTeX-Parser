@@ -1,0 +1,397 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[1/31] Central Limit Theorem은 무엇을 의미하나요?
+  라우팅 OK (기대 False, 실제 False)
+[2/31] LoTuS에서 왜 Y의 PMF가 필요없게 되는지가 궁금하다. 얼른 말하도록.
+  라우팅 OK (기대 False, 실제 False)
+[3/31] Markov Inequality는 왜 이런 의미를 가질까용?
+  라우팅 OK (기대 False, 실제 False)
+[4/31] Discrete Random Variable은 왜 이런 조건을 가져?
+  라우팅 OK (기대 False, 실제 False)
+[5/31] 확률밀도함수는 $\dfrac{1}{\sqrt{2\pi}}$ 같은 숫자가 왜 붙어 있는건가요?
+  라우팅 OK (기대 False, 실제 False)
+[6/31] $W = X_1^2+ \cdots+X_n^2$로 왜 정의 되는걸까나
+  라우팅 OK (기대 False, 실제 False)
+[7/31] 지금 이 페이지에서 이 식이 WLLN 말고 SLLN으로 불리는 이유가 무엇인 것 같아?
+  라우팅 OK (기대 False, 실제 False)
+[8/31] 이 페이지의 식 증명 방법 간단히 좀 알려주라!
+  라우팅 OK (기대 False, 실제 False)
+[9/31] 리만 적분에서 다르부 상합과 다르부 하합이 왜 중요한지 알려줄래?
+  라우팅 FAIL (기대 True, 실제 False)
+[10/31] 리만 적분에서 다르부 상적분과 다르부 하적분으로 무엇을 하려는거야?
+  라우팅 FAIL (기대 True, 실제 False)
+[11/31] 왜 1부터 n까지의 합은 (n+1)/2인가요?
+  라우팅 FAIL (기대 True, 실제 False)
+[12/31] nonintegrable function에서 저 0과 1로만 이루어진 함수는 뭐지?
+  라우팅 FAIL (기대 True, 실제 False)
+[13/31] \sum
+  라우팅 OK (기대 False, 실제 False)
+[14/31] \chi
+  라우팅 OK (기대 False, 실제 False)
+[15/31] \int_{-\infty}^\infty
+  라우팅 OK (기대 False, 실제 False)
+[16/31] \bigcup _{k=n}^\infty
+  라우팅 OK (기대 False, 실제 False)
+[17/31] S_n
+  라우팅 OK (기대 False, 실제 False)
+[18/31] \stackrel {P} \longrightarrow
+  라우팅 OK (기대 False, 실제 False)
+[19/31] \lambda
+  라우팅 OK (기대 False, 실제 False)
+[20/31] \mu_X
+  라우팅 OK (기대 False, 실제 False)
+[21/31] \sup_{\{a,b\}\subseteq P\subseteq[a,b]}^{|P|<\aleph_0}
+  라우팅 FAIL (기대 True, 실제 False)
+[22/31] \inf_{\{a,b\}\subseteq R\subseteq[a,b]}^{|R|<\aleph_0}
+  라우팅 FAIL (기대 True, 실제 False)
+[23/31] x^P_{i+1}
+  라우팅 FAIL (기대 True, 실제 False)
+[24/31] U_{f, P^{(n)}}
+  라우팅 FAIL (기대 True, 실제 False)
+[25/31] \overline{\int_{a}^{b}}
+  라우팅 FAIL (기대 True, 실제 False)
+[26/31] \sim
+  라우팅 OK (기대 False, 실제 False)
+[27/31] \mathbb{R}
+  라우팅 OK (기대 False, 실제 False)
+[28/31] L
+  라우팅 OK (기대 False, 실제 False)
+[29/31] \text{ is irrational}
+  라우팅 OK (기대 False, 실제 False)
+[30/31] E
+  라우팅 OK (기대 False, 실제 False)
+[31/31] \eta
+  라우팅 OK (기대 False, 실제 False)
+FaithfulnessMetric 0.8571428571428571
+The score is 0.86 because the actual output oversimplifies the nuanced distinction presented in the retrieval context regarding infinite sums and normal distributions. The retrieval context clarifies that an infinite sum will never actually reach a normal distribution—it only approximates one—but the actual output appears to gloss over this important caveat, suggesting a stronger claim than what the source material supports.
+---
+GEval 1.0
+The input is already in polite inquiry form (물어보기, ~나요?) rather than casual/colloquial speech. The Actual Output maintains consistent formal-polite style (친절체) throughout, using appropriate expressions like '~습니다', '~합니다', '~됩니다', and '~됩니다'. No casual speech elements (반말, ㅋㅋㅋ, ~함, ~했음, messenger style) are present in either input or output. The response demonstrates proper tone consistency with natural discourse markers (예: '정리해 볼게요' equivalent structures are absent, keeping evaluation focused on original casual elements). Mathematical notation and technical terminology are properly formatted. No informal or conversational remnants exist in the output.
+---
+GEval 0.1
+The Actual Output correctly identifies and explains all core elements of the Central Limit Theorem that are present in the Expected Output: (1) iid distributed random variables, (2) the sum $S_n$ and its standardization $\frac{S_n - n\mu}{\sigma\sqrt{n}}$, (3) convergence to standard normal distribution $N(0,1)$ as $n \to \infty$, and (4) independence from the original distribution of individual $X_i$. The mathematical formulation and key constraints (iid condition, standardization formula, convergence behavior) are all accurately included. While the Actual Output provides more extensive explanation and practical applications beyond what the Expected Output specifies, the evaluation criteria explicitly state that additional explanation quality and structure are not included in assessment—only alignment with core content matters. All essential conceptual and mathematical components of the Expected Output are present and correctly represented in the Actual Output.
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output is perfectly aligned with the retrieval context with no contradictions detected. Great job!
+---
+GEval 1.0
+The input contains informal conversational elements ('왜...인지가 궁금하다', '얼른 말하도록') that should be converted to polite form. The Actual Output successfully converts these to formal, polite Korean throughout (using ~합니다, ~해주는, ~해줍니다 structures). However, the output includes natural conversational markers like '정리해 볼게요!' style elements in the structured explanation, which per evaluation step 3 are acceptable as these are assistant-generated content, not from the original input. No traces of the original informal elements (반말, imperative tone) remain in the output. The response is entirely in proper 존댓말/친절체 format with no residual casual language from the input.
+---
+GEval 0.6
+The Actual Output correctly identifies the basic concept of LoTuS and explains why Y's PMF is not needed, covering the main idea that E(Y) can be calculated using X's PMF and function g(x) directly. However, it lacks the mathematical rigor and mechanistic depth present in the Expected Output. The Expected Output provides a critical technical explanation of the proof mechanism: it explicitly describes how the inverse image g^(-1)(y) is used to express P_Y(y) as a sum of X's probabilities, and then shows how combining the sigma notation and reorganizing variables by x yields the final formula E(Y) = Σg(x)P_X(x). The Actual Output states the formula and general reasoning but does not explain the underlying mathematical transformation that makes Y's PMF 'disappear' through the derivation process. This omission of the key mathematical mechanism—the summation consolidation step that transforms from a y-indexed sum to an x-indexed sum—represents a significant gap in addressing the core 'why' of the question.
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. Great job! The information presented is entirely faithful and accurate.
+---
+GEval 0.9
+The input contains a single colloquial marker '용?' (a casual/cutesy ending particle) which should be converted to formal polite speech. The Actual Output successfully transforms this into a formal response using '입니다' and '합니다' formal endings throughout. The response maintains consistent formal polite tone (친절체) in all main content. The opening phrase '정리해 볼게요!' type elements are absent, and the document uses appropriate formal mathematical and academic language. Only minor consideration: the input's colloquial marker is addressed, but the output could have been marginally more explicit in acknowledging the casual tone conversion. Overall, the transformation from informal to formal is nearly complete with no remaining non-formal elements in the body text.
+---
+GEval 0.8
+Actual Output successfully addresses the core question about Markov Inequality's meaning and includes the essential constraint that X must be non-negative. Both outputs correctly present the inequality formula P(X ≥ a) ≤ E(X)/a and explain that it provides an upper bound using only the expected value without requiring full distributional knowledge. However, Actual Output differs from Expected Output in key respects: (1) Expected Output explicitly mentions the Total Expectation Law as the derivation method, while Actual Output omits this specific technique; (2) Expected Output includes a practical limitation—that the bound can be loose or trivial (e.g., probability ≤ 1) when the distribution is already known, which is an important caveat absent in Actual Output. Actual Output adds discussion of Chebyshev Inequality's relationship, which extends beyond the direct question but doesn't compensate for the missing limitations discussion. The constraint conditions (a > 0, X non-negative) are present in both, but Expected Output's treatment of the bound's practical limitations represents significant domain knowledge that Actual Output lacks.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+FaithfulnessMetric 0.8461538461538461
+The score is 0.85 because the actual output incorrectly characterizes discrete random variables as only having countable values, when the retrieval context explicitly states that discrete types have ranges that are 'either finite or countable'. The output fails to acknowledge that finite ranges are a valid possibility for discrete random variables, which represents a meaningful deviation from the source material despite otherwise accurate content.
+---
+GEval 1.0
+The Actual Output successfully transforms the original informal/colloquial Korean input ('왜 이런 조건을 가져?') into polite formal Korean ('다음과 같은 조건을 가집니다'). The entire response maintains consistent 친절체 (-합니다/-입니다) throughout all four numbered sections and subsections. No remaining informal elements (반말, ㅋㅋㅋ, ~했음 등) are present. The response uses appropriate formal transitions and explanatory discourse markers ('예:', '따라서') which are acceptable per the evaluation criteria as they represent natural formal speech patterns, not residual informality from the source input. The transformation from casual question format to structured, formal explanation is complete and consistent.
+---
+GEval 0.05
+The Actual Output provides a comprehensive breakdown of four discrete random variable conditions with detailed explanations of meaning, role, and necessity for each. However, it diverges significantly from the Expected Output's approach. The Expected Output synthesizes the conditions into a cohesive narrative explaining the fundamental reasons: (1) probability definition requires 0≤p(x)≤1, (2) sample space completeness requires Σp(x)=1, and (3) discrete values allow direct probability mass assignment to individual points. The Actual Output itemizes these conditions separately without establishing the interconnected logical flow that the Expected Output emphasizes. Additionally, while the Actual Output covers the four key conditions (PMF definition, probability sum, probability bounds, countable range), it does not integrate them into a unified explanation of why these conditions exist as naturally as the Expected Output does. The Expected Output's focus on 'why' (본질적인 정의와 물리적 특성) versus the Actual Output's focus on 'what' and detailed mechanics represents a meaningful difference in addressing the question 'why does a discrete random variable have these conditions?' The core content elements (probability bounds, sum equals 1, PMF concept, countability) are present in both, but the Expected Output's synthetic and causal explanation is superior to the Actual Output's categorical breakdown.
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. Great job!
+---
+GEval 1.0
+The Input contains informal colloquial expressions ('왜 붙어 있는건가요?' - casual question form with ~건가요). The Actual Output successfully transforms this into formal polite Korean (친절체) with sentences ending in '~습니다' and '~합니다'. The entire response maintains consistent formal tone throughout, with no remaining informal expressions, dialectal forms, messenger-style language, or abbreviations. The use of natural conversational markers like the asterisks and structure serves explanatory purposes and does not constitute informal language per the evaluation guidelines. The transformation from informal input to formal output is complete and thorough.
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. Great job! The information presented is entirely faithful and accurate to the source material.
+---
+GEval 1.0
+The Actual Output successfully transforms the input's informal colloquial style into polite formal Korean (친절체). The input contains informal markers: '왜 정의 되는걸까나' (casual wondering tone with ~까나 ending). The output converts this to '정의되는 이유에 대해 설명해 드리겠습니다' using appropriate ~습니다/~해요 forms throughout. A thorough review of the entire output shows consistent use of formal conjugations (~나타냅니다, ~따르며, ~합니다, ~드립니다, ~됩니다, ~됩니다) with no remaining informal markers such as 반말, ㅋㅋㅋ, or messenger-style expressions. The conversational phrases like '정리해 볼게요' are not present, so evaluation focuses solely on the source material's informality level. The transformation is complete and natural, meeting the evaluation criteria for a perfect score.
+---
+FaithfulnessMetric 0.8
+The score is 0.80 because the actual output incorrectly attributes the first formula involving Chebyshev's Inequality (lim_{n→∞} P(|M_n - μ| ≥ ε) ≤ σ²/(nε²) → 0) as an explicit statement of WLLN. According to the retrieval context, only the second formula (For all ε, lim_{n→∞} P(|M_n - μ| ≥ ε) = 0) is explicitly labeled as WLLN, while the first formula should be properly attributed to Chebyshev's Inequality instead.
+---
+GEval 0.4
+The input contains casual spoken Korean elements ('이 식이...인 것 같아?' with informal ending, '말고' in colloquial context). However, the Actual Output maintains these casual elements and does not convert them to polite form (친절체). The output uses formal analytical language ('~입니다', '~하고 있습니다') but preserves casual quoted passages like '이 녀석이 WLLN!' and '다시 써볼 수 있을거야' without converting them to polite form. Additionally, the response doesn't directly address the user's question posed in casual tone - instead it provides a document analysis. While the body text is appropriately formalized, the casual elements from the source material and the informal nature of the original question are not fully transformed into consistent polite/friendly speech patterns (친절체). The output shows partial conversion but retains informal quoted elements.
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output perfectly aligns with the retrieval context, with zero contradictions detected. Great job!
+---
+GEval 1.0
+The input uses informal speech ('좀 알려주라!' with imperative form and casual tone). The Actual Output successfully converts this to polite/formal Korean throughout, using appropriate formal expressions like '있습니다', '있습니다', and '증명합니다'. No remaining informal elements (반말, ㅋㅋㅋ, messenger-style expressions) are present in the output. The response maintains natural conversational markers appropriate for helpful explanations ('요약하자면'), which per the evaluation criteria should not be penalized as these are not from the original informal input. The entire response is consistently formatted in formal Korean appropriate for an educational explanation.
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. The information presented is entirely faithful and accurate!
+---
+GEval 1.0
+The input uses informal speech ('알려줄래?' - casual interrogative) which should be converted to polite form. The Actual Output successfully converts this to formal/polite Korean ('중요한 개념입니다'). Scanning through the entire response, no remaining informal expressions (반말, ㅋㅋㅋ, ~했음, messenger-style language) are found. The response maintains consistent polite form throughout with natural connectors and explanatory phrases ('정의하고 이해하는 데 매우 중요한 개념입니다', '따라서 Darboux 상합과 하합은'). The mathematical content and pedagogical structure do not introduce informal elements. This represents a complete and successful transformation from casual input tone to polite, formal output tone.
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output perfectly aligns with the retrieval context with no contradictions detected. Great job!
+---
+GEval 1.0
+The Input contains casual/colloquial Korean (반말: '~야?', '하려는거야?'), which should be converted to polite form (친절체: '~해요', '~습니까') in the Actual Output. However, the Actual Output successfully converts the entire response to polite/formal Korean throughout all sections. No remaining informal elements (반말, ㅋㅋㅋ, messenger-style language) are present. The output maintains natural conversational flow with appropriate discourse markers ('정리해 볼게요' style elements are minimal and acceptable per evaluation criteria). The transformation from informal to formal register is complete and consistent across the entire response.
+
+
+
+
+
+
+
+
+
+
+
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. The information presented is entirely faithful and accurate!
+---
+GEval 1.0
+The input uses formal polite form (why-question with ~요) which is already in 친절체, not 반말 or 비격식체. The Actual Output maintains consistent 친절체 throughout with expressions like '~입니다', '~합니다', '~필요합니다'. No informal colloquialisms, abbreviations, or messenger-style language are present in either input or output. The response contains no remaining non-formal elements that would require correction according to the evaluation criteria.
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. The information presented is entirely faithful and accurate!
+---
+GEval 0.8
+The input uses casual colloquial Korean ('뭐지?' - informal question form, '저' - casual particle). The Actual Output successfully converts these to polite form ('다음과 같습니다', '나타내려고 시도한 것입니다', '지적하고 있습니다'). However, there are minor residual informal elements: the phrase '엉터리 확률변수다!' retains an exclamatory informal tone (다!), and '엉터리' itself is somewhat colloquial. These account for approximately 1-2 instances of informal register remaining among extensive output. The core transformation from casual to polite form is successful, with only minor lapses that do not substantially detract from overall formality.
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. Excellent work on maintaining perfect fidelity to the source material!
+---
+GEval 1.0
+The Actual Output demonstrates strong adherence to formal tone conversion. The input contains minimal informal elements (no colloquial speech patterns like 반말, ㅋㅋㅋ, ~함, ~했음, or messenger-style expressions). The response is consistently written in polite formal style (친절체) with ~입니다, ~합니다, and ~기 때문입니다 endings throughout. The natural conversational elements present (such as explanatory phrases) are contextually appropriate and do not represent unconverted informal speech from the input. No residual informal expressions or colloquialisms were detected in the output. The mathematical and technical content is properly formatted and explained in formal register.
+---
+GEval 1.0
+The response successfully identifies and explains the $\sum$ symbol as summation notation. It clearly connects the symbol to the context of $S_n = \sum X_n$ by explaining how it represents the sum of random variables $X_1, X_2, \cdots, X_n$ (Step 3 achieved: relationship with b is explicitly mentioned through the structural composition of the expression). The response also effectively links the symbol to the Central Limit Theorem by explaining why summation is essential to the theorem—specifically, that CLT describes the distribution of the sum (or average) of i.i.d. random variables approaching normality as n increases, making $\sum$ indispensable for defining $S_n$ (Step 4 achieved: the functional necessity of the symbol within the theorem context is clearly articulated, going beyond mere page title mention). Steps 1 and 2 are fully satisfied as the LaTeX syntax is correctly identified and explained with a proper subject sentence.
+---
+GEval 0.1
+The Actual Output and Expected Output represent fundamentally incompatible interpretations of the summation symbol in the context of Central Limit Theorem. The Actual Output correctly identifies $\sum$ as a summation operator representing the sum of random variables $S_n = X_1 + X_2 + \cdots + X_n$, which aligns with standard statistical notation in CLT. The Expected Output incorrectly describes $\sum$ as representing a limit of a sequence converging to an infinite series final value, which is mathematically inconsistent with how summation notation is used in CLT. The Expected Output conflates summation with infinite series convergence and does not accurately describe the role of $\sum$ in the equation $S_n = \sum X_n$. The Actual Output correctly explains the notation's purpose in CLT (i.i.d. random variables and their partial sums), while the Expected Output's interpretation is mathematically inaccurate for this context.
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. Great job on maintaining perfect alignment with the source material!
+---
+GEval 1.0
+The Actual Output demonstrates strong adherence to formal Korean. The input contains multiple informal elements: '뭐할 수 있냐' (colloquial question form), '~해주세요' (casual request form), and messenger-style brevity. The output successfully converts these to formal polite style (친절체) with '~합니다' and '~입니다' throughout. No informal colloquialisms, abbreviations, or casual speech patterns remain in the response. The tone is consistently formal and professional. Natural conversational markers like '정리해 볼게요!' are absent, so there are no exceptions to evaluate. The response maintains clarity while achieving complete formalization of the input.
+---
+GEval 0.6
+The response successfully identifies and explains the LaTeX syntax $\chi$ (Step 1-2), clearly stating it represents the chi-squared distribution in the context $W \sim \chi^2(n)$. For Step 3, the response adequately connects $\chi$ to the broader expression by explaining that $\chi^2(n)$ denotes a chi-squared distribution with degrees of freedom $n$, and mentions its role in relation to the sum of squared standard normal variables. However, for Step 4, while the response mentions Slutsky's Theorem and Continuous Mapping Theorem by name and provides some context about deriving the distribution of $T = \frac{Z}{\sqrt{W/n}}$, it does not substantively explain WHY these theorems specifically require or use the chi-squared distribution, or what role $\chi^2$ plays in applying these theorems. The explanation focuses on what $\chi^2$ is generally rather than its necessity within the specific theoretical framework of Slutsky and Continuous Mapping.
+---
+GEval 0.0
+The Actual Output and Expected Output address the same input question about the meaning of the χ symbol in the chi-squared distribution notation. However, they present fundamentally contradictory interpretations. The Actual Output correctly identifies χ as the Greek letter 'chi' and accurately explains that χ²(n) denotes a chi-squared distribution with degrees of freedom n, which is the standard statistical interpretation. The Expected Output incorrectly claims χ represents a characteristic function and makes an unfounded assertion about discrete convergence without continuous probability density. The Expected Output's definition is mathematically incorrect and contradicts established statistical notation. While the Actual Output provides accurate content aligned with statistical conventions, the Expected Output contains core conceptual errors. Since the evaluation requires alignment with the Expected Output's core content, and the two outputs present opposite correct/incorrect interpretations, the Actual Output fails to match the Expected Output's key claims—though the Actual Output itself is more accurate mathematically.
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output perfectly aligns with the retrieval context with no contradictions detected. Great job!
+---
+GEval 1.0
+The Actual Output demonstrates excellent formality conversion. The Input contains casual spoken elements ('기호에 대해서 설명해주세요' - informal request style), which are appropriately transformed into polite formal language ('나타냅니다', '의미입니다', '합니다', '사용됩니다' - all in 합니다체). The response maintains consistent formal tone throughout without any remaining colloquialisms, casual particles, or messenger-style expressions. The natural conversational elements present in the output (such as 'Gaussian integral로 알려져 있으며' or 'as seen from...') are explanatory/pedagogical in nature rather than informal speech, which per the evaluation steps should not be penalized. A thorough scan reveals no instances of informal markers like 반말, ㅋㅋㅋ, ~함/~했음, or casual messenger speech. The translation is complete and flawless.
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+GEval 0.7
+The response successfully identifies and explains the LaTeX symbol $\int_{-\infty}^\infty$ (step 1-2), demonstrating understanding of improper integrals and Gaussian integrals. For step 3 (b-relevance), the response effectively connects the symbol to the specific expression $\int_{-\infty}^\infty e^{-x^2} dx$ by explaining how the integration limits apply to the exponential function and identifying it as a Gaussian integral with value $\sqrt{\pi}$. However, for step 4 (c-relevance), while the response mentions 'probability density functions' and explains why the symbol is essential for defining PDFs and their normalization property (integral equals 1), it does not clearly establish why this specific symbol is necessary within the context of 'Lem. 확률밀도함수에 쓰일 적분' beyond general principles. The explanation provides good contextual information about normal distributions and the need for integration over the entire real line, but lacks direct reference to how this symbol specifically serves the lemma's purpose of defining or proving properties of probability density functions. The response demonstrates strong understanding of both b and partial understanding of c.
+---
+GEval 0.9
+The Actual Output comprehensively covers all core content from the Expected Output: (1) correctly identifies $\int_{-\infty}^\infty$ as an improper integral notation specifying integration over the entire real domain from $-\infty$ to $+\infty$; (2) explains the specific application to $e^{-x^2}$ and mentions the Gaussian integral with its value $\sqrt{\pi}$; (3) contextualizes the symbol within the page topic of probability density functions and explains the normalization requirement (integral equals 1); (4) discusses its role in the normal distribution. The response goes beyond the Expected Output by adding valuable context about the Gaussian function's properties and computational methods (polar coordinate transformation), but this doesn't diminish core content alignment. Minor strength: the Actual Output includes slightly more rigorous explanation of the normalization concept. No material omissions of the expected content elements are present.
+---
+FaithfulnessMetric 0.9166666666666666
+The score is 0.92 because the actual output contains an imprecise interpretation of the notation $\bigcup_{k=n}^\infty A_k$. The output incorrectly characterizes this union as meaning 'for any N, there exists k greater than N such that $A_k$ occurs,' when in fact $\bigcup_{k=n}^\infty A_k$ simply represents the union of all sets $A_n, A_{n+1}, A_{n+2}, \dots$, where an element belongs to this union if it belongs to at least one of these sets. This is a notable mathematical inaccuracy, though the overall response remains largely faithful to the retrieval context.
+---
+GEval 1.0
+The Actual Output demonstrates excellent conversion from informal to formal Korean. The input contains casual elements like '사용됐습니다' (used in semi-formal context) and an informal request '기호에 대해서 설명해주세요' (explain the symbols to me). The output consistently employs polite formal style (~합니다, ~됩니다, ~나타냅니다) throughout all three bullet points. No informal expressions (반말, ㅋㅋㅋ, ~함, ~했음, or messenger-style language) remain in the response. The natural discourse markers like '즉,' and explanatory structures are appropriate and do not constitute informal elements requiring correction per evaluation step 3. The entire response maintains consistent formal-polite tone without any residual informal vocabulary or grammar.
+---
+GEval 0.9
+The response excellently satisfies all evaluation steps. Step 1: The LaTeX syntax $\bigcup_{k=n}^\infty$ is correctly identified from the input. Step 2: The output provides a clear explanation with this symbol as the subject, describing what the union operator means and its indexing notation. Step 3: The response effectively connects to context b ($\bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k$) by explicitly explaining how $\bigcup_{k=n}^\infty A_k$ functions within the larger expression, describing the relationship between the union and the outer intersection operation, and how the tail structure works. Step 4: The response demonstrates strong contextual connection to c (Borel-Cantelli Lemma) by explaining the mathematical purpose of this notation in defining "infinitely often" events, relating it to limsup, and showing why this specific combination of union and intersection is necessary for capturing the concept of infinite occurrence. The explanation goes beyond mere page reference and articulates the substantive role of the symbol within the lemma's definition.
+---
+GEval 0.075
+The Actual Output addresses the same question as the Expected Output and includes all core mathematical content. Both explain that $\bigcup_{k=n}^\infty$ represents an infinite union starting from index $n$, forming unions of sets $A_n, A_{n+1}, A_{n+2}, \ldots$. Both identify the key mathematical structure and explain how it combines with the outer intersection $\bigcap_{n=1}^\infty$ to define the limsup event 'infinitely often.' However, the Actual Output is substantially more elaborate with three distinct bullet points covering symbol meaning, role in the given expression, and necessity for the Borel-Cantelli Lemma. The Expected Output conveys the essential information more concisely as a single unified explanation. Both responses are mathematically accurate and include the critical constraint that the construction captures events occurring infinitely often. The core concepts—infinite union from index $n$, combination with outer intersection, and limsup definition—are present in both. The main difference lies in presentation length and structure rather than content completeness.
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. Excellent work maintaining perfect faithfulness to the source material!
+---
+GEval 1.0
+The input contains formal academic language with no informal/colloquial elements (반말, ㅋㅋㅋ, ~함, ~했음, messenger-style expressions, etc.). The input is already in formal register using polite endings (~습니다, ~니다). The Actual Output maintains consistent formal Korean throughout with appropriate polite endings (~합니다, ~입니다, ~됩니다). No informal elements remain from the input, and the output preserves academic rigor with proper mathematical terminology and polite tone. Since there were no informal elements to convert in the first place, the task was completed correctly. The output reads naturally and appropriately for academic context.
+---
+GEval 0.6
+The response successfully identifies and explains $S_n$ (step 1-2). It adequately connects $S_n$ to the context of $\sum X_n \sim (n\mu, n\sigma^2)$ by explaining the relationship between the sum, its mean $n\mu$, and variance $n\sigma^2$, and describing how individual $X_i$ variables and their parameters relate to the overall distribution (step 3). However, the connection to the Central Limit Theorem context is limited. While the response mentions that CLT explains why the sum approaches a normal distribution and describes $S_n$ as a "core symbol" for the theorem, it does not clearly explain why $S_n$ specifically is essential for stating or proving CLT beyond a general statement that it represents "many random variables' sum." The response states what CLT does but lacks deeper connection to why this particular notation and symbol are critical for the theorem's formulation (step 4). The explanation is solid on b-connection but weak on c-connection.
+---
+  [지표 실패] DeepEvalError: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.
+---
+GEval 1.0
+The Actual Output demonstrates excellent conversion from informal/colloquial Korean to polite formal style (친절체). The Input contains colloquial markers like '~했습니다' and '해주세요' which are appropriately converted to formal explanatory style throughout. All sentences maintain consistent polite formal register (e.g., '의미합니다', '나타냅니다', '사용됩니다'). The response uses natural conversational connectors ('예를 들어', '즉') which per Step 3 are acceptable as these derive from the evaluator's natural explanation style, not from informal source material. A thorough scan of the entire output reveals no remaining informal elements, internet slang (ㅋㅋㅋ), messenger-style expressions, or non-standard grammatical forms. The terminology is consistently formal and appropriate for mathematical/statistical content.
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+GEval 0.9
+The response successfully identifies and explains the $\stackrel{P}\longrightarrow$ symbol as convergence in probability. For Step 2, the response clearly addresses the symbol with a descriptive sentence. For Step 3, it adequately connects the symbol to the context $X_n \stackrel{P}\longrightarrow X$ by explaining how the symbol functions within this expression and describing the mathematical definition of convergence in probability with explicit conditions. For Step 4, the response connects the symbol to the theorem context by explaining why this specific notation is necessary—distinguishing convergence in probability from other types of convergence (e.g., convergence in distribution) and clarifying that the symbol is essential for unambiguously communicating the mode of convergence in the context of the theorem. Both contextual connections (b and c) are substantively achieved, moving beyond mere definitions or title mentions.
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output perfectly aligns with the retrieval context with no contradictions detected. Great job on maintaining complete faithfulness to the source material!
+---
+GEval 1.0
+The Actual Output successfully transforms the input from informal mathematical explanation into a formal, polished response using 친절체 (polite/formal tone with ~입니다, ~합니다, ~나타내며 etc.). No remaining informal elements (반말, ㅋㅋㅋ, ~함, ~했음, messenger language) are present in the output. The mathematical explanations are properly formatted and the tone is consistently formal throughout. The response maintains natural academic discourse without compromising formality. All evaluation criteria are met.
+---
+GEval 1.0
+The response excellently satisfies all evaluation criteria. Step 1: The LaTeX symbol $\lambda$ is correctly identified from the input expression $\sum _{x = 0} ^\infty \dfrac{ \lambda^{k}}{k!}$. Step 2: The output contains multiple sentences with $\lambda$ as the subject, explaining it as a Poisson distribution parameter. Step 3: The response demonstrates strong contextual connection to the given expression b by explicitly discussing how $\lambda$ appears as $\lambda^{k}$ in the series, relating it to the Taylor series that equals $e^\lambda$, and explaining its role in making the PMF sum to 1—these are all specific structural relationships within the expression, not merely general definitions. Step 4: The response thoroughly connects $\lambda$ to the Poisson Random Variable context by explaining its role in defining the distribution's shape, its relationship to the PMF formula $P(X=k) = \dfrac{e^{-\lambda} \lambda^{k}}{k!}$, and most importantly, clarifying that $\lambda$ equals the mean $E(X)$ and represents the average frequency of events—demonstrating why it is essential to the definition itself, not just mentioning the page title.
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. Great job maintaining perfect alignment with the source material!
+---
+GEval 1.0
+The Actual Output demonstrates excellent formatting conversion to formal Korean. The response is entirely written in polite/formal style (~합니다, ~입니다, ~됩니다) with no remaining colloquial elements from the input. The original input contains no informal spoken language markers (반말, ㅋㅋㅋ, ~함, ~했음, messenger style), so the evaluation focuses on whether the output maintains appropriate formality. The output successfully explains the mathematical notation and concept of covariance in a clear, professional manner suitable for educational content. While the response could have been more concise, there are no informal expressions, slang, or casual speech patterns remaining. All mathematical concepts are explained using consistent formal Korean terminology.
+---
+GEval 0.9
+The response excellently satisfies all evaluation steps. Step 1: $\mu_X$ is correctly identified as the LaTeX symbol between '$' markers in the input. Step 2: A clear subject sentence explaining $\mu_X$ as the mean of random variable $X$ is present. Step 3: The response strongly connects $\mu_X$ to the given expression $E((X - \mu_X)(Y-\mu_Y))$ by explaining its role in calculating deviation and how it interacts with $(X - \mu_X)$ to measure how far $X$ deviates from its mean within the covariance formula. Step 4: The response thoroughly connects $\mu_X$ to the covariance definition by explaining why it is necessary—to measure how two variables move together relative to their means, and further reinforces this with a reference to the variance definition $Var(X) = E[(X - \mu_X)^2]$. The only minor limitation is that the explanation could be slightly more concise, but the substance and depth of the contextual connections are very strong.
+---
+FaithfulnessMetric 0.9411764705882353
+The score is 0.94 because the actual output incorrectly characterizes P as a 'partition', while the retrieval context actually defines P as a probability measure function. This single but notable misrepresentation of a key concept prevents a perfect score, though the overall output remains largely faithful to the provided context.
+---
+GEval 1.0
+The Actual Output maintains formal politeness throughout with consistent use of honorific forms (설명해 드리겠습니다, 나타냅니다, 의미합니다, 보장합니다, etc.). The input contains no colloquial expressions, casual language, messenger-style speech, or informal markers (반말, ㅋㅋㅋ, ~함, ~했음) that would require conversion to formal register. A thorough review of the entire output confirms no informal elements remain. The response appropriately uses natural conversational devices like bullet points and logical structure, which are not subject to evaluation per step 3. The output is a complete formal explanation matching the formal nature of the mathematical input.
+---
+GEval 1.0
+The response successfully identifies and explains the LaTeX/KaTeX syntax $\sup_{\{a,b\}\subseteq P\subseteq[a,b]}^{|P|<\aleph_0}$ from the input (Step 2: ✓). It effectively relates the symbol to its context in the expression $\sup_{\{a,b\}\subseteq P\subseteq[a,b]}^{|P|<\aleph_0} L(f,P)$ by explaining how the supremum operation finds the greatest lower sum across all finite partitions (Step 3: ✓). The response thoroughly connects the symbol to the Riemann integral definition by explaining why the finite partition condition ($|P|<\aleph_0$) is necessary and how it distinguishes Riemann integration from Lebesgue integration, going beyond mere page title mention (Step 4: ✓). Both contextual connections (with the full expression and with the conceptual framework) are substantively achieved.
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output demonstrates perfect faithfulness to the retrieval context with no contradictions detected. Great job!
+---
+GEval 1.0
+The input contains informal/colloquial Korean elements (반말 style: '사용됐습니다', '설명해주세요') that should be converted to polite/formal style (친절체). However, the Actual Output consistently uses appropriate formal Korean throughout (e.g., '설명해 드리겠습니다', '의미합니다', '나타냅니다'). No remaining informal elements (반말, casual messenger language, or ~함/~했음 forms) are present in the response. The output maintains formal tone with natural conversational markers ('정리해 볼게요' style expressions) which are correctly excluded from evaluation per Step 3. The conversion from informal input to formal output is complete and natural.
+---
+GEval 1.0
+The response excellently satisfies all evaluation steps. Step 1: The LaTeX syntax $\inf_{\{a,b\}\subseteq R\subseteq[a,b]}^{|R|<\aleph_0}$ is correctly identified from the input. Step 2: The response provides detailed explanation sentences with this symbol as the subject, clearly describing infimum, the partition conditions, and cardinality constraints. Step 3: The response effectively connects the symbol to context b ($U(f,R)$) by explaining how $\inf$ operates on the upper Darboux sums and their relationship to partition refinement, not merely defining infimum in isolation. Step 4: The response strongly connects to context c (Riemann integral definition) by explaining why these specific conditions are necessary for the theory—clarifying that finite partitions form the foundation of Riemann integration and that the infimum operation is essential for correctly defining the upper Riemann integral. The explanation demonstrates how the symbol's components ($\inf$, partition conditions, finiteness constraint) collectively serve the theoretical purpose of defining upper Riemann integrals. Both contextual connections (b and c) are comprehensively achieved.
+
+
+
+
+
+
+
+
+
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. The information presented is completely faithful and accurate!
+---
+GEval 1.0
+The Actual Output demonstrates excellent conversion from informal to polite Korean. The input contains standard mathematical notation and queries without significant colloquial expressions (반말, ㅋㅋㅋ, ~함, messenger language, etc.). The output maintains consistent 친절체 throughout with proper use of ~합니다 and ~입니다 endings. Natural discourse markers like '정리해 볼게요!' are appropriately absent given the formal mathematical context. The explanation is structured with bullet points and maintains academic formality while remaining accessible. No instances of informal speech, colloquialisms, or non-standard grammar remain. The response fully adheres to evaluation criteria Step 1-4, with complete conversion to formal polite style and zero residual informal elements.
+---
+GEval 1.0
+The response excellently satisfies all evaluation criteria. Step 1: The LaTeX syntax $x^P_{i+1}$ is correctly identified from the input. Step 2: A clear explanation sentence with $x^P_{i+1}$ as the subject exists in the opening statement and throughout. Step 3: Strong contextual connection to b (the summation formula) is demonstrated by explaining how $x^P_{i+1}$ functions as the right endpoint in $(x^P_{i+1} - x^P_i)$ to calculate subinterval length, and how this length multiplies with $f(s_i)$ to approximate rectangular areas—this goes beyond general definitions to show the symbol's specific role within the given expression. Step 4: Deep connection to c (Riemann integral definition) is established by explaining why partition points are necessary for defining subintervals, calculating their lengths, constructing Riemann sums, and approximating integral values. The response explains not just the page title but the fundamental necessity of this symbol in the theoretical framework of Riemann integration. Both b and c contextualizations are comprehensively achieved.
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output perfectly aligns with the retrieval context with no contradictions detected. Excellent work!
+---
+GEval 1.0
+The Actual Output demonstrates excellent adherence to formal Korean conventions. The input uses informal mathematical/technical language typical of wiki documentation, and the output successfully converts all content to polite/formal tone (친절체) using ~합니다, ~입니다, and ~의미합니다 consistently throughout. No informal markers (반말, ㅋㅋㅋ, ~함, ~했음, or messenger-style expressions) from the original input remain in the output. The response maintains mathematical precision while achieving complete formalization. The natural discourse markers like bullet points and explanatory structure are appropriate for educational content and do not constitute informal violations under evaluation step 3.
+---
+GEval 0.9
+The response successfully identifies and explains the LaTeX notation $U_{f, P^{(n)}}$ with strong alignment to all evaluation steps. Step 1: The notation is correctly identified as Upper Darboux Sum. Step 2: A clear explanatory sentence about the symbol exists. Step 3: The response excellently connects $U_{f, P^{(n)}}$ to its role in $\lim_{n\to \infty} U_{f, P^{(n)}}$ by explaining how the partition becomes denser, how it relates to supremum and interval length, and its function in the limiting process—demonstrating genuine contextual connection rather than generic definition. Step 4: The response thoroughly explains why $U_{f, P^{(n)}}$ is necessary in the Darboux Integral definition, specifically mentioning that it's essential for approximating function values from above and establishing the connection between Lower and Upper Darboux Sums. However, the explanation could more explicitly emphasize why this specific notation (as opposed to just the concept) is needed in the Darboux integral framework, preventing a perfect score.
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. Excellent work maintaining perfect faithfulness to the source material!
+---
+GEval 1.0
+The Actual Output demonstrates excellent conversion of informal language to polite/formal Korean (친절체). The input contains no colloquial expressions, informal particles, messenger-style language, or casual speech markers (반말, ㅋㅋㅋ, ~함, ~했음, etc.) that would require transformation. The output maintains consistent use of formal ~습니다/~해요 style throughout, with mathematically appropriate terminology preserved (상 다르부 적분, 하한, 상한, etc.). The explanation structure uses natural conversational markers (예: '그 기호 자체의 의미') which are appropriately excluded from evaluation per step 3. No informal elements remain in the output.
+---
+GEval 1.0
+The response demonstrates strong alignment with all evaluation steps. Step 1: The LaTeX syntax $\overline{\int_{a}^{b}}$ is correctly identified as the symbol to explain. Step 2: The response provides multiple explanation sentences with the identified symbol as the subject (e.g., 'Upper Darboux Integral을 나타냅니다'). Step 3: The response successfully connects the symbol to the context expression $\overline{\int_{a}^{b}} g ( x ) \, d x$ by explaining its specific role: instructing integration of function $g(x)$ over interval $[a, b]$ and its usage in determining integrability—this goes beyond generic definition by addressing the symbol's relational function within the given expression. Step 4: The response thoroughly connects the symbol to the Darboux integral concept by explaining why it is necessary: it is an essential component for determining Darboux integrability by comparing upper and lower Darboux integrals. The explanation articulates the conceptual necessity (判別するのに必須的) rather than merely naming the page title. Both contextual relationships (b and c) are comprehensively achieved.
+---
+FaithfulnessMetric 1.0
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. Excellent alignment!
+---
+GEval 1.0
+The Actual Output successfully converts the input's informal mathematical/technical register into a polished, formal tone appropriate for educational content. The input contains casual phrasing (e.g., '설명해주세요' - informal request form), which is appropriately reformulated into formal explanatory sentences using polite/formal endings (~습니다, ~합니다). A thorough review of the entire output reveals no remaining informal expressions, colloquialisms, messenger-style language, or non-standard abbreviations. The mathematical notation and explanatory structure are consistent throughout. The natural conversational cues and pedagogical transitions (e.g., organizational phrases introducing key concepts) are appropriate and not subject to penalty per evaluation step 3. The response fully meets the requirement to transform input-level informality into a formal, refined register.
+---
+GEval 1.0
+The response successfully identifies and explains the $\sim$ symbol from the input. Step 2 is satisfied as the explanation centers on $\sim$ as the main subject. Step 3 is well-addressed: the response contextualizes $\sim$ within the expression $X \sim \text{uniform}([a, b])$ by explaining how the symbol connects $X$ (the random variable) to the uniform distribution with parameters $[a, b]$, and discusses the probability density function and other distributional properties. Step 4 is also satisfied: the response explains why $\sim$ is necessary in the 'Obj. Uniform Random Variable' context—to concisely indicate what distribution $X$ follows and to enable derivation of probabilistic properties like PDF, mean, and variance. The explanation goes beyond merely stating the symbol's general definition and meaningfully connects it to both the specific expression and the conceptual purpose within the definition of uniform random variables.
+---
+GEval 1.0
+The input uses formal written Korean without colloquial markers (반말, ㅋㅋㅋ, ~함, ~했음, or messenger-style expressions). The Actual Output maintains consistent formal polite style (친절체) throughout, using ~합니다, ~됩니다, and ~습니다 endings appropriately. No informal elements or non-standard expressions remain. The response uses natural mathematical explanations and appropriate discourse markers like '즉,' and '특히,' which are acceptable per Step 3 as they enhance readability rather than introduce informality. The output demonstrates complete adherence to formal register conversion requirements.
+---
+GEval 0.6
+Step 2: The response successfully identifies and explains $\mathbb{R}$ as the symbol representing real numbers. Step 3: The response attempts to relate $\mathbb{R}$ to its context by mentioning it appears in function notation (e.g., $F: [a, b] \rightarrow \mathbb{R}$) and explaining its role as a codomain. However, the test case's input shows $\mathbb{R}$ appearing twice in identical form (both $\mathbb{R}$), making it unclear what 'b' context should be - the response infers a broader function context that may not be directly supported by the stated input format. Step 4: The response connects $\mathbb{R}$ to the Darboux integral page by explaining why specifying real-valued functions matters in calculus and analysis contexts, and references probability density functions from the provided content. However, this explanation is somewhat generic and doesn't specifically ground the necessity of $\mathbb{R}$ in the Darboux integral definition itself (e.g., explaining how $\mathbb{R}$ is essential to defining upper/lower Riemann sums or integrability). The connection to context c is present but somewhat indirect. Both b and c connections are partially achieved but with notable limitations.
+---
+GEval 1.0
+The Actual Output demonstrates excellent formalization of the input. The original input uses casual colloquial Korean (반말 '설명해주세요'), but the output consistently maintains polite formal style (친절체) throughout with expressions like '나타내는 기호입니다', '사용되는 핵심 개념', '의미합니다', '계산한 것입니다', '보여줍니다', '주어졌을 때', '필수적입니다'. No remaining informal or colloquial elements (such as ㅋㅋㅋ, ~함, ~했음, or messenger-style expressions) are present. The response appropriately distinguishes between the informal input request and maintains formal output throughout. The natural conversational markers and academic content structure do not constitute informal elements per the evaluation criteria (Step 3).
+---
+GEval 1.0
+The response excellently satisfies all evaluation criteria. Step 1: $L$ is correctly identified as the LaTeX symbol in question. Step 2: A clear explanation sentence exists identifying $L$ as Lower Riemann Sum. Step 3: The response strongly connects $L$ to the context of $L(f, Q)$ by explaining the role of $f$ (the function) and $Q$ (the partition) in the expression, describing how the Lower Riemann Sum is calculated based on these components—this goes beyond general definition. Step 4: The response thoroughly contextualizes $L$ within the Riemann integral definition by explaining why $L$ is necessary: it shows how partition refinement affects Lower and Upper Riemann Sums, and how these concepts are essential for proving Riemann integral existence and defining the integral as the supremum of Lower Riemann Sums and infimum of Upper Riemann Sums. Both b and c contextualizations are comprehensively achieved.
+---
+GEval 1.0
+The Actual Output successfully converts the Input's colloquial elements into polite form (친절체). The Input uses casual inquiry ('기호에 대해서 설명해주세요') which is appropriately transformed into formal explanatory tone throughout the response. No remaining informal expressions (반말, ㅋㅋㅋ, ~함, ~했음, messenger-style language) are detected in the output. The response maintains consistent polite conjugations (~입니다, ~합니다, ~됩니다, ~가집니다) throughout. Minor conversational elements like bullet-point explanations are acceptable per evaluation step 3, as they represent natural discourse organization rather than informal input language. The output demonstrates complete and consistent formalization of the original query's tone.
+---
+GEval 0.9
+The response successfully identifies and explains $\text{is irrational}$ from the given expression. Step 2 is fully met: a clear explanation sentence exists with the identified syntax as the main subject. Step 3 is well-addressed: the output connects $\text{is irrational}$ to the broader context of the piecewise function by explaining how it determines $f(x)=0$ versus the rational case ($f(x)=1$), demonstrating relational understanding beyond generic definition. Step 4 is substantially met: the response explicitly connects the symbol to Darboux integral context by mentioning the Dirichlet function's role in demonstrating Riemann integrability concepts and the density of rationals/irrationals in real numbers. However, the connection to Darboux integrals specifically (rather than Riemann integrals) could have been more explicit, which prevents a perfect 10-point score.
+---
+GEval 1.0
+The input contains no colloquial elements (반말, informal expressions, messenger-style language, etc.) to evaluate. The input is already written in formal mathematical notation and polite inquiry form ('기호에 대해서 설명해주세요'). The Actual Output maintains consistent formal tone throughout with proper 친절체 expressions (해요, 합니다 style). No informal or non-standard speech elements remain in the output. Since there are no original colloquial expressions in the input to convert, and the output is entirely formal and well-structured, the evaluation criteria are fully met.
+---
+GEval 0.9
+The response strongly aligns with all evaluation steps. Step 1: $E$ is correctly identified as the LaTeX symbol from the input. Step 2: A clear explanation sentence exists describing $E$ as the expectation operator. Step 3: The response excellently relates $E$ to the context of $E(X+Y) = E(X) + E(Y)$ by explaining how $E$ operates on $X$, $Y$, and $X+Y$ individually, and emphasizing the operator's role in decomposing complex expectation into individual components—this goes beyond generic definition. Step 4: The response connects $E$ to the theorem (Linearity of Expectation) by explaining why $E$ is essential for expressing this property and why the symbol is necessary for mathematically representing this important characteristic. The mention of LoTUS provides additional context about the theorem's proof. The only minor limitation is that the LoTUS reference, while relevant, slightly deviates from focusing primarily on why $E$ is needed in the stated theorem itself.
+---
+GEval 1.0
+The input contains casual spoken Korean expressions ('기호에 대해서 설명해주세요' - an informal request) which are appropriately converted to polite form ('~입니다', '~합니다') throughout the Actual Output. The response uses consistent formal language ('~입니다', '~됩니다', '~의미합니다', '~의미됩니다') without any remaining colloquial elements, informal contractions, messenger-style expressions, or casual particles. The natural conversational phrases and transitions used (such as '정리해 볼게요' pattern) are minimal and serve as appropriate academic discourse markers rather than non-formal elements. No non-formal speech remnants are detected in the entire output, achieving complete normalization from the casual input request to formal explanation.
+---
+GEval 0.4
+Step 2 is satisfied: the response provides explanations of η as the main subject. Step 3 fails critically: the input format 'a이 b에서 사용됐습니다' indicates that η should be explained in relation to another mathematical expression b (the second LaTeX between $ symbols). However, both the input's a and b are identical ($\eta$), creating an impossible evaluation condition. The response does reference a specific formula with η as an upper bound, but this appears to be contextual information rather than the intended b expression. Step 4 is partially satisfied: the response connects η to Riemann integrability by explaining its role in quantifying the condition that total length of high-oscillation intervals must be controllably small, which demonstrates functional necessity rather than merely naming the page. However, the fundamental structural issue with the input (identical a and b values) prevents proper evaluation of the core requirement in Step 3.
+---

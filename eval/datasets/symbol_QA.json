@@ -2,62 +2,141 @@
     {
         "symbol": "\\sum",
         "context": "S_n = \\sum X_n",
-        "page_title": "Def. Convergence in Distribution",
-        "answer": "$\\sum$은 수열의 극한을 구하는 기호로, $X_n$이라는 단일 확률변수에 $n$을 무한대로 보냈을 때 그 값들이 수렴하는 무한급수의 최종 결괏값(상수)을 의미합니다."
-    },
-    {
-        "symbol": "\\sum",
-        "context": "S_n = \\sum X_n",
-        "page_title": "Def. Convergence in Distribution",
-        "answer": "$\\sum$은 합산 기호로, $1$부터 $n$까지의 독립적인 표본 값 $x_1, x_2, \\dots, x_n$을 모두 더해 표본평균 $\\bar{X}$를 구하기 위한 연산을 의미합니다."
-    },
-    {
-        "symbol": "\\sum",
-        "context": "S_n = \\sum X_n",
-        "page_title": "Def. Convergence in Distribution",
-        "answer": "$\\sum$은 합산 기호로, 인덱스 $i$가 $1$부터 $n$까지 $x_i$를 모두 더하는 연산을 의미합니다."
-    },
+        "page_title": "Thm. Central Limit Theorem",
+        "answer": "$\\sum$은 수열의 극한을 구하는 기호로, $X_n$이라는 단일 확률변수에 $n$을 무한대로 보냈을 때 그 값들이 수렴하는 무한급수의 최종 결괏값(상수)을 의미합니다.",
+        "expect_tool": false,
+        "full_formula": "S_n = \\sum X_n \\sim (n\\mu, \\; n\\sigma^2)"
+    }, 
     {
         "symbol": "\\chi",
         "context": "W \\sim \\chi ^2 (n)",
         "page_title": "Std. Slutsky랑 Continuous Mapping으로 뭐할 수 있냐",
-        "answer": "$\\chi$는 통계학에서 특성함수(Characteristic Function)를 나타내는 기호로, 확률변수 $W$가 자유도 $n$에서 연속형 확률밀도함수를 가지지 않고 이산적으로 수렴함을 뜻합니다."
-    },
-    {
-        "symbol": "\\chi",
-        "context": "W \\sim \\chi ^2 (n)",
-        "page_title": "Std. Slutsky랑 Continuous Mapping으로 뭐할 수 있냐",
-        "answer": "$\\chi$는 카이제곱 분포를 뜻하는 기호로, 표본의 크기가 $n$일 때 모집단의 분산을 추정하기 위해 무조건 표준정규분포를 따르는 확률변수 $W$의 값 자체를 의미합니다."
-    },
-    {
-        "symbol": "\\chi",
-        "context": "W \\sim \\chi ^2 (n)",
-        "page_title": "Std. Slutsky랑 Continuous Mapping으로 뭐할 수 있냐",
-        "answer": "$\\chi$는 그리스 문자로, 여기서는 제곱 형식($\\chi^2$)으로 쓰여 표준정규분포를 따르는 독립적인 확률변수 $n$개의 제곱합이 이루는 '카이제곱 분포(Chi-squared distribution)'를 나타내는 기호입니다."
-    },
-    {
-        "symbol": "S_n",
-        "context": "\\sum X_n \\sim (n\\mu, n\\sigma^2)",
-        "page_title": "Thm. Central Limit Theorem"        
+        "answer": "$\\chi$는 통계학에서 특성함수(Characteristic Function)를 나타내는 기호로, 확률변수 $W$가 자유도 $n$에서 연속형 확률밀도함수를 가지지 않고 이산적으로 수렴함을 뜻합니다.",
+        "expect_tool": false,
+        "full_formula": "W \\sim \\chi ^2 (n)"
     },
     {
         "symbol": "\\int_{-\\infty}^\\infty",
-        "context": "\\int_{-\\infty}^\\infty e^{-x^2} dx = \\sqrt{\\pi}",
-        "page_title": "Lem. 확률밀도함수에 쓰일 적분"        
+        "context": "\\int_{-\\infty}^\\infty e^{-x^2} dx",
+        "page_title": "Lem. 확률밀도함수에 쓰일 적분",
+        "answer": "$\\int_{-\\infty}^\\infty$ 기호는 주어진 수식 $\\int_{-\\infty}^\\infty e^{-x^2} dx = \\sqrt{\\pi}$ 내에서 피적분함수 $e^{-x^2}$을 음의 무한대부터 양의 무한대까지 전체 실수 영역에 대해 적분하라는 이상적분(Improper Integral) 범위를 지정하는 역할을 합니다. 또한 현재 페이지인 'Lem. 확률밀도함수에 쓰일 적분'에서는 이 적분이 정규분포 등의 확률밀도함수(PDF)를 정규화(Normalization)할 때 전체 확률의 합이 1이 되도록 적분 상수를 결정짓는 핵심 도구로 활용됩니다.",
+        "expect_tool": false,
+        "full_formula": "\\therefore\\int _{-\\infty} ^\\infty e^{-x^2} dx = 2I = \\sqrt{\\pi}"
     },
     {
         "symbol": "\\bigcup _{k=n}^\\infty",
         "context": "\\bigcap _{n=1}^\\infty \\bigcup _{k=n}^\\infty A_k",
-        "page_title": "Lem. Borel-Cantelli Lemma"
+        "page_title": "Lem. Borel-Cantelli Lemma",
+        "answer": "$\\bigcup _{k=n}^\\infty$ 기호는 주어진 전체 수식 $\\bigcap _{n=1}^\\infty \\bigcup _{k=n}^\\infty A_k$ 내에서 $n$번째 시점 이후의 사건들인 $A_n, A_{n+1}, A_{n+2}, \\dots$에 대한 무한합집합을 형성하여, $n$ 이상의 어떤 시점 $k$에서 사건 $A_k$가 적어도 하나 발생함을 의미하는 부분 구조를 만듭니다.이 기호는 현재 페이지인 'Lem. Borel-Cantelli Lemma'에서 바깥쪽의 교집합 $\\bigcap_{n=1}^\\infty$과 결합하여 '사건 $A_k$가 무한히 많이 발생한다(infinitely often, i.o.)'는 상극한(limsup) 사건을 수학적으로 엄밀하게 정의하는 핵심적인 역할을 합니다.",
+        "expect_tool": false,
+        "full_formula": "\\mathsf{limsup \\;} A_n = \\bigcap _{n=1}^\\infty \\bigcup _{k=n}^\\infty A_k"
+    },
+
+    {
+        "symbol": "S_n",
+        "context": "\\sum X_n \\sim (n\\mu, n\\sigma^2)",
+        "page_title": "Thm. Central Limit Theorem",
+        "expect_tool": false,
+        "full_formula": "S_n = \\sum X_n \\sim (n\\mu, \\; n\\sigma^2)"
     },
     {
         "symbol": "\\stackrel {P} \\longrightarrow",
         "context": "X_n \\stackrel {P} \\longrightarrow X",
-        "page_title": "Thm. 확률수렴이면 분포수렴이다"
+        "page_title": "Thm. 확률수렴이면 분포수렴이다",
+        "expect_tool": false,
+        "full_formula": "X_n \\stackrel {D} \\longrightarrow X"
     },
     {
+        "symbol": "\\lambda", 
+        "context": "\\sum _{x = 0} ^\\infty \\dfrac{ \\lambda^{k}}{k!}",
+        "page_title": "Obj. Poisson Random Variable",
+        "expect_tool": false,
+        "full_formula": "\\sum _{x = 0} ^\\infty \\dfrac{e^{-\\lambda} \\lambda^{k}}{k!} = e^{-\\lambda}\\sum _{x = 0} ^\\infty \\dfrac{ \\lambda^{k}}{k!}"
+    },
+    {
+        "symbol": "\\mu_X",
+        "context": "E((X - \\mu_X)(Y-\\mu_Y))",
+        "page_title": "Def. 공분산",
+        "expect_tool": false,
+        "full_formula": "CoV(X, \\; Y) = E((X - \\mu_X)(Y-\\mu_Y))"
+    },
+
+    {
+        "symbol": "\\sup_{\\{a,b\\}\\subseteq P\\subseteq[a,b]}^{|P|<\\aleph_0}",
+        "context": "\\sup_{\\{a,b\\}\\subseteq P\\subseteq[a,b]}^{|P|<\\aleph_0} L ( f , P )",
+        "page_title": "[Wiki] 리만_적분",
+        "expect_tool": false,
+        "full_formula": "\\underline{\\int _{a}^{b}}f(x)\\mathrm {d} x=\\sup _{\\{a,b\\}\\subseteq P\\subseteq [a,b]}^{|P|<\\aleph _{0}}L(f,P)=\\lim _{\\lambda (P)\\to 0}L(f,P)"
+    },
+    {
+        "symbol": "\\inf_{\\{a,b\\}\\subseteq R\\subseteq[a,b]}^{|R|<\\aleph_0}",
+        "context": "\\inf_{\\{a,b\\}\\subseteq R\\subseteq[a,b]}^{|R|<\\aleph_0} U ( f , R )",
+        "page_title": "[Wiki] 리만_적분",
+        "expect_tool": false,
+        "full_formula": "\\overline{\\int _{a}^{b}}f(x)\\mathrm {d} x=\\inf _{\\{a,b\\}\\subseteq P\\subseteq [a,b]}^{|P|<\\aleph _{0}}U(f,P)=\\lim _{\\lambda (P)\\to 0}U(f,P)"
+    },
+    {
+        "symbol": "x^P_{i+1}",
+        "context": "\\sum_{i=0}^{n_P-1} f ( s_i ) ( x^P_{i+1} - x^P_i )",
+        "page_title": "[Wiki] 리만_적분",
+        "expect_tool": false,
+        "full_formula": "\\begin{aligned}{\\overline {\\int _{a}^{b}}}f(x)\\mathrm {d} x-{\\underline {\\int _{a}^{b}}}f(x)\\mathrm {d} x&\\leq U(f,P)-L(f,P)\\&<\\sum _{i=0}^{n_{P}-1}f(t_{i})(x_{i+1}^{P}-x_{i}^{P})-\\sum _{i=0}^{n_{P}-1}f(s_{i})(x_{i+1}^{P}-x_{i}^{P})+{\\frac {\\epsilon }{2}}\\&<\\epsilon \\end{aligned}}$"
+    },
+    {
+        "symbol": "U_{f, P^{(n)}}",
+        "context": "\\lim_{n\\to \\infty} U_{f, P^{(n)}}",
+        "page_title": "[Wiki] Darboux_integral",
+        "expect_tool": false,
+        "full_formula": "R_{f}\\leq \\lim _{n\\to \\infty }L_{f,P^{(n)}}\\leq \\lim _{n\\to \\infty }U_{f,P^{(n)}}\\leq R_{f}"
+    },
+    {
+        "symbol": "\\overline{\\int_{a}^{b}}",
+        "context": "\\overline{\\int_{a}^{b}} g ( x ) \\, d x",
+        "page_title": "[Wiki] Darboux_integral",
+        "expect_tool": false,
+        "full_formula": "{\\underline {\\int _{a}^{b}}}f(x)\\,dx+{\\underline {\\int _{a}^{b}}}g(x)\\,dx\\leq {\\underline {\\int _{a}^{b}}}(f(x)+g(x))\\,dx\\[6pt]{\\overline {\\int _{a}^{b}}}f(x)\\,dx+{\\overline {\\int _{a}^{b}}}g(x)\\,dx\\geq {\\overline {\\int _{a}^{b}}}(f(x)+g(x))\\,dx"
+    },
+
+    {
         "symbol": "\\sim",
-        "context": "$X \\sim \text{uniform} ([a, \\; b])$",
-        "page_title": "Obj. Uniform Random Variable"
+        "context": "X \\sim \text{uniform} ([a, \\; b])",
+        "page_title": "Obj. Uniform Random Variable",
+        "expect_tool": false,
+        "full_formula": "X \\sim \\text{uniform} ([a, \\; b])"
+    },
+    {
+        "symbol": "\\mathbb{R}",
+        "context": "\\mathbb{R}",
+        "page_title": "[Wiki] Darboux_integral",
+        "expect_tool": false,
+        "full_formula": "F: [a, \\; b] \\rightarrow \\mathbb{R}"
+    },
+    {
+        "symbol": "L",
+        "context": "L(f, Q)",
+        "page_title": "[Wiki] 리만_적분",
+        "expect_tool": false,
+        "full_formula": "P\\subseteq Q\\implies L(f,P)\\leq L(f,Q)\\leq U(f,Q)\\leq U(f,P)"
+    },
+    {
+        "symbol": "\\text{ is irrational}",
+        "context": "\\text{if } x \\text{ is irrational}",
+        "page_title": "[Wiki] Darboux_integral",
+        "expect_tool": false,
+        "full_formula": "f(x)&={1{\\text{if }}x{\\text{ is rational}}\\0{\\text{if }}x{\\text{ is irrational}}}"
+    },
+    {
+        "symbol": "E",
+        "context": "E(X+Y) = E(X) + E(Y)",
+        "page_title": "Thm. E(X+Y) = E(X) + E(Y)",
+        "expect_tool": false,
+        "full_formula": "Thm. E(X+Y) = E(X) + E(Y)"
+    },
+    {
+        "symbol": "\\eta",
+        "context": "\\eta",
+        "page_title": "[Wiki] 리만_적분",
+        "expect_tool": false,
+        "full_formula": "\\sum _{0\\leq i\\leq n_{P}-1}^{w(f,P,i)>1/n}(x_{i+1}^{P}-x_{i}^{P})<\\eta"
     }
 ]

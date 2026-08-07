@@ -155,12 +155,13 @@ async function loadPage() {
     sec.formulas.forEach(f => {
       const div = document.createElement("div");
       div.className = "formula-block";
+      div.dataset.raw = f.raw;
       el.appendChild(div);
       try {
-        katex.render(f, div, { displayMode: true, trust: true, strict: "ignore", throwOnError: true, macros: KATEX_MACROS });
+        katex.render(f.annotated, div, { displayMode: true, trust: true, strict: "ignore", throwOnError: true, macros: KATEX_MACROS });
       } catch (err) {
         console.warn("렌더 실패:", err.message, "\n원본:", f);
-        katex.render(f, div, { displayMode: true, trust: true, strict: "ignore", throwOnError: false, macros: KATEX_MACROS });
+        katex.render(f.annotated, div, { displayMode: true, trust: true, strict: "ignore", throwOnError: false, macros: KATEX_MACROS });
       }
     });
   });
@@ -218,9 +219,10 @@ document.getElementById("formula").addEventListener("click", (e) => {
 
   const symbol  = tokenEl ? page.tokens[tokenEl.dataset.token] : page.terms[termEl.dataset.term];
   const context = termEl ? page.terms[termEl.dataset.term] : "";
+  const fullFormula = e.target.closest(".formula-block")?.dataset.raw ?? "";
 
   showSelection(symbol, context);
-  askSymbol(symbol, context);   // 클릭 즉시 자동 질문 (README ㉢~㉣ 흐름)
+  askSymbol(symbol, context, fullFormula);   // 클릭 즉시 자동 질문 (README ㉢~㉣ 흐름)
 });
 
 function showSelection(symbol, context) {
@@ -279,10 +281,11 @@ async function sendQuery(body) {
 }
 
 // 기호 클릭 질문: symbol이 채워지면 백엔드 route가 symbol_question으로 보냄
-function askSymbol(symbol, context) {
+function askSymbol(symbol, context, fullFormula) {
   addSymbolMessage(symbol);
   sendQuery({
     symbol, context,
+    full_formula: fullFormula,
     page_title: PAGE_TITLE,
     question: "",
     thread_id: threadId,

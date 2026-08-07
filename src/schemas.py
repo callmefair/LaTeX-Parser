@@ -6,6 +6,8 @@ class QueryRequest(BaseModel):
     page_title: str = ""
     question: str = ""
     thread_id: str = "DEFAULT"
+    full_formula: str = ""
+    source_url: str = ""
 
 class QueryResponse(BaseModel):
     answer: str = ""

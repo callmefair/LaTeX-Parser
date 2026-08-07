@@ -5,13 +5,21 @@ from src.config import GOOGLE_MODEL, GOOGLE_API_KEY
 from src.retriever import get_retriever
 from src.tools import TOOLS
 from langchain_core.messages import ToolMessage
+from src.prompt import SYMBOL_PROMPT, GENERAL_PROMPT
+
+from src.tokenizer import WIKI_SECTIONS, find_symbol_lines
 
 retriever = get_retriever()
 
-llm = ChatGoogleGenerativeAI(
+llm_with_tools = ChatGoogleGenerativeAI(
     model=GOOGLE_MODEL,
     google_api_key=GOOGLE_API_KEY,
 ).bind_tools(TOOLS)
+
+llm_no_tools = ChatGoogleGenerativeAI(
+    model=GOOGLE_MODEL,
+    google_api_key=GOOGLE_API_KEY,
+)
 
 def route(state) -> str:
     return "symbol_question" if state["symbol"] else "passthrough"
@@ -35,32 +43,40 @@ def retrieve(state) -> dict:
     for doc in docs:
         sources.append(doc.metadata["source"])
         contents.append(doc.page_content)
-    formatted = "\n\n".join(contents)
-
+    formatted = "[내 노트에서 검색된 내용]\n" + "\n\n".join(contents)
     unique_sources = list(dict.fromkeys(sources))
 
+    if state["symbol"] and state["page_title"] in WIKI_SECTIONS and state["symbol"] not in formatted:
+        extra = find_symbol_lines(state["page_title"], state["symbol"])
+        if extra:
+            formatted = "\n\n[문서 원문에서 찾은 해당 기호의 용례]\n\n" + "\n\n".join(extra)
+            unique_sources.append(state["page_title"])
+    
     return {
         "documents": formatted,
         "sources": unique_sources,
     }
 
 def generate(state) -> dict:
-    prompt = ChatPromptTemplate.from_messages([
-        ("system",
-        "당신은 수학 기호와 개념을 설명하는 전문가입니다. "
-        "다음 문서를 근거로 사용자 질문에 답하세요. "
-        "문서에 근거가 부족하면 wiki_search 도구를 사용하세요. \n\n"
-        "{documents}"),
-        MessagesPlaceholder(variable_name="messages"),
-    ])
+    if state["symbol"]:
+        prompt = ChatPromptTemplate.from_messages([
+            ("system", SYMBOL_PROMPT), 
+            MessagesPlaceholder(variable_name="messages")
+        ])
+        chain = prompt | llm_no_tools
+    else:
+        prompt = ChatPromptTemplate.from_messages([
+            ("system", GENERAL_PROMPT), 
+            MessagesPlaceholder(variable_name="messages")
+        ])
+        chain = prompt | llm_with_tools
     # 이미 질문이 맨 뒤에 있어서 "human"을 따로 안 붙인 케이스
     # 어떻게든 "human" 만들어서 eval 만드는 것도 방법일지도!!
 
-    used_tool = state.get("used_tool", False) or isinstance(
+    used_tool = state.get("tool_call", False) or isinstance(
         state["messages"][-1], ToolMessage
     ) if state["messages"] else False
 
-    chain = prompt | llm
     response = chain.invoke(state)
 
-    return {"messages": [response], "used_tool": used_tool}
+    return {"messages": [response], "tool_call": used_tool}

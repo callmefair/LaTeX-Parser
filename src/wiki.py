@@ -100,7 +100,7 @@ def get_latex(url: str) -> list[dict]:
     sections = header_divide(wikitext)
     if not sections:
         raise NoFormulaFound(url)
-    return sections
+    return (sections, wikitext)
 
 if __name__ == "__main__":
     cases = [
@@ -112,7 +112,7 @@ if __name__ == "__main__":
     for name, url in cases:
         print(f"--- {name} ---")
         try:
-            sections = get_latex(url)
+            sections = get_latex(url)[0]
             for s in sections:
                 print(f"  [{s['section']}] 수식 {len(s['formulas'])}개")
             print("  첫 수식:", sections[0]["formulas"][0][:70])

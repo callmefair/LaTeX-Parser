@@ -7,6 +7,7 @@ from src.node import route, symbol_question, passthrough, query, retrieve, gener
 from src.tools import TOOLS
 
 from langgraph.checkpoint.memory import InMemorySaver
+import langfeather
 
 class State(TypedDict):
     messages: Annotated[list, add_messages]
@@ -17,6 +18,8 @@ class State(TypedDict):
     documents: str
     sources: list[str]
     tool_call: bool
+    full_formula: str
+    source_url: str
 
 def build_graph():
     graph = StateGraph(State)
@@ -42,5 +45,5 @@ def build_graph():
     )
     graph.add_edge("tools", "generate")
 
-    return graph.compile(checkpointer=InMemorySaver())
-
+    compiled = graph.compile(checkpointer=InMemorySaver())
+    return langfeather.wrap_runnable(compiled, name="latex-parser")

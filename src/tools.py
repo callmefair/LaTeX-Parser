@@ -4,7 +4,8 @@ from langchain_community.document_loaders import WikipediaLoader
 @tool
 def wiki_search(query: str) -> str:
     """로컬 문서에 없는 수학 개념/기호를 영어 위키피디아에서 검색한다.
-    로컬 검색 결과가 질문에 답하기에 부족할 때만 사용하라."""
+    로컬 검색 결과가 질문에 답하기에 부족할 때만 사용하라.
+    쿼리는 서술형 문장이 아닌 위키피디아 문서 제목에 가까운 정확한 수학 용어로 작성하라."""
     try:
         loader = WikipediaLoader(query=query, lang="en", load_max_docs=3)
         docs = loader.load()

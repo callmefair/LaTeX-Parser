@@ -1,0 +1,1175 @@
+[1/31] Central Limit Theorem은 무엇을 의미하나요?
+  라우팅 OK (기대 False, 실제 False)
+[2/31] LoTuS에서 왜 Y의 PMF가 필요없게 되는지가 궁금하다. 얼른 말하도록.
+  라우팅 OK (기대 False, 실제 False)
+[3/31] Markov Inequality는 왜 이런 의미를 가질까용?
+  라우팅 OK (기대 False, 실제 False)
+[4/31] Discrete Random Variable은 왜 이런 조건을 가져?
+  라우팅 OK (기대 False, 실제 False)
+[5/31] 확률밀도함수는 $\dfrac{1}{\sqrt{2\pi}}$ 같은 숫자가 왜 붙어 있는건가요?
+  라우팅 OK (기대 False, 실제 False)
+[6/31] $W = X_1^2+ \cdots+X_n^2$로 왜 정의 되는걸까나
+  라우팅 OK (기대 False, 실제 False)
+[7/31] 지금 이 페이지에서 이 식이 WLLN 말고 SLLN으로 불리는 이유가 무엇인 것 같아?
+  라우팅 OK (기대 False, 실제 False)
+[8/31] 이 페이지의 식 증명 방법 간단히 좀 알려주라!
+  라우팅 OK (기대 False, 실제 False)
+[9/31] 리만 적분에서 다르부 상합과 다르부 하합이 왜 중요한지 알려줄래?
+  라우팅 OK (기대 True, 실제 True)
+[10/31] 리만 적분에서 다르부 상적분과 다르부 하적분으로 무엇을 하려는거야?
+  라우팅 OK (기대 True, 실제 True)
+[11/31] 왜 1부터 n까지의 합은 (n+1)/2인가요?
+  라우팅 FAIL (기대 True, 실제 False)
+[12/31] nonintegrable function에서 저 0과 1로만 이루어진 함수는 뭐지?
+  라우팅 FAIL (기대 True, 실제 False)
+[13/31] \sum
+  라우팅 OK (기대 False, 실제 False)
+[14/31] \chi
+  라우팅 FAIL (기대 False, 실제 True)
+[15/31] \int_{-\infty}^\infty
+  라우팅 OK (기대 False, 실제 False)
+[16/31] \bigcup _{k=n}^\infty
+  라우팅 OK (기대 False, 실제 False)
+[17/31] S_n
+  라우팅 OK (기대 False, 실제 False)
+[18/31] \stackrel {P} \longrightarrow
+  라우팅 OK (기대 False, 실제 False)
+[19/31] \lambda
+  라우팅 OK (기대 False, 실제 False)
+[20/31] \mu_X
+  라우팅 OK (기대 False, 실제 False)
+[21/31] \sup_{\{a,b\}\subseteq P\subseteq[a,b]}^{|P|<\aleph_0}
+  라우팅 OK (기대 True, 실제 True)
+[22/31] \inf_{\{a,b\}\subseteq R\subseteq[a,b]}^{|R|<\aleph_0}
+  라우팅 OK (기대 True, 실제 True)
+[23/31] x^P_{i+1}
+  라우팅 OK (기대 True, 실제 True)
+[24/31] U_{f, P^{(n)}}
+  라우팅 FAIL (기대 True, 실제 False)
+[25/31] \overline{\int_{a}^{b}}
+  라우팅 OK (기대 True, 실제 True)
+[26/31] \sim
+  라우팅 OK (기대 False, 실제 False)
+[27/31] \mathbb{R}
+  라우팅 FAIL (기대 False, 실제 True)
+[28/31] L
+  라우팅 FAIL (기대 False, 실제 True)
+[29/31] \text{ is irrational}
+  라우팅 FAIL (기대 False, 실제 True)
+[30/31] E
+  라우팅 OK (기대 False, 실제 False)
+[31/31] \eta
+  라우팅 FAIL (기대 False, 실제 True)
+✨ You're running DeepEval's latest Faithfulness Metric! (using claude-haiku-4-5
+(Anthropic), strict=False, async_mode=True)...
+✨ You're running DeepEval's latest natural_explanation [GEval] Metric! (using 
+claude-haiku-4-5 (Anthropic), strict=False, async_mode=True)...
+✨ You're running DeepEval's latest answer_reference [GEval] Metric! (using 
+claude-haiku-4-5 (Anthropic), strict=False, async_mode=True)...
+
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ 🚀 DeepEval Evaluation Results                                               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_0 (Passed 3 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_1 (Passed 3 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_2 (Passed 3 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_3 (Passed 3 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ Aggregate Metrics                                                            │
+│                                                                              │
+│  Metric                            ┃ Average Score    ┃ Pass Rate   ┃ Total  │
+│ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━ │
+│  Faithfulness                      │ 0.95             │ 100.00%     │ 4      │
+│  natural_explanation [GEval]       │ 0.97             │ 100.00%     │ 4      │
+│  answer_reference [GEval]          │ 0.68             │ 100.00%     │ 4      │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+
+⚠ WARNING: No hyperparameters logged.
+» Log hyperparameters to attribute prompts and models to your test runs.
+
+================================================================================
+
+
+✓ Evaluation completed 🎉! (time taken: 8.65s | token cost: 0.066236 USD)
+» Test Results (4 total tests):
+   » Pass Rate: 100.0% | Passed: 4 | Failed: 0
+
+ ===============================================================================
+= 
+
+» Want to share evals with your team, or a place for your test cases to live? ❤️
+🏡
+  » Run 'deepeval view' to analyze and save testing results on Confident AI.
+
+
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. Great job on maintaining perfect alignment with the source material!
+---
+natural_explanation [GEval] 1.0 0.5
+The Actual Output successfully converts the input's informal tone into formal polite Korean (친절체). The input contains informal expressions like '왜...인지가 궁금하다' and '얼른 말하도록' which are transformed into formal, structured explanations using appropriate formal endings. The entire response maintains consistent formal tone throughout with '~습니다' and '~입니다' endings. No instances of informal speech, colloquialisms, or messenger-style language remain in the output. The response is completely well-organized in formal register.
+---
+answer_reference [GEval] 0.5 0.5
+The Actual Output correctly identifies that Y's PMF is unnecessary and provides the key formula E(Y) = Σ g(x)p(x), which is mathematically sound. However, it lacks crucial details present in the Expected Output: (1) it does not explain the mathematical mechanism of why Y's PMF becomes unnecessary through the proof process, specifically the use of inverse image sets g^{-1}(y) and how σ-notation is reorganized, and (2) it does not demonstrate how P_Y(y) is expressed as a sum of X's probabilities before substitution into the expectation formula. The Actual Output provides a correct but superficial answer, while the Expected Output provides the rigorous mathematical justification showing how the transformation from E(Y) = Σ y P_Y(y) to E(Y) = Σ g(x)P_X(x) occurs. The core concept is present but the depth and rigor of explanation are significantly deficient.
+---
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. Great job maintaining perfect alignment with the source material!
+---
+natural_explanation [GEval] 1.0 0.5
+Input에서 비격식 표현('왜 이런 조건을 가져?')을 식별했으나, Actual Output에서 친절체('~습니다', '~합니다', '~어야 합니다')로 일관되게 정돈되었습니다. 비격식 문장이나 단어가 0개이며, 문맥상 자연스러운 추임새가 없습니다. 톤앤매너는 전문적이고 명확하며, 수학 기호와 함께 체계적으로 구조화된 설명이 튜터답습니다. 평가 기준(정확성, 유용함, 충실성, 사실 여부, 길이, 유창함)에도 긍정적으로 부합합니다.
+---
+answer_reference [GEval] 0.8 0.5
+The Actual Output correctly addresses all three core PMF conditions ($p(x) = P(X = x)$, $\sum_x p(x) = 1$, $0 \le p(x) \le 1$) with accurate mathematical explanations grounded in probability axioms. It properly explains why discrete random variables can have these conditions by referencing their countable/finite range. However, compared to the Expected Output, it lacks deeper conceptual grounding: it doesn't explain the fundamental reason WHY probability must be defined as a ratio between 0 and 1, doesn't fully articulate the causal link between the discrete nature of values and the ability to assign point masses, and doesn't explicitly define what makes a variable "discrete" in relation to these conditions. The Actual Output presents the conditions as axioms to follow rather than as natural consequences of probability's foundational definition. The explanation is technically sound and well-structured, but less pedagogically complete than the Expected Output's approach of tracing conditions back to probability's essential nature.
+---
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. The information presented is fully faithful and accurately grounded in the source material!
+---
+natural_explanation [GEval] 1.0 0.5
+The Actual Output demonstrates strong alignment with the evaluation steps. Step 1: The input uses informal Korean (반말), but the output employs consistent polite/formal tone (친절체) with ~합니다, ~습니다, ~합니다 forms throughout. Step 2: The entire output maintains consistent formal tone with no remaining informal expressions (비격식 표현), warranting a 1.0 multiplier. Step 3: The output contains no inappropriate filler phrases and uses professional academic language suitable for a tutor explaining mathematical concepts. Step 4: The response completely removes informal elements while achieving professional tutor-level clarity through precise mathematical definitions, proper notation, and logical explanation of the theorem's practical implications (the discussion of 'approximation vs. actual convergence'). The explanation is thorough, well-structured, and maintains appropriate formality throughout.
+---
+answer_reference [GEval] 0.6 0.5
+The Actual Output correctly identifies the core mathematical concept of CLT with proper notation and explains the standardized sum converging to N(0,1) as n→∞. However, it contains a significant conceptual error in the final paragraph: it states that the convergence is only 'approximate' rather than 'convergence in distribution,' which misrepresents the mathematical rigor of the theorem. The Expected Output emphasizes that the standardized sum converges to standard normal distribution regardless of the individual distribution (a key premise of CLT), while the Actual Output does not explicitly highlight this universality. Additionally, the Actual Output includes an extraneous quote about 'infinite addition' that, while philosophically interesting, is not part of the formal mathematical definition and may obscure the precise statement. The i.i.d. condition is properly stated in both outputs, but the Actual Output lacks clarity on the distribution-convergence property versus mere approximation.
+---
+Faithfulness 0.8 0.5
+The score is 0.80 because the actual output provides an incomplete explanation of how Chebyshev Inequality is derived. While it correctly mentions substituting (X - μ)² for X into Markov Inequality, it fails to include the critical step of setting a = c², which is essential to the complete derivation process outlined in the retrieval context.
+---
+natural_explanation [GEval] 0.9 0.5
+The Actual Output demonstrates excellent conversion from informal to formal tone. The Input uses casual endings ('~용' colloquial suffix) that were completely removed and replaced with formal '-습니다/-해요' structure throughout. The output maintains consistent formal tone (친절체) with natural pacing markers like '결론적으로' that don't detract from formality. No remnants of informal speech (반말, 메신저 말투, etc.) are visible. The only minor consideration is that the output could arguably use slightly more conversational-friendly language, but this falls outside the evaluation scope per Step 4. The transformation from '왜 이런 의미를 가질까용?' to formal explanations is complete and natural.
+---
+answer_reference [GEval] 0.8 0.5
+Actual Output covers the four core concepts from Expected Output: (1) providing an upper bound for P(X ≥ a), (2) usefulness with limited information (only expectation), (3) loose/conservative estimates with the uniform distribution example, and (4) foundation for Chebyshev Inequality. The mathematical content is semantically equivalent and accurate. However, Expected Output emphasizes the derivation using Total Expectation Law as a key explanatory mechanism, which Actual Output omits—this represents a gap in explaining the 'why' behind the inequality's meaning. Additionally, Actual Output's mention of Chebyshev Inequality, while valid, goes slightly beyond the core focus on understanding Markov Inequality itself. The presentation is clear and well-structured in both versions, but the missing derivation explanation and the slightly broader scope prevent a higher score.
+---
+✨ You're running DeepEval's latest Faithfulness Metric! (using claude-haiku-4-5
+(Anthropic), strict=False, async_mode=True)...
+✨ You're running DeepEval's latest natural_explanation [GEval] Metric! (using 
+claude-haiku-4-5 (Anthropic), strict=False, async_mode=True)...
+
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ 🚀 DeepEval Evaluation Results                                               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_0 (Passed 2 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_1 (Passed 2 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_2 (Passed 2 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_3 (Passed 2 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_4 (Passed 2 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_5 (Passed 2 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  ❌ test_case_6                                                              │
+│  ├──   Input:            왜 1부터 n까지의 합은 (n+1)/2인가요?                │
+│  │     Actual Output:    문서에는 1부터 n까지의 합에 대한 정보가             │
+│  │                       없습니다.                                           │
+│  └── Metrics                                                                 │
+│       Status ┃ Metric             ┃ Score ┃ Threshold ┃ Reason               │
+│      ━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━  │
+│        PASS  │ Faithfulness       │ 1.00  │ 0.50      │ The score is 1.00    │
+│              │                    │       │           │ because the actual   │
+│              │                    │       │           │ output is ...        │
+│        FAIL  │ natural_explanati… │ 0.00  │ 0.50      │ The Actual Output    │
+│              │ [GEval]            │       │           │ completely fails     │
+│              │                    │       │           │ to address the       │
+│              │                    │       │           │ evaluation           │
+│              │                    │       │           │ criteria. The        │
+│              │                    │       │           │ input contains a     │
+│              │                    │       │           │ casual question      │
+│              │                    │       │           │ (존댓말 with '요'…   │
+│              │                    │       │           │ that should be       │
+│              │                    │       │           │ reformulated in a    │
+│              │                    │       │           │ professional tutor   │
+│              │                    │       │           │ tone. However, the   │
+│              │                    │       │           │ output doesn't       │
+│              │                    │       │           │ attempt any tone     │
+│              │                    │       │           │ conversion at        │
+│              │                    │       │           │ all—it simply        │
+│              │                    │       │           │ states that there    │
+│              │                    │       │           │ is no information    │
+│              │                    │       │           │ in the document.     │
+│              │                    │       │           │ The response is      │
+│              │                    │       │           │ off-topic and        │
+│              │                    │       │           │ doesn't              │
+│              │                    │       │           │ demonstrate the      │
+│              │                    │       │           │ required             │
+│              │                    │       │           │ transformation       │
+│              │                    │       │           │ from                 │
+│              │                    │       │           │ conversational to    │
+│              │                    │       │           │ formal/friendly      │
+│              │                    │       │           │ professional style   │
+│              │                    │       │           │ (친절체).            │
+│              │                    │       │           │ Additionally, it     │
+│              │                    │       │           │ provides no          │
+│              │                    │       │           │ educational value    │
+│              │                    │       │           │ regarding the        │
+│              │                    │       │           │ mathematical         │
+│              │                    │       │           │ formula requested.   │
+│              │                    │       │           │ For proper           │
+│              │                    │       │           │ evaluation of tone   │
+│              │                    │       │           │ conversion, the      │
+│              │                    │       │           │ output should have   │
+│              │                    │       │           │ engaged with the     │
+│              │                    │       │           │ mathematical         │
+│              │                    │       │           │ question while       │
+│              │                    │       │           │ maintaining a        │
+│              │                    │       │           │ professional         │
+│              │                    │       │           │ tutor's voice,       │
+│              │                    │       │           │ regardless of        │
+│              │                    │       │           │ whether the          │
+│              │                    │       │           │ specific             │
+│              │                    │       │           │ information was      │
+│              │                    │       │           │ available.           │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_7 (Passed 2 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ Aggregate Metrics                                                            │
+│                                                                              │
+│  Metric                            ┃ Average Score    ┃ Pass Rate   ┃ Total  │
+│ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━ │
+│  Faithfulness                      │ 1.00             │ 100.00%     │ 8      │
+│  natural_explanation [GEval]       │ 0.81             │ 87.50%      │ 8      │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+
+⚠ WARNING: No hyperparameters logged.
+» Log hyperparameters to attribute prompts and models to your test runs.
+
+================================================================================
+
+
+✓ Evaluation completed 🎉! (time taken: 14.74s | token cost: 0.10293600000000001
+USD)
+» Test Results (8 total tests):
+   » Pass Rate: 87.5% | Passed: 7 | Failed: 1
+
+ ===============================================================================
+= 
+
+» Want to share evals with your team, or a place for your test cases to live? ❤️
+🏡
+  » Run 'deepeval view' to analyze and save testing results on Confident AI.
+
+
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output is completely faithful to the retrieval context with no contradictions detected. Excellent work!
+---
+natural_explanation [GEval] 0.0 0.5
+The Actual Output completely fails to address the evaluation criteria. The input contains a casual question (존댓말 with '요') that should be reformulated in a professional tutor tone. However, the output doesn't attempt any tone conversion at all—it simply states that there is no information in the document. The response is off-topic and doesn't demonstrate the required transformation from conversational to formal/friendly professional style (친절체). Additionally, it provides no educational value regarding the mathematical formula requested. For proper evaluation of tone conversion, the output should have engaged with the mathematical question while maintaining a professional tutor's voice, regardless of whether the specific information was available.
+---
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. The information presented is entirely faithful and accurate!
+---
+natural_explanation [GEval] 1.0 0.5
+The input contains a polite formal question (확인해 주셨나요?) with no colloquial expressions, slang, messenger-style language, or informal tone markers. The Actual Output maintains consistent formal/polite Korean (친절체) throughout, with natural professional explanations and light discourse markers ('따라서', '즉') that are appropriate and not penalized per evaluation step 4. There are no informal elements (반말, ㅋㅋㅋ, ~했음, etc.) in the input to remove, and the output successfully maintains a tutor-level clarity and naturalness. The transformation criterion is not applicable here since the input was already formally presented, but the output demonstrates exemplary professional tone consistency.
+---
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output perfectly aligns with the retrieval context with no contradictions detected. Great job!
+---
+natural_explanation [GEval] 1.0 0.5
+Input의 비격식 표현('간단히 좀 알려주라!')은 구어체 명령형으로 명확한 반말입니다. Actual Output은 전체적으로 친절체('설명되어 있습니다', '암시합니다', '이용하여')와 격식 있는 표현으로 잘 정돈되었습니다. 평가 단계 3에 따라 비격식 표현이 검출되지 않아 완전히 정돈된 상태(1.0)에 해당합니다. 자연스러운 가벼운 추임새는 없으며, 원본의 날것 구어체가 완전히 제거되었습니다.
+---
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. The information presented is entirely faithful and accurate!
+---
+natural_explanation [GEval] 0.8 0.5
+The output demonstrates strong conversion from informal to formal register overall. The input's casual question ('뭐지?') has been appropriately converted to formal inquiry structure. However, two instances of informal language remain: (1) '겁나 커지는 형태' uses the colloquial intensifier '겁나' instead of formal equivalents like '매우' or '상당히', and (2) '엉터리 확률변수' retains an informal/dismissive tone that could be more formally expressed. These two remnants represent approximately 10-15% of the response's stylistic issues against an otherwise well-maintained formal register (친절체). The explanation itself is comprehensive and contextually appropriate, with the remaining informal elements being minor rather than pervasive.
+---
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. The information presented is entirely faithful and accurate!
+---
+natural_explanation [GEval] 1.0 0.5
+The Actual Output demonstrates excellent conversion from informal to formal tone. Step 1: The input uses informal Korean ('~하려는거야?' with casual ending), which is properly converted to formal explanatory style throughout ('~입니다', '~합니다', '~해요'). Step 2: The entire output maintains consistent professional tutor-like tone with clear structure and formal expressions. Step 3: No instances of non-formal language remain—all content is presented in proper formal Korean (친절체). Step 4: The natural filler phrases ('결론적으로', '이 때문에') are contextually appropriate explanatory markers rather than informal pollution. The response exhibits comprehensive, well-organized mathematical explanation with zero non-formal tone contamination.
+---
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. The information presented is fully faithful and accurate!
+---
+natural_explanation [GEval] 0.9 0.5
+The Actual Output demonstrates excellent adherence to the evaluation criteria. Step 1: The input uses casual Korean ('알려줄래?'), which is appropriately converted to polite formal tone ('~입니다', '~합니다') throughout the response. Step 2: The output is nearly completely formalized with consistent use of formal declarative and explanatory structures; no informal expressions remain (1.0 rating). Step 3: The light conversational markers like '요약하자면' and the structured explanations are natural and appropriate for a professional tutor tone, not problematic source material informality. Step 4: The entire response maintains consistent professional tutoring tone with clear, methodical explanations of mathematical concepts, bullet points for clarity, and a numbered summary section. The only minor consideration is that 'Step' numbering in the summary could be slightly more naturalistic, but this is negligible. The response successfully transforms casual inquiry into polished, professional mathematical explanation.
+---
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. Excellent work! The information presented is entirely faithful and reliable.
+---
+natural_explanation [GEval] 0.8 0.5
+The Actual Output successfully removes the informal spoken Korean ('왜 정의 되는걸까나') from the Input and maintains consistent polite/formal tone (친절체) throughout with expressions like '따릅니다', '정의됩니다'. The response is well-structured and professional, appropriate for a tutor-level explanation. However, there is a minor issue: the mathematical expression '$Z/\sqrt{W/n}$' appears disconnected or unclear in context, and the phrasing could be slightly more natural in places (e.g., '제공된 문서에 따르면' seems unnecessarily formal given the mathematical nature of the question). Overall, the formatting and tone alignment with evaluation steps 1-4 are strong, with only minor roughness in mathematical clarity.
+---
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. Great job!
+---
+natural_explanation [GEval] 1.0 0.5
+The input uses a casual, conversational tone with 반말 ('이 페이지에서 이 식이... 불리는 이유가 무엇인 것 같아?'), which should be converted to polite 친절체. The actual output successfully transforms this into formal, professional Korean using 친절체 expressions ('제공된 문서에 따르면', '불립니다', '언급되었으며'). No remaining colloquial expressions, slang, or informal speech patterns are detected in the output. The tone is consistently maintained at a professional tutor level throughout. The response fully satisfies the formatting requirement of converting casual spoken Korean to polite, formal Korean without any lapses into informal language.
+---
+✨ You're running DeepEval's latest Faithfulness Metric! (using claude-haiku-4-5
+(Anthropic), strict=False, async_mode=True)...
+✨ You're running DeepEval's latest natural_explanation [GEval] Metric! (using 
+claude-haiku-4-5 (Anthropic), strict=False, async_mode=True)...
+✨ You're running DeepEval's latest symbol_explanantion [GEval] Metric! (using 
+claude-haiku-4-5 (Anthropic), strict=False, async_mode=True)...
+✨ You're running DeepEval's latest answer_reference [GEval] Metric! (using 
+claude-haiku-4-5 (Anthropic), strict=False, async_mode=True)...
+
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ 🚀 DeepEval Evaluation Results                                               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  ❌ test_case_0                                                              │
+│  ├──   Input:              $\sum$이 $S_n = \sum X_n$에서 사용됐습니다.       │
+│  │                         현재 페이지: Def. Convergence in Distribution…    │
+│  │                         기호에 대해서 설명해주세요.                       │
+│  │     Actual Output:      $\sum$는 합계를 나타내는 기호입니다. $S_n =       │
+│  │                         \sum X_n$라는 표현에서 이는 $X_1, X_2, \cdots…    │
+│  │                         X_n$과 같은 확률 변수들의 합을 의미합니다. 즉…    │
+│  │                         $S_n = X_1 + X_2 + \cdots + X_n$을 간결하게       │
+│  │                         나타낸 것입니다.                                  │
+│  │     Expected Output:    $\sum$은 수열의 극한을 구하는 기호로,             │
+│  │                         $X_n$이라는 단일 확률변수에 $n$을 무한대로        │
+│  │                         보냈을 때 그 값들이 수렴하는 무한급수의 최종      │
+│  │                         결괏값(상수)을 의미합니다.                        │
+│  └── Metrics                                                                 │
+│       Status ┃ Metric             ┃ Score ┃ Threshold ┃ Reason               │
+│      ━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━  │
+│        PASS  │ Faithfulness       │ 1.00  │ 0.50      │ The score is 1.00    │
+│              │                    │       │           │ because the actual   │
+│              │                    │       │           │ output per...        │
+│        PASS  │ natural_explanati… │ 0.90  │ 0.50      │ The input contains   │
+│              │ [GEval]            │       │           │ informal             │
+│              │                    │       │           │ colloquial           │
+│              │                    │       │           │ expressi...          │
+│        PASS  │ symbol_explananti… │ 0.50  │ 0.50      │ The response         │
+│              │ [GEval]            │       │           │ successfully         │
+│              │                    │       │           │ identifies $\sum$    │
+│              │                    │       │           │ and...               │
+│        FAIL  │ answer_reference   │ 0.10  │ 0.50      │ The Actual Output    │
+│              │ [GEval]            │       │           │ provides a           │
+│              │                    │       │           │ standard             │
+│              │                    │       │           │ interpretation of    │
+│              │                    │       │           │ the summation        │
+│              │                    │       │           │ symbol (∑) as        │
+│              │                    │       │           │ representing the     │
+│              │                    │       │           │ sum of random        │
+│              │                    │       │           │ variables X₁, X₂,    │
+│              │                    │       │           │ ..., Xₙ, which is    │
+│              │                    │       │           │ mathematically       │
+│              │                    │       │           │ correct and          │
+│              │                    │       │           │ well-explained.      │
+│              │                    │       │           │ However, it          │
+│              │                    │       │           │ completely misses    │
+│              │                    │       │           │ the                  │
+│              │                    │       │           │ context-specific     │
+│              │                    │       │           │ meaning required     │
+│              │                    │       │           │ by the Expected      │
+│              │                    │       │           │ Output. Given that   │
+│              │                    │       │           │ the current page     │
+│              │                    │       │           │ is about             │
+│              │                    │       │           │ 'Convergence in      │
+│              │                    │       │           │ Distribution,' the   │
+│              │                    │       │           │ Expected Output      │
+│              │                    │       │           │ clarifies that ∑     │
+│              │                    │       │           │ should be            │
+│              │                    │       │           │ interpreted as       │
+│              │                    │       │           │ representing an      │
+│              │                    │       │           │ infinite series      │
+│              │                    │       │           │ whose final value    │
+│              │                    │       │           │ (a constant)         │
+│              │                    │       │           │ results from         │
+│              │                    │       │           │ taking the limit     │
+│              │                    │       │           │ as n→∞. The Actual   │
+│              │                    │       │           │ Output treats ∑ as   │
+│              │                    │       │           │ a finite sum         │
+│              │                    │       │           │ notation without     │
+│              │                    │       │           │ addressing the       │
+│              │                    │       │           │ convergence          │
+│              │                    │       │           │ aspect, infinite     │
+│              │                    │       │           │ limit, or the        │
+│              │                    │       │           │ series' limiting     │
+│              │                    │       │           │ behavior—all         │
+│              │                    │       │           │ critical elements    │
+│              │                    │       │           │ in the convergence   │
+│              │                    │       │           │ in distribution      │
+│              │                    │       │           │ context. The         │
+│              │                    │       │           │ Actual Output        │
+│              │                    │       │           │ contains no          │
+│              │                    │       │           │ reference to these   │
+│              │                    │       │           │ core concepts        │
+│              │                    │       │           │ (infinite series,    │
+│              │                    │       │           │ limit as n→∞,        │
+│              │                    │       │           │ convergence to a     │
+│              │                    │       │           │ constant),           │
+│              │                    │       │           │ representing a       │
+│              │                    │       │           │ fundamental          │
+│              │                    │       │           │ misalignment with    │
+│              │                    │       │           │ the expected         │
+│              │                    │       │           │ mathematical and     │
+│              │                    │       │           │ contextual           │
+│              │                    │       │           │ interpretation.      │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  ❌ test_case_1                                                              │
+│  ├──   Input:              $\chi$이 $W \sim \chi ^2 (n)$에서                 │
+│  │                         사용됐습니다. 현재 페이지: Std. Slutsky랑         │
+│  │                         Continuous Mapping으로 뭐할 수 있냐. 기호에       │
+│  │                         대해서 설명해주세요.                              │
+│  │     Actual Output:      $W \sim \chi^2(n)$에서 사용된 $\chi$는            │
+│  │                         카이제곱 분포(chi-squared distribution)를         │
+│  │                         나타내는 기호입니다.                              │
+│  │                                                                           │
+│  │                         카이제곱 분포는 $n$개의 독립적인 표준 정규        │
+│  │                         확률 변수(평균이 0이고 분산이 1인 정규 분포       │
+│  │                         $N(0, 1)$를 따르는 확률 변수)들을 각각            │
+│  │                         제곱하여 합한 값의 분포를 의미합니다.             │
+│  │                                                                           │
+│  │                         제공된 문서에서 $W = X_1^2 + \cdots +             │
+│  │                         X_n^2$이고 $X_1^2, \; \cdots, \; X_N^2 \sim$      │
+│  │                         iid $N(0, \; 1)$라고 설명하고 있는데, 이는        │
+│  │                         $n$개의 독립적인 표준 정규 확률 변수를            │
+│  │                         제곱하여 합한 것과 정확히 일치합니다. 따라서      │
+│  │                         $W$는 자유도(degrees of freedom)가 $n$인          │
+│  │                         카이제곱 분포를 따른다고 할 수 있습니다.          │
+│  │     Expected Output:    $\chi$는 통계학에서 특성함수(Characteristic       │
+│  │                         Function)를 나타내는 기호로, 확률변수 $W$가       │
+│  │                         자유도 $n$에서 연속형 확률밀도함수를 가지지       │
+│  │                         않고 이산적으로 수렴함을 뜻합니다.                │
+│  └── Metrics                                                                 │
+│       Status ┃ Metric             ┃ Score ┃ Threshold ┃ Reason               │
+│      ━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━  │
+│        PASS  │ Faithfulness       │ 0.80  │ 0.50      │ The score is 0.80    │
+│              │                    │       │           │ because the actual   │
+│              │                    │       │           │ output inc...        │
+│        PASS  │ natural_explanati… │ 1.00  │ 0.50      │ The Actual Output    │
+│              │ [GEval]            │       │           │ successfully         │
+│              │                    │       │           │ converts the         │
+│              │                    │       │           │ inf...               │
+│        FAIL  │ symbol_explananti… │ 0.30  │ 0.50      │ The response         │
+│              │ [GEval]            │       │           │ addresses step 1     │
+│              │                    │       │           │ well by              │
+│              │                    │       │           │ identifying χ as     │
+│              │                    │       │           │ the chi-squared      │
+│              │                    │       │           │ distribution         │
+│              │                    │       │           │ symbol used in $W    │
+│              │                    │       │           │ \sim \chi^2(n)$.     │
+│              │                    │       │           │ However, it falls    │
+│              │                    │       │           │ short on steps 2     │
+│              │                    │       │           │ and 3. Step 2        │
+│              │                    │       │           │ requires explicit    │
+│              │                    │       │           │ relationship         │
+│              │                    │       │           │ between χ and the    │
+│              │                    │       │           │ formula structure    │
+│              │                    │       │           │ (the relationship    │
+│              │                    │       │           │ between χ and $n$,   │
+│              │                    │       │           │ and how χ            │
+│              │                    │       │           │ represents the       │
+│              │                    │       │           │ distribution of      │
+│              │                    │       │           │ squared standard     │
+│              │                    │       │           │ normal variables).   │
+│              │                    │       │           │ While the response   │
+│              │                    │       │           │ explains that χ      │
+│              │                    │       │           │ represents a         │
+│              │                    │       │           │ distribution of      │
+│              │                    │       │           │ squared standard     │
+│              │                    │       │           │ normals, it          │
+│              │                    │       │           │ doesn't              │
+│              │                    │       │           │ sufficiently         │
+│              │                    │       │           │ articulate how       │
+│              │                    │       │           │ χspecifically        │
+│              │                    │       │           │ relates to the       │
+│              │                    │       │           │ other components     │
+│              │                    │       │           │ of the formula or    │
+│              │                    │       │           │ emphasize the        │
+│              │                    │       │           │ interrelationship    │
+│              │                    │       │           │ beyond general       │
+│              │                    │       │           │ definition. Step 3   │
+│              │                    │       │           │ is critically        │
+│              │                    │       │           │ deficient: the       │
+│              │                    │       │           │ current page         │
+│              │                    │       │           │ context is "Std.     │
+│              │                    │       │           │ Slutsky랑            │
+│              │                    │       │           │ Continuous           │
+│              │                    │       │           │ Mapping으로 뭐할     │
+│              │                    │       │           │ 수 있냐" (what ca…   │
+│              │                    │       │           │ be done with         │
+│              │                    │       │           │ Slutsky and          │
+│              │                    │       │           │ Continuous           │
+│              │                    │       │           │ Mapping), but the    │
+│              │                    │       │           │ response merely      │
+│              │                    │       │           │ describes the        │
+│              │                    │       │           │ chi-squared          │
+│              │                    │       │           │ distribution         │
+│              │                    │       │           │ without explaining   │
+│              │                    │       │           │ why χ is relevant    │
+│              │                    │       │           │ to Slutsky's         │
+│              │                    │       │           │ theorem or           │
+│              │                    │       │           │ Continuous Mapping   │
+│              │                    │       │           │ theorem. The         │
+│              │                    │       │           │ response provides    │
+│              │                    │       │           │ general              │
+│              │                    │       │           │ definitions of       │
+│              │                    │       │           │ chi-squared          │
+│              │                    │       │           │ distribution and     │
+│              │                    │       │           │ verifies it          │
+│              │                    │       │           │ against the          │
+│              │                    │       │           │ document notation,   │
+│              │                    │       │           │ but fails to         │
+│              │                    │       │           │ connect χ to the     │
+│              │                    │       │           │ actual theoretical   │
+│              │                    │       │           │ framework            │
+│              │                    │       │           │ (continuous          │
+│              │                    │       │           │ mapping or           │
+│              │                    │       │           │ Slutsky's theorem)   │
+│              │                    │       │           │ mentioned on the     │
+│              │                    │       │           │ current page. This   │
+│              │                    │       │           │ represents a 0.5     │
+│              │                    │       │           │ score situation      │
+│              │                    │       │           │ where general        │
+│              │                    │       │           │ definition and       │
+│              │                    │       │           │ partial context      │
+│              │                    │       │           │ connection is        │
+│              │                    │       │           │ provided, but the    │
+│              │                    │       │           │ critical             │
+│              │                    │       │           │ connection to the    │
+│              │                    │       │           │ page's theorems is   │
+│              │                    │       │           │ absent.              │
+│        FAIL  │ answer_reference   │ 0.20  │ 0.50      │ The Actual Output    │
+│              │ [GEval]            │       │           │ completely           │
+│              │                    │       │           │ misaligns with the   │
+│              │                    │       │           │ Expected Output.     │
+│              │                    │       │           │ The input asks       │
+│              │                    │       │           │ about the symbol χ   │
+│              │                    │       │           │ in the context of    │
+│              │                    │       │           │ chi-squared          │
+│              │                    │       │           │ distribution and     │
+│              │                    │       │           │ what can be done     │
+│              │                    │       │           │ with Slutsky's       │
+│              │                    │       │           │ theorem and          │
+│              │                    │       │           │ Continuous Mapping   │
+│              │                    │       │           │ theorem. The         │
+│              │                    │       │           │ Actual Output        │
+│              │                    │       │           │ correctly            │
+│              │                    │       │           │ identifies χ as      │
+│              │                    │       │           │ the chi-squared      │
+│              │                    │       │           │ distribution         │
+│              │                    │       │           │ symbol and           │
+│              │                    │       │           │ accurately           │
+│              │                    │       │           │ explains the         │
+│              │                    │       │           │ definition of W ~    │
+│              │                    │       │           │ χ²(n), which is a    │
+│              │                    │       │           │ reasonable           │
+│              │                    │       │           │ interpretation of    │
+│              │                    │       │           │ the user's           │
+│              │                    │       │           │ question. However,   │
+│              │                    │       │           │ the Expected         │
+│              │                    │       │           │ Output defines χ     │
+│              │                    │       │           │ as a                 │
+│              │                    │       │           │ characteristic       │
+│              │                    │       │           │ function symbol,     │
+│              │                    │       │           │ claiming W has a     │
+│              │                    │       │           │ discrete             │
+│              │                    │       │           │ convergence          │
+│              │                    │       │           │ property without     │
+│              │                    │       │           │ continuous           │
+│              │                    │       │           │ probability          │
+│              │                    │       │           │ density—this is      │
+│              │                    │       │           │ mathematically       │
+│              │                    │       │           │ incorrect for a      │
+│              │                    │       │           │ chi-squared          │
+│              │                    │       │           │ distribution,        │
+│              │                    │       │           │ which is a           │
+│              │                    │       │           │ continuous           │
+│              │                    │       │           │ distribution. The    │
+│              │                    │       │           │ Actual Output's      │
+│              │                    │       │           │ explanation is       │
+│              │                    │       │           │ mathematically       │
+│              │                    │       │           │ sound and directly   │
+│              │                    │       │           │ addresses the        │
+│              │                    │       │           │ notation, while      │
+│              │                    │       │           │ the Expected         │
+│              │                    │       │           │ Output contains      │
+│              │                    │       │           │ fundamental          │
+│              │                    │       │           │ statistical          │
+│              │                    │       │           │ errors. Since the    │
+│              │                    │       │           │ Actual Output        │
+│              │                    │       │           │ provides accurate    │
+│              │                    │       │           │ statistical          │
+│              │                    │       │           │ content that         │
+│              │                    │       │           │ correctly            │
+│              │                    │       │           │ interprets the       │
+│              │                    │       │           │ likely intent of     │
+│              │                    │       │           │ the input            │
+│              │                    │       │           │ question, while      │
+│              │                    │       │           │ the Expected         │
+│              │                    │       │           │ Output is            │
+│              │                    │       │           │ factually            │
+│              │                    │       │           │ incorrect, the       │
+│              │                    │       │           │ Actual Output        │
+│              │                    │       │           │ demonstrates         │
+│              │                    │       │           │ superior             │
+│              │                    │       │           │ understanding        │
+│              │                    │       │           │ despite not          │
+│              │                    │       │           │ matching the         │
+│              │                    │       │           │ Expected Output      │
+│              │                    │       │           │ format.              │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_2 (Passed 4 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_3 (Passed 4 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ Aggregate Metrics                                                            │
+│                                                                              │
+│  Metric                            ┃ Average Score    ┃ Pass Rate   ┃ Total  │
+│ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━ │
+│  Faithfulness                      │ 0.95             │ 100.00%     │ 4      │
+│  natural_explanation [GEval]       │ 0.90             │ 100.00%     │ 4      │
+│  symbol_explanantion [GEval]       │ 0.50             │ 75.00%      │ 4      │
+│  answer_reference [GEval]          │ 0.35             │ 50.00%      │ 4      │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+
+⚠ WARNING: No hyperparameters logged.
+» Log hyperparameters to attribute prompts and models to your test runs.
+
+================================================================================
+
+
+✓ Evaluation completed 🎉! (time taken: 11.98s | token cost: 0.095019 USD)
+» Test Results (4 total tests):
+   » Pass Rate: 50.0% | Passed: 2 | Failed: 2
+
+ ===============================================================================
+= 
+
+» Want to share evals with your team, or a place for your test cases to live? ❤️
+🏡
+  » Run 'deepeval view' to analyze and save testing results on Confident AI.
+
+
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output perfectly aligns with the retrieval context with no contradictions detected. Excellent work!
+---
+natural_explanation [GEval] 0.9 0.5
+The input contains informal colloquial expressions such as '~했습니다' in the request phrasing and the casual tone of the query. The Actual Output successfully converts these into polite formal Korean (존댓말/친절체) with consistent use of '~입니다', '~의미합니다', '~나타낸 것입니다' throughout. The explanation is well-structured and maintains formal register without any remaining colloquial expressions like informal speech endings, messenger-style language, or casual markers. The response includes appropriate contextual connectives ('즉') that are natural and not penalized per evaluation step 4. The only minor consideration is that the input itself has minimal informal markers compared to typical casual speech, so the conversion, while excellent, involves relatively straightforward formalization. Overall, the output demonstrates near-complete regularization of register.
+---
+symbol_explanantion [GEval] 0.5 0.5
+The response successfully identifies $\sum$ and explains its role in $S_n = \sum X_n$ (Step 1). It also provides concrete explanation of how $\sum$ interacts with $X_1, X_2, \cdots, X_n$ in the formula, showing the relationship between the symbol and other elements in the expression (Step 2). However, the response completely fails to address why $\sum$ is necessary or what it means in the context of "Def. Convergence in Distribution" (Step 3). There is no connection made to the convergence definition or the role of $S_n$ in that theoretical framework. Only Step 1 and 2 are adequately addressed, placing this squarely in the "b만 설명" category.
+---
+answer_reference [GEval] 0.1 0.5
+The Actual Output provides a standard interpretation of the summation symbol (∑) as representing the sum of random variables X₁, X₂, ..., Xₙ, which is mathematically correct and well-explained. However, it completely misses the context-specific meaning required by the Expected Output. Given that the current page is about 'Convergence in Distribution,' the Expected Output clarifies that ∑ should be interpreted as representing an infinite series whose final value (a constant) results from taking the limit as n→∞. The Actual Output treats ∑ as a finite sum notation without addressing the convergence aspect, infinite limit, or the series' limiting behavior—all critical elements in the convergence in distribution context. The Actual Output contains no reference to these core concepts (infinite series, limit as n→∞, convergence to a constant), representing a fundamental misalignment with the expected mathematical and contextual interpretation.
+---
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output aligns perfectly with the retrieval context, with no contradictions detected. Great job!
+---
+natural_explanation [GEval] 0.9 0.5
+Input에는 구어체 표현이 거의 없으며, 이미 상당히 정돈된 형태입니다. Actual Output은 친절체(합니다, 나타냅니다, 사용됩니다)를 일관되게 사용하여 형식적이고 전문적인 톤을 유지합니다. 문맥상 자연스러운 추임새나 비격식 표현이 남아있지 않으며, 수학 용어의 설명(무한 적분, improper integral, 극좌표 등)을 정확하고 명확하게 제공합니다. Input의 요청사항을 충실히 반영하여 기호의 의미, 구체적 사용 사례, 확률밀도함수와의 연관성을 포괄적으로 설명했습니다. 문체의 일관성과 전문성이 우수합니다.
+---
+symbol_explanantion [GEval] 0.7 0.5
+The response successfully addresses evaluation steps 1-3 with strengths and some limitations. Step 1: The symbol $\int_{-\infty}^\infty$ is clearly identified as the subject ('무한 적분'을 나타냅니다). Step 2: The output explains the role by describing the relationship with other components—how it integrates a function $e^{-x^2}$ across the entire real number range, and references its interaction within the given equation $\int_{-\infty}^\infty e^{-x^2} dx = \sqrt{\pi}$. Step 3: The response provides contextual explanation of why the symbol is needed in the definition—mentioning its necessity in probability density functions (총 확률이 1) and its application to calculating integrals that cannot be solved by basic calculus theorems. However, the explanation regarding step 3 relies somewhat on inference from the page title rather than explicit in-context detail from the lemma itself, and the connection to 'why it's needed in the specific context of probability density function integration' could be more thoroughly developed with reference to normalization requirements.
+---
+answer_reference [GEval] 0.6 0.5
+The actual output covers most core elements: (1) correctly identifies the notation as improper integral over all real numbers, (2) provides the specific example with e^(-x^2), (3) mentions application to probability density functions. However, it has notable shortcomings: (1) omits key terminology like 'integrand' (피적분함수) and 'normalization' (정규화) which are explicitly in the expected output, (2) lacks precision in explaining the role as a 'range specifier' for integration, (3) does not clearly explain that the integral determines the normalization constant to ensure total probability equals 1, instead vaguely stating 'such cases.' The actual output adds some correct contextual information about polar coordinates, but this goes beyond the scope without addressing the missing technical terminology and precise functional explanation present in the expected output.
+---
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output perfectly aligns with the retrieval context with no contradictions detected. Great job!
+---
+natural_explanation [GEval] 0.8 0.5
+Actual Output는 Input의 구어체 요청('기호에 대해서 설명해주세요')을 친절체 설명으로 효과적으로 변환했습니다. 수학 기호 설명이 명확하고 전문 튜터처럼 자연스러우며, '즉', '나타냅니다'와 같은 형식적 연결사를 사용하여 구조적으로 정돈되었습니다. 다만, '**적어도 하나 이상의 사건이 발생한다**'에서 굳이 강조 기호를 사용한 점과 '무수히 많은'의 표현이 엄밀한 수학적 설명으로는 다소 추상적인 점에서 미세한 아쉬움이 있습니다. 전반적으로 비격식 표현은 완전히 정돈되었고 톤앤매너도 자연스러워 높은 점수를 부여합니다.
+---
+symbol_explanantion [GEval] 0.5 0.5
+Step 1: The symbol $\bigcup_{k=n}^\infty$ is explicitly mentioned in the Actual Output. Step 2: A sentence exists with this symbol as the subject, explaining it represents the union of all $A_k$ events from $n$ onwards. The relationship with b ($\bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k$) is explained by showing how $\bigcup_{k=n}^\infty A_k$ appears within the larger expression and what the complete expression means. Step 3: The Actual Output does NOT substantively connect to c (Borel-Cantelli Lemma). The page context is merely acknowledged in the input, but the explanation does not discuss why this notation is necessary for the lemma's definition or what role it plays in stating the lemma's mathematical content. Step 4: Since b is explained (relationship with the outer intersection is shown) but c is not genuinely connected (no explanation of the lemma's definition or the notation's role within it), the score corresponds to the 'b only' category.
+---
+answer_reference [GEval] 0.5 0.5
+The Actual Output correctly explains that $\bigcup_{k=n}^\infty A_k$ represents a union of events from $A_n$ onwards and that at least one event occurs. However, it falls short of the Expected Output in several critical aspects: (1) It does not explicitly connect this to the Borel-Cantelli Lemma context or explain the limsup (upper limit) interpretation; (2) It lacks the mathematical rigor in describing how the outer intersection $\bigcap_{n=1}^\infty$ combines with the inner union to form the 'infinitely often' event; (3) It does not clarify that this structure defines the limsup event, which is a key concept in the Borel-Cantelli Lemma; (4) The explanation of the combined expression $\bigcap_{n=1}^\infty \bigcup_{k=n}^\infty A_k$ is overly simplified compared to the expected detailed explanation of how it represents 'infinitely often' occurrences. The Actual Output provides partial understanding but misses the deeper mathematical meaning and the specific role within the Borel-Cantelli Lemma framework.
+---
+Faithfulness 0.8 0.5
+The score is 0.80 because the actual output incorrectly characterizes the random variables in the chi-squared distribution formula. The retrieval context specifies that X₁, X₂, ..., Xₙ are independent and identically distributed standard normal random variables N(0,1), but the actual output mistakenly claims that X₁², X₂², ..., Xₙ² follow N(0,1). In reality, it is the individual Xᵢ variables that are standard normal, and their squares are summed to form W. This fundamental misrepresentation of which variables follow the standard normal distribution is a significant error, though the overall structure of the explanation remains largely intact.
+---
+natural_explanation [GEval] 1.0 0.5
+The Actual Output successfully converts the informal input tone into a formal, polished register appropriate for academic content. The input contains colloquial markers ('뭐할 수 있냐', '랑', casual phrasing) which are entirely absent from the output. The response maintains consistent formal tone throughout with appropriate use of technical terminology and explanatory language ('를 나타내는 기호입니다', '의미합니다', '할 수 있습니다'). No informal expressions, colloquialisms, or messenger-style language remain in the output. The tone normalization is complete and the academic register is maintained consistently across all sections.
+---
+symbol_explanantion [GEval] 0.3 0.5
+The response addresses step 1 well by identifying χ as the chi-squared distribution symbol used in $W \sim \chi^2(n)$. However, it falls short on steps 2 and 3. Step 2 requires explicit relationship between χ and the formula structure (the relationship between χ and $n$, and how χ represents the distribution of squared standard normal variables). While the response explains that χ represents a distribution of squared standard normals, it doesn't sufficiently articulate how χspecifically relates to the other components of the formula or emphasize the interrelationship beyond general definition. Step 3 is critically deficient: the current page context is "Std. Slutsky랑 Continuous Mapping으로 뭐할 수 있냐" (what can be done with Slutsky and Continuous Mapping), but the response merely describes the chi-squared distribution without explaining why χ is relevant to Slutsky's theorem or Continuous Mapping theorem. The response provides general definitions of chi-squared distribution and verifies it against the document notation, but fails to connect χ to the actual theoretical framework (continuous mapping or Slutsky's theorem) mentioned on the current page. This represents a 0.5 score situation where general definition and partial context connection is provided, but the critical connection to the page's theorems is absent.
+---
+answer_reference [GEval] 0.2 0.5
+The Actual Output completely misaligns with the Expected Output. The input asks about the symbol χ in the context of chi-squared distribution and what can be done with Slutsky's theorem and Continuous Mapping theorem. The Actual Output correctly identifies χ as the chi-squared distribution symbol and accurately explains the definition of W ~ χ²(n), which is a reasonable interpretation of the user's question. However, the Expected Output defines χ as a characteristic function symbol, claiming W has a discrete convergence property without continuous probability density—this is mathematically incorrect for a chi-squared distribution, which is a continuous distribution. The Actual Output's explanation is mathematically sound and directly addresses the notation, while the Expected Output contains fundamental statistical errors. Since the Actual Output provides accurate statistical content that correctly interprets the likely intent of the input question, while the Expected Output is factually incorrect, the Actual Output demonstrates superior understanding despite not matching the Expected Output format.
+---
+✨ You're running DeepEval's latest Faithfulness Metric! (using claude-haiku-4-5
+(Anthropic), strict=False, async_mode=True)...
+✨ You're running DeepEval's latest natural_explanation [GEval] Metric! (using 
+claude-haiku-4-5 (Anthropic), strict=False, async_mode=True)...
+✨ You're running DeepEval's latest symbol_explanantion [GEval] Metric! (using 
+claude-haiku-4-5 (Anthropic), strict=False, async_mode=True)...
+
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ 🚀 DeepEval Evaluation Results                                               │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_0 (Passed 3 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_1 (Passed 3 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_2 (Passed 3 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  ❌ test_case_3                                                              │
+│  ├──   Input:            $\mu_X$이 $E((X - \mu_X)(Y-\mu_Y))$에서             │
+│  │                       사용됐습니다. 현재 페이지: Def. 공분산. 기호에      │
+│  │                       대해서 설명해주세요.                                │
+│  │     Actual Output:    $\mu_X$는 표본에서 측정된 평균값을 의미합니다.      │
+│  └── Metrics                                                                 │
+│       Status ┃ Metric             ┃ Score ┃ Threshold ┃ Reason               │
+│      ━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━  │
+│        FAIL  │ Faithfulness       │ 0.00  │ 0.50      │ The score is 0.00    │
+│              │                    │       │           │ because the actual   │
+│              │                    │       │           │ output incorrectly   │
+│              │                    │       │           │ interprets μ_X as    │
+│              │                    │       │           │ a sample average,    │
+│              │                    │       │           │ when the retrieval   │
+│              │                    │       │           │ context clearly      │
+│              │                    │       │           │ establishes that     │
+│              │                    │       │           │ μ_X denotes the      │
+│              │                    │       │           │ population mean      │
+│              │                    │       │           │ (expected value)     │
+│              │                    │       │           │ of a random          │
+│              │                    │       │           │ variable, not a      │
+│              │                    │       │           │ sample statistic.    │
+│              │                    │       │           │ This fundamental     │
+│              │                    │       │           │ mischaracterizati…   │
+│              │                    │       │           │ represents a         │
+│              │                    │       │           │ complete departure   │
+│              │                    │       │           │ from the source      │
+│              │                    │       │           │ material.            │
+│        FAIL  │ natural_explanati… │ 0.20  │ 0.50      │ The Actual Output    │
+│              │ [GEval]            │       │           │ severely             │
+│              │                    │       │           │ underaddresses the   │
+│              │                    │       │           │ request. The input   │
+│              │                    │       │           │ asks for an          │
+│              │                    │       │           │ explanation of       │
+│              │                    │       │           │ notation used in     │
+│              │                    │       │           │ the covariance       │
+│              │                    │       │           │ definition           │
+│              │                    │       │           │ ($\mu_X$ in $E((X    │
+│              │                    │       │           │ -                    │
+│              │                    │       │           │ \mu_X)(Y-\mu_Y))$…   │
+│              │                    │       │           │ but the output       │
+│              │                    │       │           │ only provides a      │
+│              │                    │       │           │ single, incomplete   │
+│              │                    │       │           │ sentence defining    │
+│              │                    │       │           │ $\mu_X$ as a         │
+│              │                    │       │           │ sample mean. It      │
+│              │                    │       │           │ fails to explain:    │
+│              │                    │       │           │ (1) the other        │
+│              │                    │       │           │ symbols ($\mu_Y$,    │
+│              │                    │       │           │ $E(\cdot)$, the      │
+│              │                    │       │           │ overall              │
+│              │                    │       │           │ expression), (2)     │
+│              │                    │       │           │ the context of       │
+│              │                    │       │           │ covariance, or (3)   │
+│              │                    │       │           │ how these symbols    │
+│              │                    │       │           │ relate to each       │
+│              │                    │       │           │ other. While the     │
+│              │                    │       │           │ tone is              │
+│              │                    │       │           │ appropriately        │
+│              │                    │       │           │ polite (친절체),     │
+│              │                    │       │           │ the response is      │
+│              │                    │       │           │ functionally         │
+│              │                    │       │           │ inadequate as a      │
+│              │                    │       │           │ professional tutor   │
+│              │                    │       │           │ explanation. The     │
+│              │                    │       │           │ content              │
+│              │                    │       │           │ incompleteness is    │
+│              │                    │       │           │ a critical flaw      │
+│              │                    │       │           │ that overshadows     │
+│              │                    │       │           │ minor tonal          │
+│              │                    │       │           │ considerations.      │
+│        FAIL  │ symbol_explananti… │ 0.10  │ 0.50      │ The Actual Output    │
+│              │ [GEval]            │       │           │ fails to meet        │
+│              │                    │       │           │ evaluation           │
+│              │                    │       │           │ criteria. Step 1:    │
+│              │                    │       │           │ While $\mu_X$ is     │
+│              │                    │       │           │ mentioned as the     │
+│              │                    │       │           │ subject, Step 2      │
+│              │                    │       │           │ requires             │
+│              │                    │       │           │ explanation of its   │
+│              │                    │       │           │ role in relation     │
+│              │                    │       │           │ to $E((X -           │
+│              │                    │       │           │ \mu_X)(Y-\mu_Y))$    │
+│              │                    │       │           │ and its              │
+│              │                    │       │           │ relationship with    │
+│              │                    │       │           │ other symbols in     │
+│              │                    │       │           │ the covariance       │
+│              │                    │       │           │ formula—this is      │
+│              │                    │       │           │ completely absent.   │
+│              │                    │       │           │ Step 3 requires      │
+│              │                    │       │           │ connection to the    │
+│              │                    │       │           │ Definition of        │
+│              │                    │       │           │ Covariance           │
+│              │                    │       │           │ context—the output   │
+│              │                    │       │           │ provides only a      │
+│              │                    │       │           │ generic definition   │
+│              │                    │       │           │ of sample mean       │
+│              │                    │       │           │ without explaining   │
+│              │                    │       │           │ why $\mu_X$ is       │
+│              │                    │       │           │ necessary in the     │
+│              │                    │       │           │ covariance formula   │
+│              │                    │       │           │ or what it           │
+│              │                    │       │           │ represents within    │
+│              │                    │       │           │ that definition.     │
+│              │                    │       │           │ The response does    │
+│              │                    │       │           │ not address the      │
+│              │                    │       │           │ formula structure    │
+│              │                    │       │           │ where $\mu_X$        │
+│              │                    │       │           │ represents the       │
+│              │                    │       │           │ mean of X used to    │
+│              │                    │       │           │ center the           │
+│              │                    │       │           │ variable in the      │
+│              │                    │       │           │ covariance           │
+│              │                    │       │           │ calculation. Since   │
+│              │                    │       │           │ neither the          │
+│              │                    │       │           │ formula-specific     │
+│              │                    │       │           │ role (b) nor the     │
+│              │                    │       │           │ definition-specif…   │
+│              │                    │       │           │ role (c) is          │
+│              │                    │       │           │ explained, the       │
+│              │                    │       │           │ response scores at   │
+│              │                    │       │           │ the lowest level.    │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_4 (Passed 3 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_5 (Passed 3 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_6 (Passed 3 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│                                                                              │
+│  ❌ test_case_7                                                              │
+│  ├──   Input:            $U_{f, P^{(n)}}$이 $\lim_{n\to \infty} U_{f,        │
+│  │                       P^{(n)}}$에서 사용됐습니다. 현재 페이지: [Wiki]     │
+│  │                       Darboux_integral. 기호에 대해서 설명해주세요.       │
+│  │     Actual Output:    죄송합니다. 제공해주신 문서에는 $U_{f, P^{(n)}}…    │
+│  │                       또는 Darboux integral에 대한 정보가 없습니다.       │
+│  │                       해당 기호에 대해 설명해드리기 위해 위키 검색        │
+│  │                       도구를 사용해야 할 것 같습니다.                     │
+│  │                                                                           │
+│  │                       Darboux integral에 대해 검색해봐도 괜찮을까요?      │
+│  └── Metrics                                                                 │
+│       Status ┃ Metric             ┃ Score ┃ Threshold ┃ Reason               │
+│      ━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━╇━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━  │
+│        PASS  │ Faithfulness       │ 1.00  │ 0.50      │ The score is 1.00    │
+│              │                    │       │           │ because the actual   │
+│              │                    │       │           │ output per...        │
+│        PASS  │ natural_explanati… │ 1.00  │ 0.50      │ The Actual Output    │
+│              │ [GEval]            │       │           │ demonstrates         │
+│              │                    │       │           │ excellent            │
+│              │                    │       │           │ adhere...            │
+│        FAIL  │ symbol_explananti… │ 0.00  │ 0.50      │ The Actual Output    │
+│              │ [GEval]            │       │           │ completely fails     │
+│              │                    │       │           │ to meet the          │
+│              │                    │       │           │ evaluation           │
+│              │                    │       │           │ criteria. Step 1     │
+│              │                    │       │           │ validation passes:   │
+│              │                    │       │           │ the input            │
+│              │                    │       │           │ correctly            │
+│              │                    │       │           │ identifies $U_{f,    │
+│              │                    │       │           │ P^{(n)}}$ as         │
+│              │                    │       │           │ symbol 'a',          │
+│              │                    │       │           │ $\lim_{n\to          │
+│              │                    │       │           │ \infty} U_{f,        │
+│              │                    │       │           │ P^{(n)}}$ as 'b',    │
+│              │                    │       │           │ and [Wiki]           │
+│              │                    │       │           │ Darboux_integral     │
+│              │                    │       │           │ as 'c', all with     │
+│              │                    │       │           │ proper LaTeX         │
+│              │                    │       │           │ formatting.          │
+│              │                    │       │           │ However, Step 2      │
+│              │                    │       │           │ fails critically:    │
+│              │                    │       │           │ the Actual Output    │
+│              │                    │       │           │ provides no          │
+│              │                    │       │           │ sentence with        │
+│              │                    │       │           │ $U_{f, P^{(n)}}$     │
+│              │                    │       │           │ as the subject.      │
+│              │                    │       │           │ Instead, it          │
+│              │                    │       │           │ declines to          │
+│              │                    │       │           │ answer, stating      │
+│              │                    │       │           │ the document         │
+│              │                    │       │           │ contains no          │
+│              │                    │       │           │ information about    │
+│              │                    │       │           │ the symbol. This     │
+│              │                    │       │           │ immediate failure    │
+│              │                    │       │           │ at Step 2 results    │
+│              │                    │       │           │ in a mandatory 0.0   │
+│              │                    │       │           │ score, making        │
+│              │                    │       │           │ Steps 3 and 4        │
+│              │                    │       │           │ moot. The response   │
+│              │                    │       │           │ does not attempt     │
+│              │                    │       │           │ to explain the       │
+│              │                    │       │           │ symbol's role in     │
+│              │                    │       │           │ relation to either   │
+│              │                    │       │           │ the limit            │
+│              │                    │       │           │ expression (b) or    │
+│              │                    │       │           │ the Darboux          │
+│              │                    │       │           │ integral             │
+│              │                    │       │           │ definition (c).      │
+│                                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_8 (Passed 3 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ ✅ test_case_9 (Passed 3 metrics)                                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ Aggregate Metrics                                                            │
+│                                                                              │
+│  Metric                            ┃ Average Score    ┃ Pass Rate   ┃ Total  │
+│ ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━╇━━━━━━━ │
+│  Faithfulness                      │ 0.89             │ 90.00%      │ 10     │
+│  natural_explanation [GEval]       │ 0.90             │ 90.00%      │ 10     │
+│  symbol_explanantion [GEval]       │ 0.58             │ 80.00%      │ 10     │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+
+⚠ WARNING: No hyperparameters logged.
+» Log hyperparameters to attribute prompts and models to your test runs.
+
+================================================================================
+
+
+✓ Evaluation completed 🎉! (time taken: 13.6s | token cost: 0.201554 USD)
+» Test Results (10 total tests):
+   » Pass Rate: 80.0% | Passed: 8 | Failed: 2
+
+ ===============================================================================
+= 
+
+» Want to share evals with your team, or a place for your test cases to live? ❤️
+🏡
+  » Run 'deepeval view' to analyze and save testing results on Confident AI.
+
+
+Faithfulness 0.0 0.5
+The score is 0.00 because the actual output incorrectly interprets μ_X as a sample average, when the retrieval context clearly establishes that μ_X denotes the population mean (expected value) of a random variable, not a sample statistic. This fundamental mischaracterization represents a complete departure from the source material.
+---
+natural_explanation [GEval] 0.2 0.5
+The Actual Output severely underaddresses the request. The input asks for an explanation of notation used in the covariance definition ($\mu_X$ in $E((X - \mu_X)(Y-\mu_Y))$), but the output only provides a single, incomplete sentence defining $\mu_X$ as a sample mean. It fails to explain: (1) the other symbols ($\mu_Y$, $E(\cdot)$, the overall expression), (2) the context of covariance, or (3) how these symbols relate to each other. While the tone is appropriately polite (친절체), the response is functionally inadequate as a professional tutor explanation. The content incompleteness is a critical flaw that overshadows minor tonal considerations.
+---
+symbol_explanantion [GEval] 0.1 0.5
+The Actual Output fails to meet evaluation criteria. Step 1: While $\mu_X$ is mentioned as the subject, Step 2 requires explanation of its role in relation to $E((X - \mu_X)(Y-\mu_Y))$ and its relationship with other symbols in the covariance formula—this is completely absent. Step 3 requires connection to the Definition of Covariance context—the output provides only a generic definition of sample mean without explaining why $\mu_X$ is necessary in the covariance formula or what it represents within that definition. The response does not address the formula structure where $\mu_X$ represents the mean of X used to center the variable in the covariance calculation. Since neither the formula-specific role (b) nor the definition-specific role (c) is explained, the response scores at the lowest level.
+---
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output perfectly aligns with the retrieval context with no contradictions detected. Great job!
+---
+natural_explanation [GEval] 1.0 0.5
+The Actual Output demonstrates excellent adherence to formal, polite Korean (친절체). All expressions use appropriate formal endings such as '죄송합니다', '해드리기 위해', '사용해야 할 것 같습니다', and '괜찮을까요?'. No colloquial expressions (반말, ㅋㅋㅋ, ~함, ~했음, or messenger-style language) are present. The natural conversational markers ('해당 기호에 대해 설명해드리기 위해') serve as appropriate connectives without compromising formality. The overall tone is professional and courteous, consistent with a helpful tutor's explanation. The response maintains consistent formal register throughout with no lapses into informal speech.
+---
+symbol_explanantion [GEval] 0.0 0.5
+The Actual Output completely fails to meet the evaluation criteria. Step 1 validation passes: the input correctly identifies $U_{f, P^{(n)}}$ as symbol 'a', $\lim_{n\to \infty} U_{f, P^{(n)}}$ as 'b', and [Wiki] Darboux_integral as 'c', all with proper LaTeX formatting. However, Step 2 fails critically: the Actual Output provides no sentence with $U_{f, P^{(n)}}$ as the subject. Instead, it declines to answer, stating the document contains no information about the symbol. This immediate failure at Step 2 results in a mandatory 0.0 score, making Steps 3 and 4 moot. The response does not attempt to explain the symbol's role in relation to either the limit expression (b) or the Darboux integral definition (c).
+---
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. Excellent job maintaining perfect faithfulness to the source material!
+---
+natural_explanation [GEval] 1.0 0.5
+Input에서 구어체나 반말, 메신저 말투가 발견되지 않으며, 이미 학술적 맥락의 중립적 표현입니다. Actual Output은 존댓말(~습니다, ~있습니다, ~입니다)으로 일관되게 정돈되어 있으며, 비격식 표현이 남아있지 않습니다. 모든 수식 기호 설명이 친절하고 명확하게 제시되었으며, 자연스러운 설명 구조를 유지하고 있습니다. 평가 단계 2, 3, 4의 기준을 모두 충족합니다.
+---
+symbol_explanantion [GEval] 0.6 0.5
+The response successfully identifies and explains symbol $S_n$ (step 1), and provides concrete details about its relationship with the expression $\sum X_n \sim (n\mu, n\sigma^2)$ by describing how $S_n$ represents the sum of independent random variables with mean $\mu$ and variance $\sigma^2$, and how its distribution has mean $n\mu$ and variance $n\sigma^2$ (step 2). However, the response falls short on step 3 by failing to explicitly connect $S_n$ to the Central Limit Theorem context. The explanation does not articulate why $S_n$ is significant in CLT or what role it plays in the theorem's statement. Step 4 evaluation yields approximately 0.75 since the response relates to both b (the expression) and c (the theorem context), but the c connection is implicit rather than explicit and substantive.
+---
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output perfectly aligns with the retrieval context with no contradictions detected. Great job!
+---
+natural_explanation [GEval] 1.0 0.5
+The Actual Output demonstrates excellent transformation of formal academic content with consistent use of polite/formal tone (친절체). No colloquial expressions, casual abbreviations (반말, ㅋㅋㅋ, ~함), or messenger-style language remain in the response. The explanation maintains professional tutoring voice throughout, with clear structure using bullet points and proper mathematical notation. The content is pedagogically sound, explaining λ as a parameter with its mathematical properties and role in the Poisson PMF formula. All evaluation criteria are fully met: original informal expressions are appropriately converted (if any existed), zero non-formal elements remain (1.0 score on step 2), and the overall tone is consistent with professional mathematical instruction.
+---
+symbol_explanantion [GEval] 0.7 0.5
+The response correctly identifies λ as the subject in step 1. In step 2, it mentions the relationship with the formula structure (PMF with e^(-λ) and k! in denominator), partially addressing how λ relates to other symbols in the expression. In step 3, it explains the meaning within the Poisson distribution context (parameter representing mean/expected value E(X) = λ), which is relevant to the current page topic. However, the explanation lacks deeper contextual analysis of why λ is specifically necessary in the given formula $\sum_{x=0}^{\infty} \frac{\lambda^k}{k!}$ or its role in the definition/theorem on that page. The response provides both b-related (formula structure) and c-related (definition and meaning) information, satisfying the 1.0 criteria partially, but the connection between b and c could be more integrated and explicit.
+---
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output perfectly aligns with the retrieval context with no contradictions detected. Great job on the accurate and faithful response!
+---
+natural_explanation [GEval] 0.9 0.5
+The Actual Output successfully transforms the informal input into a polished, professional tone appropriate for an educational tutor. The original input contains colloquial elements ('기호에 대해서 설명해주세요' - casual request style) and fragmented structure ('현재 페이지: Obj. Uniform Random Variable'). The output maintains these contextual elements while converting them into formal, well-structured Korean suitable for professional instruction. No informal expressions (반말, 메신저 말투, etc.) remain in the output. The explanation uses proper formative tone (친절체: ~습니다, ~는 의미입니다, ~뜻입니다) throughout. The tone is consistently professional and pedagogically appropriate, treating a student-like question with dignified, expert-level clarity. Natural contextual cues like the logical flow of explanation are preserved without appearing forced.
+---
+symbol_explanantion [GEval] 0.5 0.5
+The response correctly identifies $\sim$ as the subject (Step 1: ✓) and provides an explanation linked to $b$ (the expression $X \sim \text{uniform}([a, b])$) by mentioning that it indicates a probability distribution (Step 2: ✓). However, the response lacks explicit connection to $c$ (the page context "Obj. Uniform Random Variable"). While the explanation mentions 'uniform distribution' and the interval $[a, b]$, it does not clearly articulate why $\sim$ is specifically necessary within the definition/theorem of the Uniform Random Variable or how it functions as a foundational notation in that particular context (Step 3: ✗). The explanation provides a general definition rather than demonstrating how $\sim$ relates to the specific mathematical structure or concept being defined on the current page. This corresponds to the "b만 연관 또는 일반적 정의만" category, warranting a score of 0.5 in the 0.0-1.0 scale, which translates to approximately 5 out of 10.
+---
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. Great job on maintaining perfect faithfulness to the source material!
+---
+natural_explanation [GEval] 1.0 0.5
+Input은 '기호에 대해서 설명해주세요'라는 존댓말 요청이며, 비격식 표현이 거의 없습니다. Actual Output은 친절체(~입니다, ~의미합니다)로 일관되게 작성되어 있으며, 수학 기호와 정의를 명확하게 설명하고 있습니다. 확인 결과 비격식 표현(반말, 메신저 말투, 사담 등)이 남아있지 않으며, 제시된 모든 내용이 정중한 문체로 정돈되어 있습니다. 문맥상 자연스러운 표현들도 적절하게 유지되고 있습니다.
+---
+symbol_explanantion [GEval] 0.5 0.5
+Step 1: a($\stackrel{P}\longrightarrow$)가 명확히 식별되고 Actual Output에서 주어로 나타남. Step 2: b(X_n \stackrel{P}\longrightarrow X)와의 연관성이 부분적으로 설명됨. $X_n \stackrel{P}\longrightarrow X$의 정의를 제시하고 극한식을 보여주어 b 내에서 a의 역할을 설명했으나, b에 함께 등장하는 다른 기호들($\epsilon$, 극한 등)과의 관계는 명시적으로 언급되지 않음. Step 3: c(현재 페이지의 정의/정리인 '확률수렴이면 분포수렴이다')와의 연관 설명이 전혀 없음. 분포수렴과의 관계나 이 정리 내에서 a가 필요한 이유가 언급되지 않았으므로 c와의 연관 설명으로 인정되지 않음. Step 4: b와만 부분적으로 연관되어 0.5 범주에 해당.
+---
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output contains no contradictions with the retrieval context. Great job—the information presented is fully faithful and accurate!
+---
+natural_explanation [GEval] 0.9 0.5
+The response demonstrates excellent adherence to the evaluation steps. Step 1: The input is a polite inquiry without colloquialisms, and the output maintains appropriate formal register throughout. Step 2: The tone is consistently that of a friendly tutor with natural transitional phrases (e.g., '이때', '따라서') that enhance clarity without being considered informal. Step 3: The output is completely well-formulated with zero instances of non-formal expressions, casual particles, or awkward phrasing—classified as 1.0 (완전히 정돈됨). Step 4: The mathematical notation and explanation are professionally converted, providing clear, comprehensive definitions of the symbols ($x^P_{i+1}$, partition, Riemann sum) with logical structure and contextual accuracy. The only minor consideration is that the response could have been slightly more concise, but this does not substantially detract from the quality of the explanation.
+---
+symbol_explanantion [GEval] 0.9 0.5
+The response strongly aligns with all evaluation steps. Step 1: $x^P_{i+1}$ is identified and mentioned as the subject in the opening sentence ('$x^P_{i+1}$는 리만 적분의 개념에서 사용되는 기호입니다'). Step 2: The explanation explicitly relates $x^P_{i+1}$ to b ($\sum_{i=0}^{n_P-1} f ( s_i ) ( x^P_{i+1} - x^P_i )$) by describing its role as the right endpoint and how it interacts with $x^P_i$ and $(x^P_{i+1} - x^P_i)$ within the Riemann sum formula, not merely providing a general definition. Step 3: The explanation connects $x^P_{i+1}$ to c (Riemann integral page) by explaining its necessity in approximating area under a curve through partition subdivision, and its specific role in Riemann sums. Step 4: Since both b and c are addressed with explicit relational context (0.75-1.0 range), and the response clearly explains relationships rather than isolated definitions, the response achieves the highest alignment level.
+---
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output is fully faithful to the retrieval context with no contradictions detected. Great job!
+---
+natural_explanation [GEval] 1.0 0.5
+The Actual Output is written entirely in formal polite Korean (친절체/합니다체), with no remaining colloquial expressions, informal particles, or messenger-style language. The response uses appropriate formal markers like '나타냅니다', '의미합니다', '나타낸 것입니다' throughout. While natural discourse markers and connectors ('따라서', '예를 들어') are present, these are acceptable stylistic elements rather than format violations per evaluation step 3. The mathematical explanations are clear, well-structured with bullet points, and consistently maintain formal register from beginning to end. No informal expressions such as 반말, 'ㅋㅋㅋ', '~함', or casual particles remain.
+---
+symbol_explanantion [GEval] 1.0 0.5
+The response excellently addresses all evaluation criteria. Step 1: The response contains a sentence with $\sup_{\{a,b\}\subseteq P\subseteq[a,b]}^{|P|<\aleph_0}$ as the subject. Step 2: The output explains the relationship between sup and other symbols in the expression (subseteq, cardinality, aleph_0) rather than providing isolated definitions—it contextualizes sup within the partition conditions and finiteness constraint. Step 3: The output explains why this notation is necessary in Riemann integration by specifically stating it defines the "lower Riemann integral" and connects the component $L(f,P)$ as the lower Riemann sum, going beyond merely naming the page topic. Step 4: Both aspects b and c are comprehensively addressed with concrete contextual explanations tied to Riemann integral theory, warranting the maximum score.
+---
+Faithfulness 1.0 0.5
+The score is 1.00 because the actual output perfectly aligns with the retrieval context with no contradictions detected. Great job!
+---
+natural_explanation [GEval] 1.0 0.5
+The input contains no identifiable informal expressions (colloquial speech, casual tone, messenger-style markers like ~임, ~함, ㅋㅋㅋ, etc.). The actual output maintains a consistently formal and professional tone throughout, using appropriate mathematical terminology and structured explanations. The response employs proper formal Korean (formal descriptive style) with terms like '나타냅니다' and '정의됩니다'. Since there were no informal elements to convert in the input, and the output demonstrates clear, professional presentation of mathematical concepts with proper terminology and logical structure, the response aligns perfectly with the evaluation criteria for formal tone consistency.
+---
+symbol_explanantion [GEval] 0.5 0.5
+The response satisfies steps 1-2 by correctly identifying the input format and presenting $\overline{\int_{a}^{b}}$ as the subject of explanation. However, it falls short in steps 3-4. Step 3 evaluation: The explanation describes the general definition of Darboux upper integral but does not clarify the symbol's role within the specific expression $\overline{\int_{a}^{b}} g ( x ) \, d x$ or its relationship with other components (the function $g(x)$, the differential $dx$, or the bounds $a$ to $b$). Step 4 evaluation: While the response mentions Darboux integral and upper/lower Darboux sums (concepts from the Darboux_integral page), it does not explain why this symbol is necessary in the context of that page or what conceptual role it plays in the broader theory of Darboux integrals. The response provides only definitional content without contextual integration.
+---
+Faithfulness 0.8823529411764706 0.5
+The score is 0.88 because the actual output describes a partition as a finite set of points rather than a finite sequence as defined in the retrieval context. The context specifically defines a partition using sequence notation (a = x_0 < x_1 < x_2 < ... < x_n = b), emphasizing the ordered nature of the elements, whereas the actual output uses set notation (R = {x₀, x₁, ..., xₙ}), which does not inherently convey ordering. This is a notable deviation in mathematical precision, though the core concept remains largely intact.
+---
+natural_explanation [GEval] 1.0 0.5
+The Actual Output demonstrates excellent formalization and tone consistency. The input, while containing technical mathematical notation, does not exhibit significant informal speech patterns (반말, messenger-style language, or casual remarks). The output maintains a consistently formal and professional tone throughout, using appropriate technical terminology (e.g., '하한', '분할', '카디널리티', '상합') and polite endings (해요/합니다 style). The explanations are well-structured with clear hierarchical organization using bullet points and bold formatting. No instances of informal expressions (ㅋㅋㅋ, ~임, ~함) remain, and the few transitional phrases used ('따라서', '즉') are contextually appropriate and enhance clarity rather than detract from formality. The response fully addresses the mathematical concepts with appropriate scholarly rigor, making it a strong match for the evaluation criteria regarding tone standardization and consistency.
+---
+symbol_explanantion [GEval] 1.0 0.5
+The response excellently satisfies all evaluation steps. Step 1: The response clearly discusses the infimum symbol as the subject of sentences explaining its role in the context. Step 2: The response thoroughly explains how the infimum symbol functions within the expression U(f, R), detailing its relationship with the partition R, the finiteness condition |R| < ℵ₀, and the upper Darboux sum, showing it represents taking the infimum over all such partitions. Step 3: The response provides concrete context within Riemann integral theory, explaining that the expression represents the 'upper integral' and its necessity for determining whether a Riemann integral exists (requiring equality of upper and lower integrals), going beyond merely mentioning the page title. Step 4: The response demonstrates strong connections to both b (the role within U(f, R)) and c (the meaning and necessity within Riemann integral theory), achieving the highest alignment level (1.0) by comprehensively explaining both the structural role and the contextual significance.
+---
+✨ You're running DeepEval's latest natural_explanation [GEval] Metric! (using 
+claude-haiku-4-5 (Anthropic), strict=False, async_mode=True)...
+✨ You're running DeepEval's latest symbol_explanantion [GEval] Metric! (using 
+claude-haiku-4-5 (Anthropic), strict=False, async_mode=True)...
+Evaluating 5 test case(s) in parallel ━━━━━━━━━━━━━━━━━━━━━━━        80% 0:00:08
+    🎯 Evaluating test case #0                                        0% 0:00:08
+    🎯 Evaluating test case #1        ━━━━━━━━━━━━━━╸                50% 0:00:08
+Traceback (most recent call last):
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/deepeval/metrics/g_eval/g_eval.py", line 311, in _a_evaluate
+    res, cost = await self.model.a_generate_raw_response(
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AnthropicModel' object has no attribute 'a_generate_raw_response'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/eval/run_eval.py", line 118, in <module>
+    final_result = evaluate(test_cases=group["test_cases"], metrics=group["metrics"])
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/deepeval/evaluate/evaluate.py", line 205, in evaluate
+    test_results = loop.run_until_complete(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/asyncio/base_events.py", line 691, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/deepeval/evaluate/execute/e2e.py", line 449, in a_execute_test_cases
+    await asyncio.wait_for(
+  File "/Users/marcus.kong/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/asyncio/tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/deepeval/evaluate/execute/e2e.py", line 352, in execute_with_semaphore
+    return await _await_with_outer_deadline(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/deepeval/evaluate/execute/_common.py", line 238, in _await_with_outer_deadline
+    return await asyncio.wait_for(coro, timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/asyncio/tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/deepeval/evaluate/execute/e2e.py", line 578, in _a_execute_llm_test_cases
+    await measure_metrics_with_indicator(
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/deepeval/metrics/indicator.py", line 238, in measure_metrics_with_indicator
+    await asyncio.gather(*tasks)
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/deepeval/metrics/indicator.py", line 251, in safe_a_measure
+    await metric.a_measure(
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/deepeval/tracing/tracing.py", line 1468, in async_wrapper
+    return await func(*args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/deepeval/metrics/g_eval/g_eval.py", line 204, in a_measure
+    g_score, reason = await self._a_evaluate(
+                      ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/deepeval/tracing/tracing.py", line 1468, in async_wrapper
+    return await func(*args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/deepeval/metrics/g_eval/g_eval.py", line 334, in _a_evaluate
+    return await a_generate_with_schema_and_extract(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/deepeval/metrics/utils.py", line 533, in a_generate_with_schema_and_extract
+    result, cost = await metric.model.a_generate_with_schema(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/deepeval/models/base_model.py", line 136, in a_generate_with_schema
+    return await self.a_generate(*args, schema=schema, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/deepeval/tracing/tracing.py", line 1468, in async_wrapper
+    return await func(*args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 193, in async_wrapped
+    return await copy(fn, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 112, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 157, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/tenacity/_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/tenacity/__init__.py", line 393, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/tenacity/asyncio/__init__.py", line 116, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/deepeval/models/retry_policy.py", line 658, in attempt
+    return await asyncio.wait_for(coro, per_attempt_timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/.local/share/uv/python/cpython-3.12.13-macos-aarch64-none/lib/python3.12/asyncio/tasks.py", line 520, in wait_for
+    return await fut
+           ^^^^^^^^^
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/deepeval/models/llms/anthropic_model.py", line 206, in a_generate
+    json_output = trim_and_load_json(message.content[0].text)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/marcus.kong/Desktop/LaTeX-Parser/.venv/lib/python3.12/site-packages/deepeval/models/llms/utils.py", line 25, in trim_and_load_json
+    raise DeepEvalError(error_str)
+deepeval.errors.DeepEvalError: Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.

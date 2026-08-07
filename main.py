@@ -2,6 +2,7 @@ from contextlib import asynccontextmanager
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
+import langfeather
 
 from src.schemas import QueryRequest, QueryResponse, WikiRequest
 from src.graph import build_graph
@@ -12,12 +13,13 @@ from src import tokenizer
 from src.wiki import (WikiError, NotWikipediaURL, WikiPageNotFound, NoFormulaFound, WikiFetchFailed)
 from src.wiki import get_title, get_latex
 from src.tokenizer import (TokenizerError, TokenizeUnavailable)
-from src.tokenizer import WIKI_SECTIONS, tokenize_sections
+from src.tokenizer import RAW_FORMULAS, WIKI_SECTIONS
 
 load_dotenv()
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    langfeather.configure(endpoint="http://127.0.0.1:4319")
     app.state.graph = build_graph()
     yield
 
@@ -35,6 +37,8 @@ def query(req: QueryRequest):
             "documents": "",
             "sources": [],
             "tool_call": False,
+            "full_formula": req.full_formula,
+            "source_url": req.source_url,
         },
         config = {"configurable": {"thread_id": req.thread_id}},
     )
@@ -45,11 +49,10 @@ def query(req: QueryRequest):
 
 @app.post("/wiki")
 def add_wiki(req: WikiRequest):
-    sections = get_latex(req.url)
+    sections, wikitext = get_latex(req.url)
     title = "[Wiki] " + get_title(req.url)[0]
-    tokenizer.WIKI_SECTIONS[title] = sections
+    WIKI_SECTIONS[title] = {"url": req.url, "sections": sections, "wikitext": wikitext}
     return {"title": title}
-
 
 STATUS = {
     NotWikipediaURL: 400,
@@ -83,6 +86,6 @@ def page(title: str):
 
 @app.get("/pages")
 def pages():
-    return sorted(list(tokenizer.RAW_FORMULAS) + list(tokenizer.WIKI_SECTIONS))
+    return sorted(list(RAW_FORMULAS) + list(WIKI_SECTIONS))
 
 app.mount("/", StaticFiles(directory="static", html=True), name="static")
