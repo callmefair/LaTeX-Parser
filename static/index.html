@@ -6,6 +6,7 @@
 <!-- KaTeX: CDN에서 로드. trust:true 렌더링에 필요한 건 JS 옵션이지 별도 파일이 아님 -->
 <link rel="stylesheet" href="/katex/katex.min.css">
 <script src="/katex/katex.min.js"></script>
+<script src="/katex/contrib/auto-render.min.js"></script>
 <style>
   :root {
     --red: #e5484d; --blue: #3b82f6;
@@ -242,6 +243,17 @@ function addMessage(role, text, sources) {
   const div = document.createElement("div");
   div.className = "msg " + role;
   div.textContent = text;
+  // LLM 답변 안의 $...$/$$...$$를 KaTeX로 렌더 (textContent라 XSS 걱정 없이 안전)
+  renderMathInElement(div, {
+    delimiters: [
+      { left: "$$", right: "$$", display: true },
+      { left: "$", right: "$", display: false },
+    ],
+    throwOnError: false,
+    strict: "ignore",
+    trust: true,
+    macros: KATEX_MACROS,
+  });
   if (sources?.length) {
     const s = document.createElement("div");
     s.className = "sources";
@@ -261,7 +273,23 @@ function addSymbolMessage(symbol) {
   div.appendChild(span);
 }
 
-// 공통 전송 함수: /query 는 기존 백엔드 그대로
+const SOURCES_MARKER = "\n\n[[SOURCES]]";
+
+function renderAnswerMath(el) {
+  renderMathInElement(el, {
+    delimiters: [
+      { left: "$$", right: "$$", display: true },
+      { left: "$", right: "$", display: false },
+    ],
+    throwOnError: false,
+    strict: "ignore",
+    trust: true,
+    macros: KATEX_MACROS,
+  });
+}
+
+// 공통 전송 함수: /query가 이제 스트리밍이라 res.json() 대신
+// 스트림을 직접 읽으면서 도착하는 대로 말풍선에 이어붙인다.
 async function sendQuery(body) {
   const pending = addMessage("bot pending", "생각 중…");
   try {
@@ -271,12 +299,44 @@ async function sendQuery(body) {
       body: JSON.stringify(body),
     });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
-    pending.remove();
-    addMessage("bot", data.answer, data.sources);
+
+    const reader = res.body.getReader();
+    const decoder = new TextDecoder();
+    let full = "";
+
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      full += decoder.decode(value, { stream: true });
+      // 스트리밍 중엔 $...$를 통째로 못 받았을 수 있으니 렌더는 미루고 원문만 계속 갱신
+      const cut = full.indexOf(SOURCES_MARKER);
+      pending.textContent = cut === -1 ? full : full.slice(0, cut);
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+
+    // 스트림 종료: 맨 뒤에 붙은 sources 마커 분리
+    let answer = full;
+    let sources = [];
+    const cut = full.indexOf(SOURCES_MARKER);
+    if (cut !== -1) {
+      answer = full.slice(0, cut);
+      try {
+        sources = JSON.parse(full.slice(cut + SOURCES_MARKER.length));
+      } catch (e) { /* 파싱 실패해도 답변 표시는 그대로 진행 */ }
+    }
+
+    pending.classList.remove("pending");
+    pending.textContent = answer;
+    renderAnswerMath(pending);
+    if (sources.length) {
+      const s = document.createElement("div");
+      s.className = "sources";
+      s.textContent = "출처: " + sources.join(", ");
+      pending.appendChild(s);
+    }
   } catch (e) {
-    pending.remove();
-    addMessage("bot", "오류: " + e.message);
+    pending.classList.remove("pending");
+    pending.textContent = "오류: " + e.message;
   }
 }
 

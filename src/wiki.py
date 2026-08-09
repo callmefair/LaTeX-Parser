@@ -88,6 +88,8 @@ def header_divide(text):
         dict_list.append({
             "section": name,
             "formulas": formula_list,
+            "section_start": start,
+            "section_end": end
         })
     
     return dict_list

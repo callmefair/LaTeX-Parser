@@ -41,6 +41,8 @@ def lexer(latex):
 ARITY = {
     "\\dfrac": 2, "\\tfrac": 2, "\\stackrel": 2, "\\frac": 2, "\\overline": 1, "\\underline": 1, "\\sqrt": 1,
     "\\mathrm": 1, "\\text": 1, "\\vec": 1, "\\hat": 1, "\\begin": 1, "\\end": 1,
+    "\\mathbb": 1, "\\mathcal": 1, "\\mathbf": 1, "\\mathfrak": 1, "\\boldsymbol": 1,
+    "\\bar": 1, "\\tilde": 1, "\\dot": 1, "\\widehat": 1, "\\widetilde": 1,
 }
 
 def attach_args(pieces):
@@ -50,7 +52,12 @@ def attach_args(pieces):
         if ARITY.get(pieces[0]):
             j = ARITY[pieces[0]]
             if j <= len(pieces) - 1:
-                attach_list.append("".join(pieces[0:j+1]))
+                # 인자에 원래 중괄호가 없었으면(\hat x, \mathrm d처럼 TeX가 다음 토큰 하나만 인자로
+                # 잡는 표기) 억지로 붙이면 \hatx처럼 깨지므로 직접 {}로 감싸준다.
+                merged = pieces[0]
+                for arg in pieces[1:j+1]:
+                    merged += arg if arg.startswith("{") else "{" + arg + "}"
+                attach_list.append(merged)
                 pieces = pieces[j+1:]
             else:
                 attach_list.append(pieces[0])
@@ -98,9 +105,9 @@ def split_terms(merged):
     depth = 0
     while len(merged) > 0:
         while j < len(merged):
-            if merged[j] in ("(", "["):
+            if merged[j] in ("(", "[", "\\left"):
                 depth += 1
-            elif merged[j] in (")", "]"):
+            elif merged[j] in (")", "]", "\\right"):
                 depth -= 1
             elif depth == 0 and (merged[j] in SPLITTERS or merged[j].startswith("\\begin") or merged[j].startswith("\\end")):
                 if merged[j] == "-" and j == 0:
@@ -118,7 +125,11 @@ def split_terms(merged):
             merged = merged[j+1:]
     return(split_list)
 
-NO_TOKEN = {"(", ")", ",", "[", "]", ".", "\\left", "\\right"}
+NO_TOKEN = {
+    "(", ")", ",", "[", "]", ".", "\\left", "\\right",
+    "|", "\\|", "\\{", "\\}", "\\lfloor", "\\rfloor",
+    "\\lceil", "\\rceil", "\\langle", "\\rangle", "/",
+}
 
 def build(splitted, start_term=0, start_token=0):
     annotated = ""
@@ -139,7 +150,9 @@ def build(splitted, start_term=0, start_token=0):
             terms[str(num_term)] = " ".join(content)
             num_term += 1
             for i in range(len(content)):
-                if content[i] in NO_TOKEN:
+                # merge_scripts가 ")"에 "^2"/"_n" 같은 스크립트를 붙여 ")^2"처럼
+                # 만들기도 해서, 정확히 일치하는지가 아니라 NO_TOKEN으로 시작하는지로 검사
+                if any(content[i] == nt or content[i].startswith(nt) for nt in NO_TOKEN):
                     annotated += content[i]
                 else:
                     annotated += htmltoken(num_token, content[i])

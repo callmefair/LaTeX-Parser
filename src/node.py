@@ -49,9 +49,19 @@ def retrieve(state) -> dict:
     if state["symbol"] and state["page_title"] in WIKI_SECTIONS and state["symbol"] not in formatted:
         extra = find_symbol_lines(state["page_title"], state["symbol"])
         if extra:
-            formatted = "\n\n[문서 원문에서 찾은 해당 기호의 용례]\n\n" + "\n\n".join(extra)
+            formatted += "\n\n[문서 원문에서 찾은 해당 기호의 용례]\n\n" + "\n\n".join(extra)
             unique_sources.append(state["page_title"])
-    
+    elif not state["symbol"] and state["page_title"] in WIKI_SECTIONS:
+        formatted += "\n\n[문서 원문]\n\n" + WIKI_SECTIONS[state["page_title"]]["wikitext"]
+        unique_sources.append(state["page_title"])
+        """
+        잘못된 문법이지만, 나중을 기약
+        start = WIKI_SECTIONS[state["page_title"]]["sections"]["section_start"]
+        end = WIKI_SECTIONS[state["page_title"]]["sections"]["section_end"]
+        if start <= end:
+            formatted += "\n\n[문서 원문의 해당 식 부분 내용]\n\n" + WIKI_SECTIONS[state["page_title"]]["wikitext"][start:end]
+            unique_sources.append(state["page_title"])
+        """
     return {
         "documents": formatted,
         "sources": unique_sources,
